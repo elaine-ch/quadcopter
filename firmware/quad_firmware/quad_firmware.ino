@@ -64,7 +64,6 @@ void loop() {
 
   //read from radio
   uint8_t buf[sizeof(Packet)];
-  
   if(rfAvailable()) {
     rfRead(buf, sizeof(Packet));
     Packet* packet = (Packet*) buf;
