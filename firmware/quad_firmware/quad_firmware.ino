@@ -49,6 +49,7 @@ void setup() {
   packet.propBackLeft = 0;
   packet.propBackRight = 0;
   packet.magicNumber = 2025;
+  packet.battery = 0;
   packet.armed = armed;
   rfWrite((uint8_t*) (&packet), sizeof(packet));
 }
@@ -101,4 +102,14 @@ void readBattery() {
   int batteryRead = analogRead(BATTERY_SENSE_PIN);
   int batteryLevel = map(batteryRead, 792, 890, 0, 100);
   Serial.println(batteryLevel);
+
+  Packet packet;
+  packet.propFrontLeft = 0;
+  packet.propFrontRight = 0;
+  packet.propBackLeft = 0;
+  packet.propBackRight = 0;
+  packet.magicNumber = 2025;
+  packet.battery = batteryLevel;
+  packet.armed = armed;
+  rfWrite((uint8_t*) (&packet), sizeof(packet));
 }

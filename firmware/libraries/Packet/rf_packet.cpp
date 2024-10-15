@@ -10,6 +10,7 @@ struct Packet {
     int propBackRight;
     //int LED[8];
     int magicNumber;
+    int battery;
     bool armed;
 };
 

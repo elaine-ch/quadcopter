@@ -6,6 +6,8 @@ bool calibrate = false;
 bool armed = false;
 bool printOnce = true;
 int batteryCount = 0;
+int quadBattery = 0;
+int batteryLevel = 0;
 
 struct MinMaxGimbals {
   int throttleMax;
@@ -33,6 +35,7 @@ void setup() {
 
   calibrate = false;
   armed = false;
+  lcd.setBacklight(255, 255, 255);
 
   //tell quad about reset
   Packet packet;
@@ -41,6 +44,7 @@ void setup() {
   packet.propBackLeft = 0;
   packet.propBackRight = 0;
   packet.magicNumber = 2025;
+  packet.battery = 0;
   packet.armed = armed;
   rfWrite((uint8_t*) (&packet), sizeof(packet));
 }
@@ -91,6 +95,7 @@ void loop() {
     packet.propBackLeft = throttle;
     packet.propBackRight = throttle;
     packet.magicNumber = 2025;
+    packet.battery = 0;
     packet.armed = armed;
     rfWrite((uint8_t*) (&packet), sizeof(packet));
   }
@@ -100,9 +105,9 @@ void loop() {
   if(!armed && throttle >= 0 && throttle <= 5 && yaw <= 255 && yaw >= 250 && roll <= 255  && roll >= 250 && pitch >= 250 && pitch <= 255){
     armed = true;
     Serial.println("armed!");
-    char* armed = "Quad armed!";
+    char* armedMessage = "Quad armed!";
     lcd.clear();
-    lcd.write(armed);
+    lcd.write(armedMessage);
   }
 
   //disarm using button 2
@@ -112,6 +117,12 @@ void loop() {
     char* disarmed = "Quad disarmed!";
     lcd.clear();
     lcd.write(disarmed);
+
+    lcd.setCursor(0, 1);
+    lcd.print(batteryLevel);
+
+    lcd.setCursor(13, 1);
+    lcd.print(quadBattery);
   }
 
   //receive message from quadcopter
@@ -120,11 +131,18 @@ void loop() {
     rfRead(buf, sizeof(Packet));
     Packet* packet = (Packet*) buf;
     armed = packet->armed;
+    quadBattery = packet->battery;
     int magicNumber = packet->magicNumber;
     if(!armed) {
       char* disarmed = "Quad disarmed!";
       lcd.clear();
       lcd.write(disarmed);
+
+      lcd.setCursor(0, 1);
+      lcd.print(batteryLevel);
+
+      lcd.setCursor(13, 1);
+      lcd.print(quadBattery);
     }
   }
 
@@ -160,18 +178,24 @@ void loop() {
   }
 
   //calibration fails if quad is armed
-  if(digitalRead(BUTTON1_PIN) == 0 && !armed) {
-    char* deny = "Calibration failed quad is armed";
-    lcd.clear();
-    lcd.write(deny);
-  }
+  // if(digitalRead(BUTTON1_PIN) == 0 && !armed) {
+  //   char* deny = "Calibration failed quad is armed";
+  //   lcd.clear();
+  //   lcd.write(deny);
+  // }
 }
 
 void readBattery() {
   Serial.print("Battery reading: ");
   int batteryRead = analogRead(BATTERY_SENSE_PIN);
-  int batteryLevel = map(batteryRead, 39, 57, 0, 100);
+  batteryLevel = map(batteryRead, 39, 57, 0, 100);
   Serial.println(batteryLevel);
+
+  lcd.setCursor(0, 1);
+  lcd.print(batteryLevel);
+
+  lcd.setCursor(13, 1);
+  lcd.print(quadBattery);
 }
 
 void calibrationMode() {
