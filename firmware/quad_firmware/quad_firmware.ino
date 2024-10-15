@@ -9,7 +9,6 @@ int propFrontRightPin = 3;
 int propFrontLeftPin = 4;
 int propBackLeftPin = 5;
 bool armed;
-int magicNumber;
 
 int bRValue = 0;
 int bLValue = 0;
@@ -42,13 +41,15 @@ void setup() {
   analogWrite(propFrontLeftPin, 0);
   analogWrite(propBackLeftPin, 0);
 
+  rfFlush();
+
   //send one packet on setup to tell remote quad is disarmed
   Packet packet;
   packet.propFrontLeft = 0;
   packet.propFrontRight = 0;
   packet.propBackLeft = 0;
   packet.propBackRight = 0;
-  packet.magicNumber = 2025;
+  packet.magicNumber = 1829;
   packet.battery = 0;
   packet.armed = armed;
   rfWrite((uint8_t*) (&packet), sizeof(packet));
@@ -68,12 +69,14 @@ void loop() {
   if(rfAvailable()) {
     rfRead(buf, sizeof(Packet));
     Packet* packet = (Packet*) buf;
-    bRValue = packet->propBackRight;
-    bLValue = packet->propBackLeft;
-    fLValue = packet->propFrontLeft;
-    fRValue = packet->propFrontRight;
-    armed = packet->armed;
-    magicNumber = packet->magicNumber;
+    int magicNumber = packet->magicNumber;
+    if (magicNumber == 1829){
+      bRValue = packet->propBackRight;
+      bLValue = packet->propBackLeft;
+      fLValue = packet->propFrontLeft;
+      fRValue = packet->propFrontRight;
+      armed = packet->armed;
+    }
     timeSinceLastPacket = millis();
   }
 
@@ -108,7 +111,7 @@ void readBattery() {
   packet.propFrontRight = 0;
   packet.propBackLeft = 0;
   packet.propBackRight = 0;
-  packet.magicNumber = 2025;
+  packet.magicNumber = 1829;
   packet.battery = batteryLevel;
   packet.armed = armed;
   rfWrite((uint8_t*) (&packet), sizeof(packet));

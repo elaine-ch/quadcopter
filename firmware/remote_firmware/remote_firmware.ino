@@ -37,13 +37,15 @@ void setup() {
   armed = false;
   lcd.setBacklight(255, 255, 255);
 
+  rfFlush();
+
   //tell quad about reset
   Packet packet;
   packet.propFrontLeft = 0;
   packet.propFrontRight = 0;
   packet.propBackLeft = 0;
   packet.propBackRight = 0;
-  packet.magicNumber = 2025;
+  packet.magicNumber = 1829;
   packet.battery = 0;
   packet.armed = armed;
   rfWrite((uint8_t*) (&packet), sizeof(packet));
@@ -94,7 +96,7 @@ void loop() {
     packet.propFrontRight = throttle;
     packet.propBackLeft = throttle;
     packet.propBackRight = throttle;
-    packet.magicNumber = 2025;
+    packet.magicNumber = 1829;
     packet.battery = 0;
     packet.armed = armed;
     rfWrite((uint8_t*) (&packet), sizeof(packet));
@@ -130,9 +132,11 @@ void loop() {
   if(rfAvailable()) {
     rfRead(buf, sizeof(Packet));
     Packet* packet = (Packet*) buf;
-    armed = packet->armed;
-    quadBattery = packet->battery;
     int magicNumber = packet->magicNumber;
+    if (magicNumber == 1829) {
+      armed = packet->armed;
+      quadBattery = packet->battery;
+    }
     if(!armed) {
       char* disarmed = "Quad disarmed!";
       lcd.clear();
