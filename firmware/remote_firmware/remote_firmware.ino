@@ -169,7 +169,9 @@ void loop() {
 
 void readBattery() {
   Serial.print("Battery reading: ");
-  Serial.println(analogRead(BATTERY_SENSE_PIN));
+  int batteryRead = analogRead(BATTERY_SENSE_PIN);
+  int batteryLevel = map(batteryRead, 39, 57, 0, 100);
+  Serial.println(batteryLevel);
 }
 
 void calibrationMode() {
