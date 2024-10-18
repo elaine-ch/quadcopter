@@ -5116,9 +5116,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="J2" library="quadparts_prebuilt_2022" deviceset="HEADER-4POS" device="-2X2-0.1IN-FEMALE-SMD-BOTTOM-ENTRY"/>
 <part name="GND16" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="U2" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="LSM-IMU" device="-497-18367-1-NDIMU"/>
-<part name="P+5" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="P+6" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
-<part name="GND17" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND18" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+7" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="R4" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
@@ -5206,13 +5204,16 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="C7" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
 <part name="C8" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.75PF" value="0.75pF"/>
 <part name="C9" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.1UF" value="0.1uF"/>
-<part name="C10" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.1UF" value="0.1uF"/>
 <part name="C11" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.1UF" value="0.1uF"/>
 <part name="C15" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
 <part name="C13" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
 <part name="GND47" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="C14" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
 <part name="C17" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-POL_" device="47UF-SMD-1206-TAJA" package3d_urn="urn:adsk.eagle:package:11793387/1" value="47uF"/>
+<part name="P+5" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
+<part name="C10" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.1UF" value="0.1uF"/>
+<part name="GND17" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
+<part name="GND48" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5386,14 +5387,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="U2" gate="G$1" x="261.62" y="157.48" smashed="yes">
 <attribute name="NAME" x="261.62" y="177.8" size="1.778" layer="95" align="top-center"/>
 </instance>
-<instance part="P+5" gate="G$1" x="236.22" y="157.48" smashed="yes">
-<attribute name="VALUE" x="236.22" y="160.02" size="1.778" layer="96" rot="R180" align="center"/>
-</instance>
 <instance part="P+6" gate="G$1" x="287.02" y="177.8" smashed="yes">
 <attribute name="VALUE" x="287.02" y="180.34" size="1.778" layer="96" rot="R180" align="center"/>
-</instance>
-<instance part="GND17" gate="1" x="236.22" y="142.24" smashed="yes">
-<attribute name="VALUE" x="236.22" y="139.7" size="1.778" layer="96" align="center"/>
 </instance>
 <instance part="GND18" gate="1" x="231.14" y="160.02" smashed="yes">
 <attribute name="VALUE" x="231.14" y="157.48" size="1.778" layer="96" align="center"/>
@@ -5686,10 +5681,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <attribute name="VALUE" x="329.184" y="208.661" size="1.778" layer="96"/>
 <attribute name="NAME" x="333.248" y="211.201" size="1.778" layer="95"/>
 </instance>
-<instance part="C10" gate="G$1" x="228.6" y="149.86" smashed="yes">
-<attribute name="VALUE" x="225.044" y="147.701" size="1.778" layer="96"/>
-<attribute name="NAME" x="229.108" y="150.241" size="1.778" layer="95"/>
-</instance>
 <instance part="C11" gate="G$1" x="297.18" y="170.18" smashed="yes">
 <attribute name="VALUE" x="293.624" y="168.021" size="1.778" layer="96"/>
 <attribute name="NAME" x="297.688" y="170.561" size="1.778" layer="95"/>
@@ -5712,6 +5703,19 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="C17" gate="G$1" x="215.9" y="35.56" smashed="yes">
 <attribute name="VALUE" x="212.344" y="33.401" size="1.778" layer="96"/>
 <attribute name="NAME" x="216.154" y="35.941" size="1.778" layer="95"/>
+</instance>
+<instance part="P+5" gate="G$1" x="236.22" y="157.48" smashed="yes">
+<attribute name="VALUE" x="236.22" y="160.02" size="1.778" layer="96" rot="R180" align="center"/>
+</instance>
+<instance part="C10" gate="G$1" x="231.14" y="149.86" smashed="yes">
+<attribute name="VALUE" x="227.584" y="147.701" size="1.778" layer="96"/>
+<attribute name="NAME" x="231.648" y="150.241" size="1.778" layer="95"/>
+</instance>
+<instance part="GND17" gate="1" x="231.14" y="139.7" smashed="yes">
+<attribute name="VALUE" x="231.14" y="137.16" size="1.778" layer="96" align="center"/>
+</instance>
+<instance part="GND48" gate="1" x="241.3" y="139.7" smashed="yes">
+<attribute name="VALUE" x="241.3" y="137.16" size="1.778" layer="96" align="center"/>
 </instance>
 </instances>
 <busses>
@@ -5861,15 +5865,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <junction x="231.14" y="167.64"/>
 </segment>
 <segment>
-<wire x1="228.6" y1="144.78" x2="236.22" y2="144.78" width="0.1524" layer="91" style="longdash"/>
-<pinref part="GND17" gate="1" pin="GND"/>
-<pinref part="U2" gate="G$1" pin="GND"/>
-<wire x1="241.3" y1="147.32" x2="236.22" y2="147.32" width="0.1524" layer="91" style="longdash"/>
-<wire x1="236.22" y1="147.32" x2="236.22" y2="144.78" width="0.1524" layer="91" style="longdash"/>
-<junction x="236.22" y="144.78"/>
-<pinref part="C10" gate="G$1" pin="2"/>
-</segment>
-<segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="17.78" y1="0" x2="10.16" y2="0" width="0.1524" layer="91"/>
 <pinref part="GND22" gate="1" pin="GND"/>
@@ -5947,6 +5942,16 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="GND47" gate="1" pin="GND"/>
 <pinref part="C14" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<pinref part="C10" gate="G$1" pin="2"/>
+<wire x1="231.14" y1="144.78" x2="231.14" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND48" gate="1" pin="GND"/>
+<wire x1="241.3" y1="142.24" x2="241.3" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="GND"/>
+</segment>
 </net>
 <net name="PG1" class="0">
 <segment>
@@ -6013,6 +6018,15 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="347.98" y1="182.88" x2="347.98" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="340.36" y1="180.34" x2="347.98" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="J3" gate="G$1" pin="10"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="VDDIO"/>
+<wire x1="241.3" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="152.4" x2="236.22" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="P+5" gate="G$1" pin="3V"/>
+<wire x1="236.22" y1="152.4" x2="231.14" y2="152.4" width="0.1524" layer="91"/>
+<junction x="236.22" y="152.4"/>
+<pinref part="C10" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -6188,15 +6202,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </segment>
 </net>
 <net name="VDDIO" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="VDDIO"/>
-<wire x1="241.3" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91" style="longdash"/>
-<wire x1="236.22" y1="152.4" x2="236.22" y2="154.94" width="0.1524" layer="91" style="longdash"/>
-<pinref part="P+5" gate="G$1" pin="3V"/>
-<wire x1="228.6" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91" style="longdash"/>
-<junction x="236.22" y="152.4"/>
-<pinref part="C10" gate="G$1" pin="1"/>
-</segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="320.04" y1="147.32" x2="325.12" y2="147.32" width="0.1524" layer="91" style="longdash"/>
