@@ -5688,7 +5688,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="GND15" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="J2" library="quadparts_prebuilt_2022" deviceset="HEADER-4POS" device="-2X2-0.1IN-FEMALE-SMD-BOTTOM-ENTRY"/>
 <part name="GND16" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="C9" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
+<part name="C9" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="1uF"/>
 <part name="U2" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="LSM-IMU" device="-497-18367-1-NDIMU"/>
 <part name="P+5" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="P+6" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
@@ -6551,13 +6551,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="J3" gate="G$1" pin="10"/>
 </segment>
 </net>
-<net name="10" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB0(SSN/PCINT0)"/>
-<wire x1="17.78" y1="165.1" x2="15.24" y2="165.1" width="0.1524" layer="91"/>
-<label x="15.24" y="165.1" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="SCK" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PB1(SCK/PCINT1)"/>
@@ -6576,6 +6569,11 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="17.78" y1="119.38" x2="15.24" y2="119.38" width="0.1524" layer="91"/>
 <label x="15.24" y="119.38" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="J2" gate="G$1" pin="3"/>
+<wire x1="325.12" y1="220.98" x2="327.66" y2="220.98" width="0.1524" layer="91" style="longdash"/>
+<label x="327.66" y="220.98" size="1.016" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="TX0" class="0">
 <segment>
@@ -6583,47 +6581,10 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="17.78" y1="116.84" x2="15.24" y2="116.84" width="0.1524" layer="91"/>
 <label x="15.24" y="116.84" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
-</net>
-<net name="2" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PE2(XCK0/AIN0)"/>
-<wire x1="17.78" y1="114.3" x2="15.24" y2="114.3" width="0.1524" layer="91"/>
-<label x="15.24" y="114.3" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="3" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PE3(OC3A/AIN1)"/>
-<wire x1="17.78" y1="111.76" x2="15.24" y2="111.76" width="0.1524" layer="91"/>
-<label x="15.24" y="111.76" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="4" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PE4(OC3B/INT4)"/>
-<wire x1="17.78" y1="109.22" x2="15.24" y2="109.22" width="0.1524" layer="91"/>
-<label x="15.24" y="109.22" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="5" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PE5(OC3C/INT5)"/>
-<wire x1="17.78" y1="106.68" x2="15.24" y2="106.68" width="0.1524" layer="91"/>
-<label x="15.24" y="106.68" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="6" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PE6(T3/INT6)"/>
-<wire x1="17.78" y1="104.14" x2="15.24" y2="104.14" width="0.1524" layer="91"/>
-<label x="15.24" y="104.14" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="7" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PE7(ICP3/INT7/CLKO)"/>
-<wire x1="17.78" y1="101.6" x2="15.24" y2="101.6" width="0.1524" layer="91"/>
-<label x="15.24" y="101.6" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="J2" gate="G$1" pin="4"/>
+<wire x1="325.12" y1="223.52" x2="327.66" y2="223.52" width="0.1524" layer="91" style="longdash"/>
+<label x="327.66" y="223.52" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -6718,69 +6679,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="C6" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="AREF" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="AREF"/>
-<wire x1="83.82" y1="114.3" x2="86.36" y2="114.3" width="0.1524" layer="91"/>
-<label x="86.36" y="114.3" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A0" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF0(ADC0)"/>
-<wire x1="83.82" y1="111.76" x2="86.36" y2="111.76" width="0.1524" layer="91"/>
-<label x="86.36" y="111.76" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A1" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF1(ADC1)"/>
-<wire x1="83.82" y1="109.22" x2="86.36" y2="109.22" width="0.1524" layer="91"/>
-<label x="86.36" y="109.22" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A2" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF2(ADC2/DIG2)"/>
-<wire x1="83.82" y1="106.68" x2="86.36" y2="106.68" width="0.1524" layer="91"/>
-<label x="86.36" y="106.68" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A3" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF3(ADC3/DIG4)"/>
-<wire x1="83.82" y1="104.14" x2="86.36" y2="104.14" width="0.1524" layer="91"/>
-<label x="86.36" y="104.14" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A4" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF4(ADC4/TCK)"/>
-<wire x1="83.82" y1="101.6" x2="86.36" y2="101.6" width="0.1524" layer="91"/>
-<label x="86.36" y="101.6" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A5" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF5(ADC5/TMS)"/>
-<wire x1="83.82" y1="99.06" x2="86.36" y2="99.06" width="0.1524" layer="91"/>
-<label x="86.36" y="99.06" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A6" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF6(ADC6/TDO)"/>
-<wire x1="83.82" y1="96.52" x2="86.36" y2="96.52" width="0.1524" layer="91"/>
-<label x="86.36" y="96.52" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A7" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PF7(ADC7/TDI)"/>
-<wire x1="83.82" y1="93.98" x2="86.36" y2="93.98" width="0.1524" layer="91"/>
-<label x="86.36" y="93.98" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="B1" gate="G$1" pin="IN"/>
@@ -6815,20 +6713,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="U1" gate="G$1" pin="PB2(MOSI/PDI/PCINT2)"/>
 <wire x1="17.78" y1="160.02" x2="15.24" y2="160.02" width="0.1524" layer="91"/>
 <label x="15.24" y="160.02" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="SERIALTX" class="0">
-<segment>
-<pinref part="J2" gate="G$1" pin="4"/>
-<wire x1="325.12" y1="223.52" x2="327.66" y2="223.52" width="0.1524" layer="91" style="longdash"/>
-<label x="327.66" y="223.52" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="SERIALRX" class="0">
-<segment>
-<pinref part="J2" gate="G$1" pin="3"/>
-<wire x1="325.12" y1="220.98" x2="327.66" y2="220.98" width="0.1524" layer="91" style="longdash"/>
-<label x="327.66" y="220.98" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$11" class="0">
