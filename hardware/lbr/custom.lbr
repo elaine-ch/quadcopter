@@ -742,6 +742,34 @@
 </technology>
 </technologies>
 </device>
+<device name="-08052.2KOHMRES" package="0805_RESISTOR">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="ELENA"/>
+<attribute name="DIST" value="Digikey"/>
+<attribute name="DISTPN" value="311-2.2KARTR-ND"/>
+<attribute name="VALUE" value="2.2K"/>
+</technology>
+</technologies>
+</device>
+<device name="-080520OHMRES" package="0805_RESISTOR">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="ELENA"/>
+<attribute name="DIST" value="Digikey"/>
+<attribute name="DISTPN" value="311-20ARTR-ND"/>
+<attribute name="VALUE" value="20"/>
+</technology>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="LED" prefix="D" uservalue="yes">
