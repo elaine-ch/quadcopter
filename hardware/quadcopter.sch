@@ -5695,8 +5695,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="GND17" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND18" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+7" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
-<part name="C10" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="1uF"/>
-<part name="C11" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
+<part name="C10" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="0.1uF"/>
+<part name="C11" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="0.1uF"/>
 <part name="R4" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="R5" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="FRONT-LEFT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
