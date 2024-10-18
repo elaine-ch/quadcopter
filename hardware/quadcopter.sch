@@ -5744,7 +5744,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="P+13" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND34" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="P+14" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
-<part name="U$6" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="NET-BRIDGE" device=""/>
+<part name="NET-BRIDGE" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="NET-BRIDGE" device=""/>
 <part name="GND37" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND38" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="J3" library="quadparts_prebuilt_2022" deviceset="HEADER-10POS" device="TH-254X10"/>
@@ -6161,7 +6161,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="P+14" gate="VCC" x="233.68" y="48.26" smashed="yes">
 <attribute name="VALUE" x="233.68" y="50.8" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
-<instance part="U$6" gate="G$1" x="274.32" y="38.1" smashed="yes">
+<instance part="NET-BRIDGE" gate="G$1" x="274.32" y="38.1" smashed="yes">
 <attribute name="NAME" x="270.256" y="40.132" size="1.778" layer="95"/>
 </instance>
 <instance part="GND37" gate="1" x="269.24" y="35.56" smashed="yes">
@@ -6454,7 +6454,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <wire x1="276.86" y1="38.1" x2="281.94" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="GND38" gate="1" pin="GND"/>
-<pinref part="U$6" gate="G$1" pin="2"/>
+<pinref part="NET-BRIDGE" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="J4" gate="G$1" pin="3"/>
@@ -6902,7 +6902,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <pinref part="GND37" gate="1" pin="BAT_GND"/>
 <wire x1="269.24" y1="38.1" x2="271.78" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="U$6" gate="G$1" pin="1"/>
+<pinref part="NET-BRIDGE" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="GND41" gate="1" pin="BAT_GND"/>
