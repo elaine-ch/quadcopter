@@ -4308,220 +4308,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="2.9" y1="-1.4" x2="2.9" y2="1.4" width="0.05" layer="39"/>
 <wire x1="2.9" y1="1.4" x2="-2.4" y2="1.4" width="0.05" layer="39"/>
 </package>
-<package name="CAPC1608X100" urn="urn:adsk.eagle:footprint:11135720/1" locally_modified="yes">
-<description>Chip, 1.60 X 0.80 X 1.00 mm body
-&lt;p&gt;Chip package with body size 1.60 X 0.80 X 1.00 mm&lt;/p&gt;</description>
-<wire x1="-0.9" y1="-0.5" x2="-0.9" y2="0.5" width="0.12" layer="51"/>
-<wire x1="-0.9" y1="0.5" x2="0.9" y2="0.5" width="0.12" layer="51"/>
-<wire x1="-1.9" y1="-0.9" x2="1.9" y2="-0.9" width="0.05" layer="39"/>
-<wire x1="-1.9" y1="0.9" x2="-1.9" y2="-0.9" width="0.05" layer="39"/>
-<text x="0" y="-1" size="0.9" layer="27" font="vector" align="top-center">&gt;VALUE</text>
-<text x="0" y="1" size="0.9" layer="25" font="vector" align="bottom-center">&gt;NAME</text>
-<wire x1="0.9" y1="-0.5" x2="-0.9" y2="-0.5" width="0.12" layer="51"/>
-<wire x1="0.9" y1="-0.8217" x2="-0.9" y2="-0.8217" width="0.12" layer="21"/>
-<wire x1="0.9" y1="0.5" x2="0.9" y2="-0.5" width="0.12" layer="51"/>
-<wire x1="0.9" y1="0.8217" x2="-0.9" y2="0.8217" width="0.12" layer="21"/>
-<wire x1="1.9" y1="-0.9" x2="1.9" y2="0.9" width="0.05" layer="39"/>
-<wire x1="1.9" y1="0.9" x2="-1.9" y2="0.9" width="0.05" layer="39"/>
-<smd name="1" x="-0.7533" y="0" dx="1.0088" dy="1.0153" layer="1"/>
-<smd name="2" x="0.7533" y="0" dx="1.0088" dy="1.0153" layer="1"/>
-</package>
-<package name="CAPC2012X140_HS">
-<description>Capacitor, Chip; 2.00 mm L X 1.25 mm W X 1.40 mm H body&lt;p&gt;&lt;i&gt;PCB Libraries Packages&lt;/i&gt;</description>
-<wire x1="-1.08" y1="-0.7" x2="-1.08" y2="0.7" width="0.12" layer="51"/>
-<wire x1="-1.08" y1="0.7" x2="1.08" y2="0.7" width="0.12" layer="51"/>
-<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.4" width="0.05" layer="39"/>
-<wire x1="-2.4" y1="1.4" x2="2.4" y2="1.4" width="0.05" layer="39"/>
-<circle x="0" y="0" radius="0.25" width="0.05" layer="39"/>
-<text x="0" y="0" size="0.9" layer="27" font="vector">&gt;VALUE</text>
-<text x="0" y="0" size="0.9" layer="25" font="vector">&gt;NAME</text>
-<wire x1="0" y1="0.35" x2="0" y2="-0.35" width="0.05" layer="39"/>
-<polygon width="0.01" layer="31" pour="solid">
-<vertex x="-1.2240875" y="-0.7069"/>
-<vertex x="-1.185003125" y="-0.709990625"/>
-<vertex x="-0.565909375" y="-0.7069"/>
-<vertex x="-0.52768125" y="-0.6978"/>
-<vertex x="-0.491509375" y="-0.68280625"/>
-<vertex x="-0.458090625" y="-0.662290625"/>
-<vertex x="-0.4282" y="-0.6368"/>
-<vertex x="-0.402709375" y="-0.606909375"/>
-<vertex x="-0.38219375" y="-0.573490625"/>
-<vertex x="-0.3672" y="-0.53731875"/>
-<vertex x="-0.3581" y="-0.499084375"/>
-<vertex x="-0.355" y="-0.45995625"/>
-<vertex x="-0.355" y="0.45995625"/>
-<vertex x="-0.3581" y="0.499084375"/>
-<vertex x="-0.3672" y="0.53731875"/>
-<vertex x="-0.38219375" y="0.573490625"/>
-<vertex x="-0.402709375" y="0.606909375"/>
-<vertex x="-0.4282" y="0.6368"/>
-<vertex x="-0.458090625" y="0.662290625"/>
-<vertex x="-0.491509375" y="0.68280625"/>
-<vertex x="-0.52768125" y="0.6978"/>
-<vertex x="-0.5659125" y="0.7069"/>
-<vertex x="-0.604996875" y="0.709990625"/>
-<vertex x="-1.224090625" y="0.7069"/>
-<vertex x="-1.26231875" y="0.6978"/>
-<vertex x="-1.298490625" y="0.68280625"/>
-<vertex x="-1.331909375" y="0.662290625"/>
-<vertex x="-1.3618" y="0.6368"/>
-<vertex x="-1.387290625" y="0.606909375"/>
-<vertex x="-1.40780625" y="0.573490625"/>
-<vertex x="-1.4228" y="0.53731875"/>
-<vertex x="-1.4319" y="0.499084375"/>
-<vertex x="-1.435" y="0.45995625"/>
-<vertex x="-1.435" y="-0.45995625"/>
-<vertex x="-1.4319" y="-0.499084375"/>
-<vertex x="-1.4228" y="-0.53731875"/>
-<vertex x="-1.40780625" y="-0.573490625"/>
-<vertex x="-1.387290625" y="-0.606909375"/>
-<vertex x="-1.3618" y="-0.6368"/>
-<vertex x="-1.331909375" y="-0.662290625"/>
-<vertex x="-1.298490625" y="-0.68280625"/>
-<vertex x="-1.26231875" y="-0.6978"/>
-</polygon>
-<polygon width="0.01" layer="31" pour="solid">
-<vertex x="0.5659125" y="-0.7069"/>
-<vertex x="0.604996875" y="-0.709990625"/>
-<vertex x="1.224090625" y="-0.7069"/>
-<vertex x="1.26231875" y="-0.6978"/>
-<vertex x="1.298490625" y="-0.68280625"/>
-<vertex x="1.331909375" y="-0.662290625"/>
-<vertex x="1.3618" y="-0.6368"/>
-<vertex x="1.387290625" y="-0.606909375"/>
-<vertex x="1.40780625" y="-0.573490625"/>
-<vertex x="1.4228" y="-0.53731875"/>
-<vertex x="1.4319" y="-0.499084375"/>
-<vertex x="1.435" y="-0.45995625"/>
-<vertex x="1.435" y="0.45995625"/>
-<vertex x="1.4319" y="0.499084375"/>
-<vertex x="1.4228" y="0.53731875"/>
-<vertex x="1.40780625" y="0.573490625"/>
-<vertex x="1.387290625" y="0.606909375"/>
-<vertex x="1.3618" y="0.6368"/>
-<vertex x="1.331909375" y="0.662290625"/>
-<vertex x="1.298490625" y="0.68280625"/>
-<vertex x="1.26231875" y="0.6978"/>
-<vertex x="1.2240875" y="0.7069"/>
-<vertex x="1.185003125" y="0.709990625"/>
-<vertex x="0.565909375" y="0.7069"/>
-<vertex x="0.52768125" y="0.6978"/>
-<vertex x="0.491509375" y="0.68280625"/>
-<vertex x="0.458090625" y="0.662290625"/>
-<vertex x="0.4282" y="0.6368"/>
-<vertex x="0.402709375" y="0.606909375"/>
-<vertex x="0.38219375" y="0.573490625"/>
-<vertex x="0.3672" y="0.53731875"/>
-<vertex x="0.3581" y="0.499084375"/>
-<vertex x="0.355" y="0.45995625"/>
-<vertex x="0.355" y="-0.45995625"/>
-<vertex x="0.3581" y="-0.499084375"/>
-<vertex x="0.3672" y="-0.53731875"/>
-<vertex x="0.38219375" y="-0.573490625"/>
-<vertex x="0.402709375" y="-0.606909375"/>
-<vertex x="0.4282" y="-0.6368"/>
-<vertex x="0.458090625" y="-0.662290625"/>
-<vertex x="0.491509375" y="-0.68280625"/>
-<vertex x="0.52768125" y="-0.6978"/>
-</polygon>
-<polygon width="0.01" layer="29" pour="solid">
-<vertex x="-1.2240875" y="-0.7069"/>
-<vertex x="-1.185003125" y="-0.709990625"/>
-<vertex x="-0.565909375" y="-0.7069"/>
-<vertex x="-0.52768125" y="-0.6978"/>
-<vertex x="-0.491509375" y="-0.68280625"/>
-<vertex x="-0.458090625" y="-0.662290625"/>
-<vertex x="-0.4282" y="-0.6368"/>
-<vertex x="-0.402709375" y="-0.606909375"/>
-<vertex x="-0.38219375" y="-0.573490625"/>
-<vertex x="-0.3672" y="-0.53731875"/>
-<vertex x="-0.3581" y="-0.499084375"/>
-<vertex x="-0.355" y="-0.45995625"/>
-<vertex x="-0.355" y="0.45995625"/>
-<vertex x="-0.3581" y="0.499084375"/>
-<vertex x="-0.3672" y="0.53731875"/>
-<vertex x="-0.38219375" y="0.573490625"/>
-<vertex x="-0.402709375" y="0.606909375"/>
-<vertex x="-0.4282" y="0.6368"/>
-<vertex x="-0.458090625" y="0.662290625"/>
-<vertex x="-0.491509375" y="0.68280625"/>
-<vertex x="-0.52768125" y="0.6978"/>
-<vertex x="-0.5659125" y="0.7069"/>
-<vertex x="-0.604996875" y="0.709990625"/>
-<vertex x="-1.224090625" y="0.7069"/>
-<vertex x="-1.26231875" y="0.6978"/>
-<vertex x="-1.298490625" y="0.68280625"/>
-<vertex x="-1.331909375" y="0.662290625"/>
-<vertex x="-1.3618" y="0.6368"/>
-<vertex x="-1.387290625" y="0.606909375"/>
-<vertex x="-1.40780625" y="0.573490625"/>
-<vertex x="-1.4228" y="0.53731875"/>
-<vertex x="-1.4319" y="0.499084375"/>
-<vertex x="-1.435" y="0.45995625"/>
-<vertex x="-1.435" y="-0.45995625"/>
-<vertex x="-1.4319" y="-0.499084375"/>
-<vertex x="-1.4228" y="-0.53731875"/>
-<vertex x="-1.40780625" y="-0.573490625"/>
-<vertex x="-1.387290625" y="-0.606909375"/>
-<vertex x="-1.3618" y="-0.6368"/>
-<vertex x="-1.331909375" y="-0.662290625"/>
-<vertex x="-1.298490625" y="-0.68280625"/>
-<vertex x="-1.26231875" y="-0.6978"/>
-</polygon>
-<polygon width="0.01" layer="29" pour="solid">
-<vertex x="0.5659125" y="-0.7069"/>
-<vertex x="0.604996875" y="-0.709990625"/>
-<vertex x="1.224090625" y="-0.7069"/>
-<vertex x="1.26231875" y="-0.6978"/>
-<vertex x="1.298490625" y="-0.68280625"/>
-<vertex x="1.331909375" y="-0.662290625"/>
-<vertex x="1.3618" y="-0.6368"/>
-<vertex x="1.387290625" y="-0.606909375"/>
-<vertex x="1.40780625" y="-0.573490625"/>
-<vertex x="1.4228" y="-0.53731875"/>
-<vertex x="1.4319" y="-0.499084375"/>
-<vertex x="1.435" y="-0.45995625"/>
-<vertex x="1.435" y="0.45995625"/>
-<vertex x="1.4319" y="0.499084375"/>
-<vertex x="1.4228" y="0.53731875"/>
-<vertex x="1.40780625" y="0.573490625"/>
-<vertex x="1.387290625" y="0.606909375"/>
-<vertex x="1.3618" y="0.6368"/>
-<vertex x="1.331909375" y="0.662290625"/>
-<vertex x="1.298490625" y="0.68280625"/>
-<vertex x="1.26231875" y="0.6978"/>
-<vertex x="1.2240875" y="0.7069"/>
-<vertex x="1.185003125" y="0.709990625"/>
-<vertex x="0.565909375" y="0.7069"/>
-<vertex x="0.52768125" y="0.6978"/>
-<vertex x="0.491509375" y="0.68280625"/>
-<vertex x="0.458090625" y="0.662290625"/>
-<vertex x="0.4282" y="0.6368"/>
-<vertex x="0.402709375" y="0.606909375"/>
-<vertex x="0.38219375" y="0.573490625"/>
-<vertex x="0.3672" y="0.53731875"/>
-<vertex x="0.3581" y="0.499084375"/>
-<vertex x="0.355" y="0.45995625"/>
-<vertex x="0.355" y="-0.45995625"/>
-<vertex x="0.3581" y="-0.499084375"/>
-<vertex x="0.3672" y="-0.53731875"/>
-<vertex x="0.38219375" y="-0.573490625"/>
-<vertex x="0.402709375" y="-0.606909375"/>
-<vertex x="0.4282" y="-0.6368"/>
-<vertex x="0.458090625" y="-0.662290625"/>
-<vertex x="0.491509375" y="-0.68280625"/>
-<vertex x="0.52768125" y="-0.6978"/>
-</polygon>
-<wire x1="0.35" y1="0" x2="-0.35" y2="0" width="0.05" layer="39"/>
-<wire x1="1" y1="-0.89" x2="-1" y2="-0.89" width="0.12" layer="21"/>
-<wire x1="1" y1="0.89" x2="-1" y2="0.89" width="0.12" layer="21"/>
-<wire x1="1.08" y1="-0.7" x2="-1.08" y2="-0.7" width="0.12" layer="51"/>
-<wire x1="1.08" y1="0.7" x2="1.08" y2="-0.7" width="0.12" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.05" layer="39"/>
-<wire x1="2.4" y1="1.4" x2="2.4" y2="-1.4" width="0.05" layer="39"/>
-<smd name="1" x="-0.895" y="0" dx="1.08" dy="1.42" layer="1" roundness="46" rot="R180" stop="no" cream="no"/>
-<smd name="2" x="0.895" y="0" dx="1.08" dy="1.42" layer="1" roundness="46" stop="no" cream="no"/>
-</package>
 <package name="QFN-64">
 <wire x1="-0.5" y1="-4.1" x2="-0.5" y2="-5.7" width="0.2" layer="41"/>
 <wire x1="-0.5" y1="4.1" x2="-0.5" y2="5.7" width="0.2" layer="41"/>
@@ -4675,15 +4461,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <smd name="9" x="-4.881" y="-0.25" dx="0.28" dy="1.562" layer="1" rot="R270"/>
 </package>
 </packages>
-<packages3d>
-<package3d name="CAPC1608X100" urn="urn:adsk.eagle:package:11135716/1" locally_modified="yes" type="model">
-<description>Chip, 1.60 X 0.80 X 1.00 mm body
-&lt;p&gt;Chip package with body size 1.60 X 0.80 X 1.00 mm&lt;/p&gt;</description>
-<packageinstances>
-<packageinstance name="CAPC1608X100"/>
-</packageinstances>
-</package3d>
-</packages3d>
 <symbols>
 <symbol name="RESOLVED-DIODE-LED_">
 <description>Light emitting diode</description>
@@ -4707,15 +4484,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
 <text x="0" y="-2.54" size="1.778" layer="96" align="center">&gt;VALUE</text>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
-<symbol name="RESOLVED-CAPACITOR-NP_">
-<description>Nonpolarized capacitor</description>
-<wire x1="-2.54" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<text x="-3.556" y="-2.159" size="1.778" layer="96">&gt;VALUE</text>
-<text x="0.508" y="0.381" size="1.778" layer="95">&gt;NAME</text>
-<pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 </symbol>
 <symbol name="ATMEGA128RFA1">
 <description>&lt;h3&gt;ATmega128RFA1&lt;/h3&gt;
@@ -4869,339 +4637,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <attribute name="CREATOR" value="Unknown"/>
 <attribute name="DIST" value="Unknown"/>
 <attribute name="DISTPN" value="Unknown"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="CAPACITOR-NP_" prefix="C" uservalue="yes">
-<description>Nonpolarized capacitor</description>
-<gates>
-<gate name="G$1" symbol="RESOLVED-CAPACITOR-NP_" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SMD-0603_CERAMIC-0.01UF" package="CAPC1608X100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11135716/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 10000PF 100V C0GNP0 0603"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="445-180267-1-ND"/>
-<attribute name="MFR" value="TDK Corporation"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="C1608C0G2A103J080AE"/>
-<attribute name="PACKAGE" value="0603"/>
-<attribute name="VALUE" value="0.01uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-0603_CERAMIC-0.1UF" package="CAPC1608X100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11135716/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 0.1UF 10V X7R 0603"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="399-1095-1-ND"/>
-<attribute name="MFR" value="KEMET"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="C0603C104K8RACTU"/>
-<attribute name="PACKAGE" value="0603"/>
-<attribute name="VALUE" value="0.1uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-0603_CERAMIC-0.75PF" package="CAPC1608X100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11135716/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 0.75PF 50V NPO 0603"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="311-3843-1-ND"/>
-<attribute name="MFR" value="Yageo"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="CC0603BRNPO9BNR75"/>
-<attribute name="PACKAGE" value="0603"/>
-<attribute name="VALUE" value="0.75pF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-0603_CERAMIC-10UF" package="CAPC1608X100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11135716/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 10UF 6.3V X5R 0603"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="1276-1119-1-ND"/>
-<attribute name="MFR" value="Samsung Electro-Mechanics"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="CL10A106MQ8NNNC"/>
-<attribute name="PACKAGE" value="0603"/>
-<attribute name="VALUE" value="10uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-0603_CERAMIC-12PF" package="CAPC1608X100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11135716/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 12PF 10V C0G/NP0 0603"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="720-1655-1-ND"/>
-<attribute name="MFR" value="Vishay Vitramon"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="VJ0603A120FXQCW1BC"/>
-<attribute name="PACKAGE" value="0603"/>
-<attribute name="VALUE" value="12pF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-0603_CERAMIC-1UF" package="CAPC1608X100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11135716/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 1UF 10V X5R 0603"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="1276-1182-1-ND"/>
-<attribute name="MFR" value="Samsung Electro-Mechanics"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="CL10A105KP8NNNC"/>
-<attribute name="PACKAGE" value="0603"/>
-<attribute name="VALUE" value="1uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-0603_CERAMIC-22PF" package="CAPC1608X100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11135716/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 22PF 6.3V NP0 0603"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="478-11384-1-ND"/>
-<attribute name="MFR" value="AVX Corporation"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="06036A220KAT2A"/>
-<attribute name="PACKAGE" value="0603"/>
-<attribute name="VALUE" value="22pF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-0.01UF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="1608-1458-1-ND "/>
-<attribute name="MFR" value="Knowles Syfer"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="0805J0500104KJT"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="0.01uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-0.1UF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 0.1UF 100V X7R 0805"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="445-1418-1-ND"/>
-<attribute name="MFR" value="TDK Corporation"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="C2012X7R2A104K125AA"/>
-<attribute name="PACKAGE" value="0805"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="0.1uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-0.22UF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="490-1670-1-ND"/>
-<attribute name="MFR" value="Murata Electronics North America"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="GRM21BR71H224KA01L"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="0.22uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-0.75PF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 0.75PF 100V C0G/NP0 0805"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="490-3585-1-ND"/>
-<attribute name="MFR" value="Murata Electronics"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="GQM2195C2AR75CB01D"/>
-<attribute name="PACKAGE" value="0805"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="0.75pF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-10UF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 10UF 25V X5R 0805"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="445-5984-1-ND"/>
-<attribute name="MFR" value="TDK"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="C2012X5R1E106K125AB"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="10uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-12PF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 12PF 250V C0G/NP0 0805"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="490-5531-1-ND"/>
-<attribute name="MFR" value="Murata Electronics"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="GRM21A5C2E120JW01D"/>
-<attribute name="PACKAGE" value="0805"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="12pF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-1UF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="587-1281-1-ND"/>
-<attribute name="MFR" value="Taiyo Yuden"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="TMK212B7105KG-T"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="1uF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-22PF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="CAP CER 22PF 250V C0G/NP0 0805"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="490-5534-1-ND"/>
-<attribute name="MFR" value="Murata Electronics"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="GRM21A5C2E220JW01D"/>
-<attribute name="PACKAGE" value="0805"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="22pF"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-2012-0805_CERAMIC-4.7UF" package="CAPC2012X140_HS">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="490-3335-1-ND"/>
-<attribute name="MFR" value="Murata Electronics North America"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="GRM21BR61E475KA12L"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="4.7uF"/>
 </technology>
 </technologies>
 </device>
@@ -5656,8 +5091,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="D2" library="custom" deviceset="LED" device="-RED-LED" value="RED"/>
 <part name="P+1" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="P+2" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
-<part name="C1" library="quadparts_prebuilt" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
-<part name="C2" library="quadparts_prebuilt" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
 <part name="GND3" library="quadparts_prebuilt" deviceset="GND" device=""/>
 <part name="GND4" library="quadparts_prebuilt" deviceset="GND" device=""/>
 <part name="U1" library="quadparts_prebuilt" deviceset="ATMEGA128RFA1" device=""/>
@@ -5667,13 +5100,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="SW1" library="quadparts_prebuilt_2022" deviceset="PUSHBUTTON_" device="SMD-VERTICAL-1"/>
 <part name="GND5" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="B1" library="quadparts_prebuilt_2022" deviceset="BALUN" device="0805"/>
-<part name="C3" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
 <part name="GND6" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND7" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="C4" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
-<part name="C5" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
-<part name="C6" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
-<part name="C7" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
 <part name="Y1" library="quadparts_prebuilt_2022" deviceset="CRYSTAL" device="5X3"/>
 <part name="GND8" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND9" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
@@ -5681,22 +5109,18 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="GND11" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND12" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="A1" library="quadparts_prebuilt_2022" deviceset="ANTENNA" device="-CHIP"/>
-<part name="C8" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
 <part name="GND13" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND14" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="J1" library="quadparts_prebuilt_2022" deviceset="AVR_SPI_PRG_6" device="NS"/>
 <part name="GND15" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="J2" library="quadparts_prebuilt_2022" deviceset="HEADER-4POS" device="-2X2-0.1IN-FEMALE-SMD-BOTTOM-ENTRY"/>
 <part name="GND16" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="C9" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="1uF"/>
 <part name="U2" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="LSM-IMU" device="-497-18367-1-NDIMU"/>
 <part name="P+5" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="P+6" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="GND17" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND18" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+7" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
-<part name="C10" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="0.1uF"/>
-<part name="C11" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="0.1uF"/>
 <part name="R4" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="R5" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="FRONT-LEFT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
@@ -5740,7 +5164,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="GND33" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND35" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="GND36" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="C14" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-POL_" device="47UF-SMD-1206-TAJA" package3d_urn="urn:adsk.eagle:package:11793387/1" value="47uF"/>
 <part name="P+13" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND34" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="P+14" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
@@ -5771,10 +5194,25 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="R13" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="20"/>
 <part name="R15" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10K"/>
 <part name="R17" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="20"/>
-<part name="C16" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
 <part name="R12" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="2.2K"/>
 <part name="R14" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="2.2K"/>
 <part name="GND19" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
+<part name="C1" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
+<part name="C2" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
+<part name="C3" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-22PF" value="22pF"/>
+<part name="C4" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-12PF" value="12pF"/>
+<part name="C5" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-12PF" value="12pF"/>
+<part name="C6" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
+<part name="C7" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
+<part name="C8" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.75PF" value="0.75pF"/>
+<part name="C9" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.1UF" value="0.1uF"/>
+<part name="C10" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.1UF" value="0.1uF"/>
+<part name="C11" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-0.1UF" value="0.1uF"/>
+<part name="C15" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
+<part name="C13" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
+<part name="GND47" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
+<part name="C14" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-1UF" value="1uF"/>
+<part name="C17" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-POL_" device="47UF-SMD-1206-TAJA" package3d_urn="urn:adsk.eagle:package:11793387/1" value="47uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -5869,14 +5307,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="P+2" gate="G$1" x="76.2" y="203.2" smashed="yes">
 <attribute name="VALUE" x="76.2" y="205.74" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
-<instance part="C1" gate="G$1" x="63.5" y="193.04" smashed="yes">
-<attribute name="VALUE" x="59.944" y="190.881" size="1.778" layer="96"/>
-<attribute name="NAME" x="64.008" y="193.421" size="1.778" layer="95"/>
-</instance>
-<instance part="C2" gate="G$1" x="76.2" y="193.04" smashed="yes">
-<attribute name="VALUE" x="72.644" y="190.881" size="1.778" layer="96"/>
-<attribute name="NAME" x="76.708" y="193.421" size="1.778" layer="95"/>
-</instance>
 <instance part="GND3" gate="1" x="63.5" y="180.34" smashed="yes">
 <attribute name="VALUE" x="63.5" y="177.8" size="1.778" layer="96" align="center"/>
 </instance>
@@ -5905,31 +5335,11 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="B1" gate="G$1" x="170.18" y="147.32" smashed="yes" rot="MR0">
 <attribute name="NAME" x="175.26" y="127" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="C3" gate="G$1" x="157.48" y="144.78" smashed="yes" rot="R270">
-<attribute name="VALUE" x="155.321" y="148.336" size="1.778" layer="96" rot="R270"/>
-<attribute name="NAME" x="157.861" y="144.272" size="1.778" layer="95" rot="R270"/>
-</instance>
 <instance part="GND6" gate="1" x="147.32" y="139.7" smashed="yes">
 <attribute name="VALUE" x="147.32" y="137.16" size="1.778" layer="96" align="center"/>
 </instance>
 <instance part="GND7" gate="1" x="93.98" y="134.62" smashed="yes">
 <attribute name="VALUE" x="93.98" y="132.08" size="1.778" layer="96" align="center"/>
-</instance>
-<instance part="C4" gate="G$1" x="104.14" y="116.84" smashed="yes">
-<attribute name="VALUE" x="100.584" y="114.681" size="1.778" layer="96"/>
-<attribute name="NAME" x="104.648" y="117.221" size="1.778" layer="95"/>
-</instance>
-<instance part="C5" gate="G$1" x="116.84" y="116.84" smashed="yes">
-<attribute name="VALUE" x="113.284" y="114.681" size="1.778" layer="96"/>
-<attribute name="NAME" x="117.348" y="117.221" size="1.778" layer="95"/>
-</instance>
-<instance part="C6" gate="G$1" x="129.54" y="116.84" smashed="yes">
-<attribute name="VALUE" x="125.984" y="114.681" size="1.778" layer="96"/>
-<attribute name="NAME" x="130.048" y="117.221" size="1.778" layer="95"/>
-</instance>
-<instance part="C7" gate="G$1" x="142.24" y="116.84" smashed="yes">
-<attribute name="VALUE" x="138.684" y="114.681" size="1.778" layer="96"/>
-<attribute name="NAME" x="142.748" y="117.221" size="1.778" layer="95"/>
 </instance>
 <instance part="Y1" gate="G$1" x="109.22" y="121.92" smashed="yes">
 <attribute name="VALUE" x="111.76" y="119.38" size="1.778" layer="96"/>
@@ -5954,10 +5364,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <attribute name="VALUE" x="186.69" y="162.56" size="1.778" layer="96"/>
 <attribute name="NAME" x="186.69" y="165.1" size="1.778" layer="95"/>
 </instance>
-<instance part="C8" gate="G$1" x="185.42" y="152.4" smashed="yes">
-<attribute name="VALUE" x="181.864" y="150.241" size="1.778" layer="96"/>
-<attribute name="NAME" x="185.928" y="152.781" size="1.778" layer="95"/>
-</instance>
 <instance part="GND13" gate="1" x="172.72" y="127" smashed="yes">
 <attribute name="VALUE" x="172.72" y="124.46" size="1.778" layer="96" align="center"/>
 </instance>
@@ -5977,10 +5383,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="GND16" gate="1" x="342.9" y="213.36" smashed="yes">
 <attribute name="VALUE" x="342.9" y="210.82" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="C9" gate="G$1" x="332.74" y="210.82" smashed="yes">
-<attribute name="VALUE" x="329.184" y="208.661" size="1.778" layer="96"/>
-<attribute name="NAME" x="333.248" y="211.201" size="1.778" layer="95"/>
-</instance>
 <instance part="U2" gate="G$1" x="261.62" y="157.48" smashed="yes">
 <attribute name="NAME" x="261.62" y="177.8" size="1.778" layer="95" align="top-center"/>
 </instance>
@@ -5998,14 +5400,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </instance>
 <instance part="P+7" gate="G$1" x="287.02" y="160.02" smashed="yes">
 <attribute name="VALUE" x="287.02" y="162.56" size="1.778" layer="96" rot="R180" align="center"/>
-</instance>
-<instance part="C10" gate="G$1" x="228.6" y="149.86" smashed="yes">
-<attribute name="VALUE" x="225.044" y="147.701" size="1.778" layer="96"/>
-<attribute name="NAME" x="229.108" y="150.241" size="1.778" layer="95"/>
-</instance>
-<instance part="C11" gate="G$1" x="297.18" y="170.18" smashed="yes">
-<attribute name="VALUE" x="293.624" y="168.021" size="1.778" layer="96"/>
-<attribute name="NAME" x="297.688" y="170.561" size="1.778" layer="95"/>
 </instance>
 <instance part="R4" gate="G$1" x="309.88" y="147.32" smashed="yes">
 <attribute name="NAME" x="309.88" y="149.86" size="1.778" layer="95" align="bottom-center"/>
@@ -6130,8 +5524,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <attribute name="VALUE" x="228.6" y="7.62" size="1.778" layer="96"/>
 <attribute name="NAME" x="228.6" y="26.67" size="1.778" layer="95"/>
 </instance>
-<instance part="P+12" gate="VCC" x="236.22" y="0" smashed="yes">
-<attribute name="VALUE" x="236.22" y="2.54" size="1.778" layer="96" rot="R180" align="center"/>
+<instance part="P+12" gate="VCC" x="236.22" y="5.08" smashed="yes">
+<attribute name="VALUE" x="236.22" y="7.62" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
 <instance part="S1" gate="G$1" x="220.98" y="2.54" smashed="yes">
 <attribute name="NAME" x="218.44" y="-3.81" size="1.27" layer="95"/>
@@ -6148,12 +5542,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="GND36" gate="1" x="210.82" y="10.16" smashed="yes">
 <attribute name="VALUE" x="210.82" y="7.62" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="C14" gate="G$1" x="256.54" y="17.78" smashed="yes">
-<attribute name="VALUE" x="252.984" y="15.621" size="1.778" layer="96"/>
-<attribute name="NAME" x="256.794" y="18.161" size="1.778" layer="95"/>
-</instance>
-<instance part="P+13" gate="VCC" x="226.06" y="40.64" smashed="yes">
-<attribute name="VALUE" x="226.06" y="43.18" size="1.778" layer="96" rot="R180" align="center"/>
+<instance part="P+13" gate="VCC" x="226.06" y="45.72" smashed="yes">
+<attribute name="VALUE" x="226.06" y="48.26" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
 <instance part="GND34" gate="1" x="256.54" y="35.56" smashed="yes">
 <attribute name="VALUE" x="256.54" y="33.02" size="1.778" layer="96" align="center"/>
@@ -6249,10 +5639,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <attribute name="NAME" x="312.42" y="99.06" size="1.778" layer="95" align="bottom-center"/>
 <attribute name="VALUE" x="312.42" y="91.44" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="C16" gate="G$1" x="210.82" y="33.02" smashed="yes">
-<attribute name="VALUE" x="207.264" y="30.861" size="1.778" layer="96"/>
-<attribute name="NAME" x="211.328" y="33.401" size="1.778" layer="95"/>
-</instance>
 <instance part="R12" gate="G$1" x="142.24" y="213.36" smashed="yes" rot="R90">
 <attribute name="NAME" x="139.7" y="213.36" size="1.778" layer="95" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="147.32" y="213.36" size="1.778" layer="96" rot="R90" align="bottom-center"/>
@@ -6263,6 +5649,69 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </instance>
 <instance part="GND19" gate="1" x="299.72" y="162.56" smashed="yes">
 <attribute name="VALUE" x="299.72" y="160.02" size="1.778" layer="96" align="center"/>
+</instance>
+<instance part="C1" gate="G$1" x="63.5" y="193.04" smashed="yes">
+<attribute name="VALUE" x="59.944" y="190.881" size="1.778" layer="96"/>
+<attribute name="NAME" x="64.008" y="193.421" size="1.778" layer="95"/>
+</instance>
+<instance part="C2" gate="G$1" x="76.2" y="193.04" smashed="yes">
+<attribute name="VALUE" x="72.644" y="190.881" size="1.778" layer="96"/>
+<attribute name="NAME" x="76.708" y="193.421" size="1.778" layer="95"/>
+</instance>
+<instance part="C3" gate="G$1" x="154.94" y="144.78" smashed="yes" rot="R90">
+<attribute name="VALUE" x="157.099" y="141.224" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="154.559" y="145.288" size="1.778" layer="95" rot="R90"/>
+</instance>
+<instance part="C4" gate="G$1" x="104.14" y="116.84" smashed="yes">
+<attribute name="VALUE" x="100.584" y="114.681" size="1.778" layer="96"/>
+<attribute name="NAME" x="104.648" y="117.221" size="1.778" layer="95"/>
+</instance>
+<instance part="C5" gate="G$1" x="116.84" y="116.84" smashed="yes">
+<attribute name="VALUE" x="113.284" y="114.681" size="1.778" layer="96"/>
+<attribute name="NAME" x="117.348" y="117.221" size="1.778" layer="95"/>
+</instance>
+<instance part="C6" gate="G$1" x="129.54" y="116.84" smashed="yes">
+<attribute name="VALUE" x="125.984" y="114.681" size="1.778" layer="96"/>
+<attribute name="NAME" x="130.048" y="117.221" size="1.778" layer="95"/>
+</instance>
+<instance part="C7" gate="G$1" x="142.24" y="116.84" smashed="yes">
+<attribute name="VALUE" x="138.684" y="114.681" size="1.778" layer="96"/>
+<attribute name="NAME" x="142.748" y="117.221" size="1.778" layer="95"/>
+</instance>
+<instance part="C8" gate="G$1" x="185.42" y="152.4" smashed="yes">
+<attribute name="VALUE" x="181.864" y="150.241" size="1.778" layer="96"/>
+<attribute name="NAME" x="185.928" y="152.781" size="1.778" layer="95"/>
+</instance>
+<instance part="C9" gate="G$1" x="332.74" y="210.82" smashed="yes">
+<attribute name="VALUE" x="329.184" y="208.661" size="1.778" layer="96"/>
+<attribute name="NAME" x="333.248" y="211.201" size="1.778" layer="95"/>
+</instance>
+<instance part="C10" gate="G$1" x="228.6" y="149.86" smashed="yes">
+<attribute name="VALUE" x="225.044" y="147.701" size="1.778" layer="96"/>
+<attribute name="NAME" x="229.108" y="150.241" size="1.778" layer="95"/>
+</instance>
+<instance part="C11" gate="G$1" x="297.18" y="170.18" smashed="yes">
+<attribute name="VALUE" x="293.624" y="168.021" size="1.778" layer="96"/>
+<attribute name="NAME" x="297.688" y="170.561" size="1.778" layer="95"/>
+</instance>
+<instance part="C15" gate="G$1" x="205.74" y="35.56" smashed="yes">
+<attribute name="VALUE" x="202.184" y="33.401" size="1.778" layer="96"/>
+<attribute name="NAME" x="206.248" y="35.941" size="1.778" layer="95"/>
+</instance>
+<instance part="C13" gate="G$1" x="256.54" y="17.78" smashed="yes">
+<attribute name="VALUE" x="252.984" y="15.621" size="1.778" layer="96"/>
+<attribute name="NAME" x="257.048" y="18.161" size="1.778" layer="95"/>
+</instance>
+<instance part="GND47" gate="1" x="248.92" y="-2.54" smashed="yes">
+<attribute name="VALUE" x="248.92" y="-5.08" size="1.778" layer="96" align="center"/>
+</instance>
+<instance part="C14" gate="G$1" x="248.92" y="7.62" smashed="yes">
+<attribute name="VALUE" x="245.364" y="5.461" size="1.778" layer="96"/>
+<attribute name="NAME" x="249.428" y="8.001" size="1.778" layer="95"/>
+</instance>
+<instance part="C17" gate="G$1" x="215.9" y="35.56" smashed="yes">
+<attribute name="VALUE" x="212.344" y="33.401" size="1.778" layer="96"/>
+<attribute name="NAME" x="216.154" y="35.941" size="1.778" layer="95"/>
 </instance>
 </instances>
 <busses>
@@ -6329,7 +5778,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="147.32" y1="142.24" x2="147.32" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="144.78" x2="152.4" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="2"/>
+<pinref part="C3" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="AVSS_RFP"/>
@@ -6449,7 +5898,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <wire x1="256.54" y1="12.7" x2="256.54" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="GND35" gate="1" pin="GND"/>
-<pinref part="C14" gate="G$1" pin="-"/>
+<pinref part="C13" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="276.86" y1="38.1" x2="281.94" y2="38.1" width="0.1524" layer="91"/>
@@ -6480,13 +5929,23 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </segment>
 <segment>
 <pinref part="GND33" gate="1" pin="GND"/>
-<wire x1="210.82" y1="27.94" x2="210.82" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="C16" gate="G$1" pin="2"/>
+<wire x1="205.74" y1="30.48" x2="205.74" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="25.4" x2="210.82" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="C15" gate="G$1" pin="2"/>
+<wire x1="215.9" y1="30.48" x2="215.9" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="215.9" y1="25.4" x2="210.82" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="C17" gate="G$1" pin="-"/>
+<junction x="210.82" y="25.4"/>
 </segment>
 <segment>
 <wire x1="297.18" y1="165.1" x2="299.72" y2="165.1" width="0.1524" layer="91" style="longdash"/>
-<pinref part="C11" gate="G$1" pin="2"/>
 <pinref part="GND19" gate="1" pin="GND"/>
+<pinref part="C11" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<wire x1="248.92" y1="2.54" x2="248.92" y2="0" width="0.1524" layer="91"/>
+<pinref part="GND47" gate="1" pin="GND"/>
+<pinref part="C14" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="PG1" class="0">
@@ -6642,7 +6101,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <wire x1="160.02" y1="144.78" x2="165.1" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="B1" gate="G$1" pin="GND@2"/>
-<pinref part="C3" gate="G$1" pin="1"/>
+<pinref part="C3" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -6692,8 +6151,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="185.42" y1="157.48" x2="185.42" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="A1" gate="G$1" pin="SIGNAL"/>
 <wire x1="185.42" y1="154.94" x2="185.42" y2="157.48" width="0.1524" layer="91"/>
-<junction x="185.42" y="157.48"/>
 <pinref part="C8" gate="G$1" pin="1"/>
+<junction x="185.42" y="157.48"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -6735,8 +6194,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="236.22" y1="152.4" x2="236.22" y2="154.94" width="0.1524" layer="91" style="longdash"/>
 <pinref part="P+5" gate="G$1" pin="3V"/>
 <wire x1="228.6" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91" style="longdash"/>
-<pinref part="C10" gate="G$1" pin="1"/>
 <junction x="236.22" y="152.4"/>
+<pinref part="C10" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
@@ -6794,18 +6253,22 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </segment>
 <segment>
 <pinref part="S1" gate="G$1" pin="ON"/>
-<wire x1="223.52" y1="5.08" x2="236.22" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="236.22" y1="5.08" x2="236.22" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="5.08" x2="223.52" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="2.54" x2="236.22" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="P+12" gate="VCC" pin="VBAT"/>
 </segment>
 <segment>
 <pinref part="P+13" gate="VCC" pin="VBAT"/>
-<wire x1="226.06" y1="38.1" x2="226.06" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="REG" gate="G$1" pin="IN"/>
-<wire x1="226.06" y1="22.86" x2="226.06" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="226.06" y1="35.56" x2="210.82" y2="35.56" width="0.1524" layer="91"/>
-<junction x="226.06" y="35.56"/>
-<pinref part="C16" gate="G$1" pin="1"/>
+<wire x1="226.06" y1="22.86" x2="226.06" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="43.18" x2="215.9" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="215.9" y1="43.18" x2="205.74" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="43.18" x2="205.74" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="C15" gate="G$1" pin="1"/>
+<wire x1="215.9" y1="38.1" x2="215.9" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="C17" gate="G$1" pin="+"/>
+<junction x="226.06" y="43.18"/>
+<junction x="215.9" y="43.18"/>
 </segment>
 <segment>
 <pinref part="P+14" gate="VCC" pin="VBAT"/>
@@ -7061,7 +6524,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="REG" gate="G$1" pin="OUT"/>
 <wire x1="248.92" y1="22.86" x2="256.54" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="256.54" y1="22.86" x2="256.54" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="C14" gate="G$1" pin="+"/>
+<pinref part="C13" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -7170,6 +6633,13 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="R16" gate="G$1" pin="1"/>
 <wire x1="238.76" y1="93.98" x2="238.76" y2="96.52" width="0.1524" layer="91"/>
 <junction x="238.76" y="96.52"/>
+</segment>
+</net>
+<net name="N$22" class="0">
+<segment>
+<pinref part="REG" gate="G$1" pin="NC/FB"/>
+<wire x1="248.92" y1="12.7" x2="248.92" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="C14" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
