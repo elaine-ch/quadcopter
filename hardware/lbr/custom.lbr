@@ -802,8 +802,8 @@
 <technologies>
 <technology name="">
 <attribute name="CREATOR" value="ELAINE"/>
-<attribute name="DIST" value="CSE176E"/>
-<attribute name="DISTPN" value="CSE176E-net-bridge" constant="no"/>
+<attribute name="DIST" value="NA"/>
+<attribute name="DISTPN" value="NA"/>
 </technology>
 </technologies>
 </device>
