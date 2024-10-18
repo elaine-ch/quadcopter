@@ -5699,7 +5699,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="C11" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-NP_" device="SMD-2012-0805_CERAMIC-4.7UF" value="4.7uF"/>
 <part name="R4" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="R5" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
-<part name="U$1" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
+<part name="FRONT-LEFT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="P+8" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="D3" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND20" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
@@ -5707,7 +5707,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="R6" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="GND22" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="Q1" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
-<part name="U$2" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
+<part name="FRONT-RIGHT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="P+9" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="D4" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND23" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
@@ -5715,7 +5715,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="R7" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="GND25" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="Q2" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
-<part name="U$3" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
+<part name="BACK-LEFT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="P+10" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="D5" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND26" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
@@ -5723,7 +5723,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="R8" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08050OHMRES" value="10k"/>
 <part name="GND28" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="Q3" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
-<part name="U$4" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
+<part name="BACK-RIGHT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="P+11" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="D6" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND29" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
@@ -6015,7 +6015,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <attribute name="NAME" x="309.88" y="144.78" size="1.778" layer="95" align="bottom-center"/>
 <attribute name="VALUE" x="309.88" y="137.16" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="U$1" gate="G$1" x="7.62" y="27.94" smashed="yes">
+<instance part="FRONT-LEFT-MTR" gate="G$1" x="7.62" y="27.94" smashed="yes">
 <attribute name="NAME" x="5.08" y="35.56" size="0.8128" layer="95"/>
 </instance>
 <instance part="P+8" gate="VCC" x="-2.54" y="43.18" smashed="yes">
@@ -6041,7 +6041,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="Q1" gate="G$1" x="35.56" y="15.24" smashed="yes">
 <attribute name="NAME" x="27.94" y="20.32" size="1.778" layer="95"/>
 </instance>
-<instance part="U$2" gate="G$1" x="55.88" y="27.94" smashed="yes">
+<instance part="FRONT-RIGHT-MTR" gate="G$1" x="55.88" y="27.94" smashed="yes">
 <attribute name="NAME" x="53.34" y="35.56" size="0.8128" layer="95"/>
 </instance>
 <instance part="P+9" gate="VCC" x="45.72" y="43.18" smashed="yes">
@@ -6067,7 +6067,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="Q2" gate="G$1" x="83.82" y="15.24" smashed="yes">
 <attribute name="NAME" x="76.2" y="20.32" size="1.778" layer="95"/>
 </instance>
-<instance part="U$3" gate="G$1" x="104.14" y="27.94" smashed="yes">
+<instance part="BACK-LEFT-MTR" gate="G$1" x="104.14" y="27.94" smashed="yes">
 <attribute name="NAME" x="101.6" y="35.56" size="0.8128" layer="95"/>
 </instance>
 <instance part="P+10" gate="VCC" x="93.98" y="43.18" smashed="yes">
@@ -6093,7 +6093,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <instance part="Q3" gate="G$1" x="132.08" y="15.24" smashed="yes">
 <attribute name="NAME" x="124.46" y="20.32" size="1.778" layer="95"/>
 </instance>
-<instance part="U$4" gate="G$1" x="154.94" y="27.94" smashed="yes">
+<instance part="BACK-RIGHT-MTR" gate="G$1" x="154.94" y="27.94" smashed="yes">
 <attribute name="NAME" x="152.4" y="35.56" size="0.8128" layer="95"/>
 </instance>
 <instance part="P+11" gate="VCC" x="144.78" y="43.18" smashed="yes">
@@ -6749,7 +6749,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </net>
 <net name="VBAT" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="V+"/>
+<pinref part="FRONT-LEFT-MTR" gate="G$1" pin="V+"/>
 <wire x1="15.24" y1="33.02" x2="15.24" y2="38.1" width="0.1524" layer="91" style="longdash"/>
 <wire x1="15.24" y1="38.1" x2="-2.54" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="38.1" x2="-2.54" y2="40.64" width="0.1524" layer="91"/>
@@ -6763,7 +6763,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="C12" gate="G$1" pin="+"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="V+"/>
+<pinref part="FRONT-RIGHT-MTR" gate="G$1" pin="V+"/>
 <wire x1="63.5" y1="33.02" x2="63.5" y2="38.1" width="0.1524" layer="91" style="longdash"/>
 <wire x1="63.5" y1="38.1" x2="45.72" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="38.1" x2="45.72" y2="40.64" width="0.1524" layer="91"/>
@@ -6773,7 +6773,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="D4" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="V+"/>
+<pinref part="BACK-LEFT-MTR" gate="G$1" pin="V+"/>
 <wire x1="111.76" y1="33.02" x2="111.76" y2="38.1" width="0.1524" layer="91" style="longdash"/>
 <wire x1="111.76" y1="38.1" x2="93.98" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="38.1" x2="93.98" y2="40.64" width="0.1524" layer="91"/>
@@ -6783,7 +6783,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="D5" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="V+"/>
+<pinref part="BACK-RIGHT-MTR" gate="G$1" pin="V+"/>
 <wire x1="162.56" y1="33.02" x2="162.56" y2="38.1" width="0.1524" layer="91" style="longdash"/>
 <wire x1="162.56" y1="38.1" x2="144.78" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="38.1" x2="144.78" y2="40.64" width="0.1524" layer="91"/>
@@ -6838,7 +6838,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <wire x1="27.94" y1="30.48" x2="27.94" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="27.94" x2="15.24" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="V-"/>
+<pinref part="FRONT-LEFT-MTR" gate="G$1" pin="V-"/>
 <wire x1="27.94" y1="27.94" x2="38.1" y2="27.94" width="0.1524" layer="91"/>
 <junction x="27.94" y="27.94"/>
 <wire x1="38.1" y1="27.94" x2="38.1" y2="25.4" width="0.1524" layer="91"/>
@@ -6848,7 +6848,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </net>
 <net name="BAT_GND" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="FRONT-LEFT-MTR" gate="G$1" pin="GND"/>
 <pinref part="GND20" gate="1" pin="BAT_GND"/>
 <wire x1="-5.08" y1="25.4" x2="-5.08" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="22.86" x2="7.62" y2="22.86" width="0.1524" layer="91"/>
@@ -6861,7 +6861,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="GND21" gate="1" pin="BAT_GND"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="FRONT-RIGHT-MTR" gate="G$1" pin="GND"/>
 <pinref part="GND23" gate="1" pin="BAT_GND"/>
 </segment>
 <segment>
@@ -6870,7 +6870,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="GND24" gate="1" pin="BAT_GND"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="GND"/>
+<pinref part="BACK-LEFT-MTR" gate="G$1" pin="GND"/>
 <pinref part="GND26" gate="1" pin="BAT_GND"/>
 </segment>
 <segment>
@@ -6879,7 +6879,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="GND27" gate="1" pin="BAT_GND"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="GND"/>
+<pinref part="BACK-RIGHT-MTR" gate="G$1" pin="GND"/>
 <pinref part="GND29" gate="1" pin="BAT_GND"/>
 </segment>
 <segment>
@@ -6953,7 +6953,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <wire x1="76.2" y1="30.48" x2="76.2" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="27.94" x2="63.5" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="V-"/>
+<pinref part="FRONT-RIGHT-MTR" gate="G$1" pin="V-"/>
 <wire x1="76.2" y1="27.94" x2="86.36" y2="27.94" width="0.1524" layer="91"/>
 <junction x="76.2" y="27.94"/>
 <wire x1="86.36" y1="27.94" x2="86.36" y2="25.4" width="0.1524" layer="91"/>
@@ -6965,7 +6965,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <wire x1="124.46" y1="30.48" x2="124.46" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="27.94" x2="111.76" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="V-"/>
+<pinref part="BACK-LEFT-MTR" gate="G$1" pin="V-"/>
 <wire x1="124.46" y1="27.94" x2="134.62" y2="27.94" width="0.1524" layer="91"/>
 <junction x="124.46" y="27.94"/>
 <wire x1="134.62" y1="27.94" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
@@ -6977,7 +6977,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <segment>
 <wire x1="175.26" y1="30.48" x2="175.26" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="27.94" x2="162.56" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U$4" gate="G$1" pin="V-"/>
+<pinref part="BACK-RIGHT-MTR" gate="G$1" pin="V-"/>
 <wire x1="175.26" y1="27.94" x2="185.42" y2="27.94" width="0.1524" layer="91"/>
 <junction x="175.26" y="27.94"/>
 <wire x1="185.42" y1="27.94" x2="185.42" y2="25.4" width="0.1524" layer="91"/>
