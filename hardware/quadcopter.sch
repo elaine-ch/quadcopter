@@ -3979,53 +3979,44 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </library>
 <library name="custom">
 <packages>
-<package name="LEDC1507X80">
-<description>Chip LED, 1.50 X 0.75 X 0.80 mm body
- &lt;p&gt;Chip LED package with body size 1.50 X 0.75 X 0.80 mm&lt;/p&gt;</description>
+<package name="LED-160-1178-1-ND">
+<description>Chip LED, 2.00 X 1.25 X 1.10 mm body
+ &lt;p&gt;Chip LED package with body size 2.00 X 1.25 X 1.10 mm&lt;/p&gt;</description>
 <smd name="A" x="-1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
 <smd name="C" x="1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
-<wire x1="-1.904" y1="0.914" x2="1.904" y2="0.914" width="0.12" layer="21"/>
-<wire x1="-1.904" y1="0.914" x2="-1.904" y2="-0.914" width="0.12" layer="21"/>
-<wire x1="-1.904" y1="-0.914" x2="1.904" y2="-0.914" width="0.12" layer="21"/>
 <wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.12" layer="51"/>
 <wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.12" layer="51"/>
 <wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.12" layer="51"/>
 <wire x1="1" y1="-0.625" x2="-1" y2="-0.625" width="0.12" layer="51"/>
-<text x="0" y="1.5" size="0.9" layer="25" font="vector" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-1.5" size="0.9" layer="27" font="vector" align="top-center">&gt;VALUE</text>
-<wire x1="-2.4" y1="1.4" x2="-2.4" y2="-1.4" width="0.05" layer="39"/>
-<wire x1="-2.4" y1="-1.4" x2="2.4" y2="-1.4" width="0.05" layer="39"/>
-<wire x1="2.4" y1="-1.4" x2="2.4" y2="1.4" width="0.05" layer="39"/>
-<wire x1="2.4" y1="1.4" x2="-2.4" y2="1.4" width="0.05" layer="39"/>
-<circle x="2" y="1" radius="0.1018125" width="0.2" layer="21"/>
-<wire x1="1.904" y1="-0.914" x2="1.904" y2="0.914" width="0.127" layer="21"/>
+<text x="0" y="1.549" size="0.9" layer="25" font="vector" align="bottom-center">&gt;Name</text>
+<text x="0" y="-1.549" size="0.9" layer="27" font="vector" align="top-center">&gt;Value</text>
+<circle x="-2.21903125" y="0.74868125" radius="0.11008125" width="0.25" layer="21"/>
+<wire x1="-2.4" y1="1.4" x2="2.4" y2="1.4" width="0.05" layer="39"/>
+<wire x1="2.4" y1="1.4" x2="2.4" y2="-1.4" width="0.05" layer="39"/>
+<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.05" layer="39"/>
+<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.4" width="0.05" layer="39"/>
 </package>
 </packages>
 <symbols>
 <symbol name="LED">
-<pin name="A" x="-5.08" y="0" visible="pad" length="short"/>
-<pin name="C" x="5.08" y="0" visible="pad" length="short" rot="R180"/>
-<text x="0" y="5.08" size="1.778" layer="95" align="bottom-center">&gt;Name</text>
-<text x="0" y="-5.08" size="1.778" layer="96" align="bottom-center">&gt;Value</text>
-<wire x1="-2.54" y1="2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-1.0129625" y1="2.60335625" x2="0.625728125" y2="4.729175" width="0.254" layer="94"/>
-<wire x1="0.948853125" y1="1.725303125" x2="2.139175" y2="3.26946875" width="0.254" layer="94"/>
-<wire x1="2.139175" y1="3.26946875" x2="2.445046875" y2="3.666265625" width="0.254" layer="94"/>
-<wire x1="0.625728125" y1="4.729175" x2="-0.19361875" y2="4.382575" width="0.254" layer="94"/>
-<wire x1="-0.19361875" y1="4.382575" x2="0.625728125" y2="3.75098125" width="0.254" layer="94"/>
-<wire x1="0.625728125" y1="3.75098125" x2="0.625728125" y2="4.729175" width="0.254" layer="94"/>
-<wire x1="0.625728125" y1="4.729175" x2="0.06364375" y2="4.3235" width="0.254" layer="94"/>
-<wire x1="0.06364375" y1="4.3235" x2="0.50128125" y2="4.066778125" width="0.254" layer="94"/>
-<wire x1="0.50128125" y1="4.066778125" x2="0.50128125" y2="4.5263375" width="0.254" layer="94"/>
-<wire x1="2.445046875" y1="3.666265625" x2="1.69695" y2="3.409146875" width="0.254" layer="94"/>
-<wire x1="1.69695" y1="3.409146875" x2="2.341853125" y2="2.912025" width="0.254" layer="94"/>
-<wire x1="2.341853125" y1="2.912025" x2="2.445046875" y2="3.666265625" width="0.254" layer="94"/>
-<wire x1="2.445046875" y1="3.666265625" x2="2.019403125" y2="3.409146875" width="0.254" layer="94"/>
-<wire x1="2.139175" y1="3.26946875" x2="2.280425" y2="3.160584375" width="0.254" layer="94"/>
+<pin name="A" x="-5.08" y="0" length="point"/>
+<pin name="C" x="5.08" y="0" length="point" rot="R180"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="1.905" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-1.905" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.5779375" y1="3.891246875" x2="0.832871875" y2="2.1838625" width="0.1524" layer="94"/>
+<wire x1="0.832871875" y1="3.891246875" x2="-0.91219375" y2="2.1838625" width="0.1524" layer="94"/>
+<wire x1="0.832871875" y1="3.03755625" x2="0.832871875" y2="3.891246875" width="0.1524" layer="94"/>
+<wire x1="0.832871875" y1="3.891246875" x2="-0.039659375" y2="3.891246875" width="0.1524" layer="94"/>
+<wire x1="2.5779375" y1="3.891246875" x2="2.5779375" y2="3.03755625" width="0.1524" layer="94"/>
+<wire x1="2.5779375" y1="3.891246875" x2="1.70540625" y2="3.891246875" width="0.1524" layer="94"/>
+<text x="-4.064" y="4.064" size="1.778" layer="95">&gt;Name</text>
+<text x="-3.81" y="-4.572" size="1.778" layer="96">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4034,17 +4025,16 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <gate name="G$1" symbol="LED" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-RED-LED" package="LEDC1507X80">
+<device name="-RED-LED" package="LED-160-1178-1-ND">
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="CREATOR" value="ELENA"/>
-<attribute name="DIST" value="Digikey"/>
+<attribute name="CREATOR" value="Elaine Chao"/>
+<attribute name="DIST" value="DigiKey"/>
 <attribute name="DISTPN" value="160-1178-1-ND"/>
-<attribute name="VALUE" value="RED"/>
 </technology>
 </technologies>
 </device>
@@ -5289,7 +5279,6 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </instance>
 <instance part="D2" gate="G$1" x="48.26" y="193.04" smashed="yes" rot="R270">
 <attribute name="NAME" x="53.34" y="193.04" size="1.778" layer="95" rot="R270" align="bottom-center"/>
-<attribute name="VALUE" x="43.18" y="193.04" size="1.778" layer="96" rot="R270" align="bottom-center"/>
 </instance>
 <instance part="P+1" gate="G$1" x="63.5" y="203.2" smashed="yes">
 <attribute name="VALUE" x="63.5" y="205.74" size="1.778" layer="96" rot="R180" align="center"/>
@@ -5721,8 +5710,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <net name="N$2" class="0">
 <segment>
 <wire x1="48.26" y1="205.74" x2="48.26" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="D2" gate="G$1" pin="A"/>
 <pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="D2" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="PG0" class="0">
@@ -6051,8 +6040,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="116.84" y1="162.56" x2="116.84" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="165.1" x2="121.92" y2="165.1" width="0.1524" layer="91"/>
 <junction x="116.84" y="162.56"/>
-<pinref part="SW1" gate="G$1" pin="1"/>
 <pinref part="R11" gate="G$1" pin="2"/>
+<pinref part="SW1" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="5"/>
@@ -6392,14 +6381,14 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="R7" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PB5(OC1A/PCINT5)"/>
-<wire x1="17.78" y1="152.4" x2="15.24" y2="152.4" width="0.1524" layer="91"/>
-<label x="15.24" y="152.4" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="340.36" y1="172.72" x2="345.44" y2="172.72" width="0.1524" layer="91"/>
 <label x="345.44" y="172.72" size="1.016" layer="95" xref="yes"/>
 <pinref part="J3" gate="G$1" pin="7"/>
+</segment>
+<segment>
+<wire x1="17.78" y1="109.22" x2="15.24" y2="109.22" width="0.1524" layer="91"/>
+<label x="15.24" y="109.22" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PE4(OC3B/INT4)"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -6449,14 +6438,14 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="R6" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PB4(OC2A/PCINT4)"/>
-<wire x1="17.78" y1="154.94" x2="15.24" y2="154.94" width="0.1524" layer="91"/>
-<label x="15.24" y="154.94" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="340.36" y1="177.8" x2="345.44" y2="177.8" width="0.1524" layer="91"/>
 <label x="345.44" y="177.8" size="1.016" layer="95" xref="yes"/>
 <pinref part="J3" gate="G$1" pin="9"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="PE3(OC3A/AIN1)"/>
+<wire x1="17.78" y1="111.76" x2="15.24" y2="111.76" width="0.1524" layer="91"/>
+<label x="15.24" y="111.76" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="PWM3" class="0">
@@ -6470,14 +6459,14 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="R8" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PB6(OC1B/PCINT6)"/>
-<wire x1="17.78" y1="149.86" x2="15.24" y2="149.86" width="0.1524" layer="91"/>
-<label x="15.24" y="149.86" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="340.36" y1="170.18" x2="345.44" y2="170.18" width="0.1524" layer="91"/>
 <label x="345.44" y="170.18" size="1.016" layer="95" xref="yes"/>
 <pinref part="J3" gate="G$1" pin="6"/>
+</segment>
+<segment>
+<wire x1="17.78" y1="106.68" x2="15.24" y2="106.68" width="0.1524" layer="91"/>
+<label x="15.24" y="106.68" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PE5(OC3C/INT5)"/>
 </segment>
 </net>
 <net name="PWM4" class="0">
@@ -6491,14 +6480,14 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="R9" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PB7(OC0A/OC1C/PCINT7)"/>
-<wire x1="17.78" y1="147.32" x2="15.24" y2="147.32" width="0.1524" layer="91"/>
-<label x="15.24" y="147.32" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="340.36" y1="167.64" x2="345.44" y2="167.64" width="0.1524" layer="91"/>
 <label x="345.44" y="167.64" size="1.016" layer="95" xref="yes"/>
 <pinref part="J3" gate="G$1" pin="5"/>
+</segment>
+<segment>
+<wire x1="17.78" y1="83.82" x2="15.24" y2="83.82" width="0.1524" layer="91"/>
+<label x="15.24" y="83.82" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PG5(OC0B)"/>
 </segment>
 </net>
 <net name="N$20" class="0">
@@ -6586,7 +6575,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <junction x="259.08" y="96.52"/>
 </segment>
 </net>
-<net name="PB4" class="0">
+<net name="PB5" class="0">
 <segment>
 <pinref part="Q5" gate="G$1" pin="G"/>
 <wire x1="226.06" y1="106.68" x2="223.52" y2="106.68" width="0.1524" layer="91"/>
@@ -6596,6 +6585,11 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="Q6" gate="G$1" pin="G"/>
 <wire x1="289.56" y1="106.68" x2="287.02" y2="106.68" width="0.1524" layer="91"/>
 <label x="287.02" y="106.68" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="PB5(OC1A/PCINT5)"/>
+<wire x1="17.78" y1="152.4" x2="15.24" y2="152.4" width="0.1524" layer="91"/>
+<label x="15.24" y="152.4" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -6623,6 +6617,30 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="R14" gate="G$1" pin="2"/>
 <junction x="238.76" y="96.52"/>
+</segment>
+</net>
+<net name="PWM5" class="0">
+<segment>
+<wire x1="10.16" y1="68.58" x2="7.62" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$24" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PB6(OC1B/PCINT6)"/>
+<wire x1="17.78" y1="149.86" x2="15.24" y2="149.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$25" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PB7(OC0A/OC1C/PCINT7)"/>
+<wire x1="17.78" y1="147.32" x2="15.24" y2="147.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB4" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PB4(OC2A/PCINT4)"/>
+<wire x1="17.78" y1="154.94" x2="15.24" y2="154.94" width="0.1524" layer="91"/>
+<label x="15.24" y="154.94" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
