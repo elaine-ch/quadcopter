@@ -6152,6 +6152,16 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="VDDIO"/>
+<wire x1="241.3" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="152.4" x2="236.22" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="P+5" gate="G$1" pin="3V"/>
+<wire x1="236.22" y1="152.4" x2="231.14" y2="152.4" width="0.1524" layer="91"/>
+<junction x="236.22" y="152.4"/>
+<pinref part="C10" gate="G$1" pin="1"/>
+<label x="231.14" y="152.4" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="VBAT" class="0">
 <segment>
