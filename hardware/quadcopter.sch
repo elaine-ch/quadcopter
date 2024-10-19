@@ -5171,6 +5171,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <part name="C17" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-POL_" device="47UF-SMD-1206-TAJA" package3d_urn="urn:adsk.eagle:package:11793387/1" value="47uF"/>
 <part name="GND47" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+22" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
+<part name="MOTOR2" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
+<part name="MOTOR3" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
+<part name="MOTOR4" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 </parts>
 <sheets>
 <sheet>
@@ -5667,6 +5670,15 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </instance>
 <instance part="P+22" gate="G$1" x="256.54" y="25.4" smashed="yes">
 <attribute name="VALUE" x="256.54" y="27.94" size="1.778" layer="96" rot="R180" align="center"/>
+</instance>
+<instance part="MOTOR2" gate="G$1" x="55.88" y="27.94" smashed="yes">
+<attribute name="NAME" x="53.34" y="35.56" size="0.8128" layer="95"/>
+</instance>
+<instance part="MOTOR3" gate="G$1" x="104.14" y="27.94" smashed="yes">
+<attribute name="NAME" x="101.6" y="35.56" size="0.8128" layer="95"/>
+</instance>
+<instance part="MOTOR4" gate="G$1" x="154.94" y="27.94" smashed="yes">
+<attribute name="NAME" x="152.4" y="35.56" size="0.8128" layer="95"/>
 </instance>
 </instances>
 <busses>
@@ -6179,6 +6191,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="63.5" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
 <junction x="63.5" y="38.1"/>
 <pinref part="D4" gate="G$1" pin="C"/>
+<pinref part="MOTOR2" gate="G$1" pin="V+"/>
 </segment>
 <segment>
 <wire x1="111.76" y1="33.02" x2="111.76" y2="38.1" width="0.1524" layer="91" style="longdash"/>
@@ -6188,6 +6201,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="111.76" y1="38.1" x2="124.46" y2="38.1" width="0.1524" layer="91"/>
 <junction x="111.76" y="38.1"/>
 <pinref part="D5" gate="G$1" pin="C"/>
+<pinref part="MOTOR3" gate="G$1" pin="V+"/>
 </segment>
 <segment>
 <wire x1="162.56" y1="33.02" x2="162.56" y2="38.1" width="0.1524" layer="91" style="longdash"/>
@@ -6197,6 +6211,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="162.56" y1="38.1" x2="175.26" y2="38.1" width="0.1524" layer="91"/>
 <junction x="162.56" y="38.1"/>
 <pinref part="D6" gate="G$1" pin="C"/>
+<pinref part="MOTOR4" gate="G$1" pin="V+"/>
 </segment>
 <segment>
 <pinref part="S1" gate="G$1" pin="ON"/>
@@ -6323,6 +6338,18 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <pinref part="GND33" gate="1" pin="BAT_GND"/>
 <pinref part="C15" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<pinref part="GND23" gate="1" pin="BAT_GND"/>
+<pinref part="MOTOR2" gate="G$1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND26" gate="1" pin="BAT_GND"/>
+<pinref part="MOTOR3" gate="G$1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND29" gate="1" pin="BAT_GND"/>
+<pinref part="MOTOR4" gate="G$1" pin="GND"/>
+</segment>
 </net>
 <net name="PWM2" class="0">
 <segment>
@@ -6352,6 +6379,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <junction x="76.2" y="27.94"/>
 <wire x1="86.36" y1="27.94" x2="86.36" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="D4" gate="G$1" pin="A"/>
+<pinref part="MOTOR2" gate="G$1" pin="V-"/>
 </segment>
 </net>
 <net name="N$16" class="0">
@@ -6362,6 +6390,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="134.62" y1="27.94" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="D5" gate="G$1" pin="A"/>
 <junction x="124.46" y="27.94"/>
+<pinref part="MOTOR3" gate="G$1" pin="V-"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -6372,6 +6401,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <junction x="175.26" y="27.94"/>
 <wire x1="185.42" y1="27.94" x2="185.42" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="D6" gate="G$1" pin="A"/>
+<pinref part="MOTOR4" gate="G$1" pin="V-"/>
 </segment>
 </net>
 <net name="PWM1" class="0">
