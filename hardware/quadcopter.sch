@@ -808,24 +808,6 @@
 <smd name="G1" x="-3.175" y="0" dx="2.1" dy="3" layer="1"/>
 <smd name="G2" x="3.175" y="0" dx="2.1" dy="3" layer="1"/>
 </package>
-<package name="SODFL3516X96" urn="urn:adsk.eagle:footprint:11793377/1" locally_modified="yes">
-<description>SODFL, 3.50 mm span, 2.70 X 1.65 X 0.96 mm body
-&lt;p&gt;SODFL package with 3.50 mm span with body size 2.70 X 1.65 X 0.96 mm&lt;/p&gt;</description>
-<wire x1="-1.4" y1="-0.9" x2="-1.4" y2="0.9" width="0.12" layer="51"/>
-<wire x1="-1.4" y1="0.9" x2="1.4" y2="0.9" width="0.12" layer="51"/>
-<wire x1="-2.3199" y1="-0.8286" x2="1.35" y2="-0.8286" width="0.12" layer="21"/>
-<wire x1="-2.3199" y1="0.8286" x2="-2.3199" y2="-0.8286" width="0.12" layer="21"/>
-<wire x1="-3.4" y1="-1.9" x2="-3.4" y2="1.9" width="0.05" layer="39"/>
-<wire x1="-3.4" y1="1.9" x2="2.9" y2="1.9" width="0.05" layer="39"/>
-<text x="0" y="1.535" size="0.9" layer="25" font="vector" align="center">&gt;NAME</text>
-<wire x1="1.35" y1="0.8286" x2="-2.3199" y2="0.8286" width="0.12" layer="21"/>
-<wire x1="1.4" y1="-0.9" x2="-1.4" y2="-0.9" width="0.12" layer="51"/>
-<wire x1="1.4" y1="0.9" x2="1.4" y2="-0.9" width="0.12" layer="51"/>
-<wire x1="2.9" y1="-1.9" x2="-3.4" y2="-1.9" width="0.05" layer="39"/>
-<wire x1="2.9" y1="1.9" x2="2.9" y2="-1.9" width="0.05" layer="39"/>
-<smd name="1" x="-1.525" y="0" dx="0.9618" dy="1.0291" layer="1"/>
-<smd name="2" x="1.525" y="0" dx="0.9618" dy="1.0291" layer="1"/>
-</package>
 <package name="CAPMP3216X180" urn="urn:adsk.eagle:footprint:11793395/1" locally_modified="yes">
 <description>Molded Body, 3.20 X 1.65 X 1.80 mm body
 &lt;p&gt;Molded Body package with body size 3.20 X 1.65 X 1.80 mm&lt;/p&gt;</description>
@@ -2013,201 +1995,6 @@
 <text x="2" y="-6.5" size="1.27" layer="21" font="vector" rot="SR270" align="center-left">&gt;PIN1</text>
 <text x="-2" y="-6.5" size="1.27" layer="21" font="vector" rot="SR270" align="center-left">&gt;PIN2</text>
 </package>
-<package name="SOD3716X135_HS">
-<description>Small Outline Diode (SOD); 2.69 mm L X 1.60 mm W X 1.35 mm H body&lt;p&gt;&lt;i&gt;PCB Libraries Packages&lt;/i&gt;</description>
-<wire x1="-0.82" y1="0.9" x2="1.42" y2="0.9" width="0.12" layer="51"/>
-<wire x1="-1.42" y1="-0.9" x2="-1.42" y2="0.3" width="0.12" layer="51"/>
-<wire x1="-1.42" y1="0.3" x2="-0.82" y2="0.9" width="0.12" layer="51"/>
-<wire x1="-2.47" y1="-0.9" x2="1.35" y2="-0.9" width="0.12" layer="21"/>
-<wire x1="-2.47" y1="0.9" x2="-2.47" y2="-0.9" width="0.12" layer="21"/>
-<circle x="-2.79" y="0" radius="0.1" width="0.2" layer="21"/>
-<wire x1="-2.9" y1="-1.4" x2="-2.9" y2="1.4" width="0.05" layer="39"/>
-<wire x1="-2.9" y1="1.4" x2="2.9" y2="1.4" width="0.05" layer="39"/>
-<text x="0" y="1.6" size="0.9" layer="25" font="vector" align="center">&gt;NAME</text>
-<polygon width="0.01" layer="31" pour="solid">
-<vertex x="-2.09001875" y="-0.4"/>
-<vertex x="-1.23998125" y="-0.4"/>
-<vertex x="-1.20869375" y="-0.3975"/>
-<vertex x="-1.178209375" y="-0.390209375"/>
-<vertex x="-1.149196875" y="-0.378196875"/>
-<vertex x="-1.122390625" y="-0.361790625"/>
-<vertex x="-1.0986" y="-0.3414"/>
-<vertex x="-1.078209375" y="-0.317609375"/>
-<vertex x="-1.061803125" y="-0.290803125"/>
-<vertex x="-1.049790625" y="-0.2617875"/>
-<vertex x="-1.0425" y="-0.231309375"/>
-<vertex x="-1.04" y="-0.2"/>
-<vertex x="-1.0425" y="0.2313"/>
-<vertex x="-1.049790625" y="0.261790625"/>
-<vertex x="-1.061803125" y="0.290803125"/>
-<vertex x="-1.078209375" y="0.317609375"/>
-<vertex x="-1.0986" y="0.3414"/>
-<vertex x="-1.122390625" y="0.361790625"/>
-<vertex x="-1.149196875" y="0.378196875"/>
-<vertex x="-1.178209375" y="0.390209375"/>
-<vertex x="-1.20869375" y="0.3975"/>
-<vertex x="-1.23998125" y="0.4"/>
-<vertex x="-2.09001875" y="0.4"/>
-<vertex x="-2.12130625" y="0.3975"/>
-<vertex x="-2.151790625" y="0.390209375"/>
-<vertex x="-2.180803125" y="0.378196875"/>
-<vertex x="-2.207609375" y="0.361790625"/>
-<vertex x="-2.2314" y="0.3414"/>
-<vertex x="-2.251790625" y="0.317609375"/>
-<vertex x="-2.268196875" y="0.290803125"/>
-<vertex x="-2.280209375" y="0.2617875"/>
-<vertex x="-2.2875" y="0.231309375"/>
-<vertex x="-2.29" y="0.2"/>
-<vertex x="-2.2875" y="-0.2313"/>
-<vertex x="-2.280209375" y="-0.261790625"/>
-<vertex x="-2.268196875" y="-0.290803125"/>
-<vertex x="-2.251790625" y="-0.317609375"/>
-<vertex x="-2.2314" y="-0.3414"/>
-<vertex x="-2.207609375" y="-0.361790625"/>
-<vertex x="-2.180803125" y="-0.378196875"/>
-<vertex x="-2.151790625" y="-0.390209375"/>
-<vertex x="-2.12130625" y="-0.3975"/>
-</polygon>
-<polygon width="0.01" layer="31" pour="solid">
-<vertex x="1.23998125" y="-0.4"/>
-<vertex x="2.09001875" y="-0.4"/>
-<vertex x="2.12130625" y="-0.3975"/>
-<vertex x="2.151790625" y="-0.390209375"/>
-<vertex x="2.180803125" y="-0.378196875"/>
-<vertex x="2.207609375" y="-0.361790625"/>
-<vertex x="2.2314" y="-0.3414"/>
-<vertex x="2.251790625" y="-0.317609375"/>
-<vertex x="2.268196875" y="-0.290803125"/>
-<vertex x="2.280209375" y="-0.2617875"/>
-<vertex x="2.2875" y="-0.231309375"/>
-<vertex x="2.29" y="-0.2"/>
-<vertex x="2.2875" y="0.2313"/>
-<vertex x="2.280209375" y="0.261790625"/>
-<vertex x="2.268196875" y="0.290803125"/>
-<vertex x="2.251790625" y="0.317609375"/>
-<vertex x="2.2314" y="0.3414"/>
-<vertex x="2.207609375" y="0.361790625"/>
-<vertex x="2.180803125" y="0.378196875"/>
-<vertex x="2.151790625" y="0.390209375"/>
-<vertex x="2.12130625" y="0.3975"/>
-<vertex x="2.09001875" y="0.4"/>
-<vertex x="1.23998125" y="0.4"/>
-<vertex x="1.20869375" y="0.3975"/>
-<vertex x="1.178209375" y="0.390209375"/>
-<vertex x="1.149196875" y="0.378196875"/>
-<vertex x="1.122390625" y="0.361790625"/>
-<vertex x="1.0986" y="0.3414"/>
-<vertex x="1.078209375" y="0.317609375"/>
-<vertex x="1.061803125" y="0.290803125"/>
-<vertex x="1.049790625" y="0.2617875"/>
-<vertex x="1.0425" y="0.231309375"/>
-<vertex x="1.04" y="0.2"/>
-<vertex x="1.0425" y="-0.2313"/>
-<vertex x="1.049790625" y="-0.261790625"/>
-<vertex x="1.061803125" y="-0.290803125"/>
-<vertex x="1.078209375" y="-0.317609375"/>
-<vertex x="1.0986" y="-0.3414"/>
-<vertex x="1.122390625" y="-0.361790625"/>
-<vertex x="1.149196875" y="-0.378196875"/>
-<vertex x="1.178209375" y="-0.390209375"/>
-<vertex x="1.20869375" y="-0.3975"/>
-</polygon>
-<polygon width="0.01" layer="29" pour="solid">
-<vertex x="-2.09001875" y="-0.4"/>
-<vertex x="-1.23998125" y="-0.4"/>
-<vertex x="-1.20869375" y="-0.3975"/>
-<vertex x="-1.178209375" y="-0.390209375"/>
-<vertex x="-1.149196875" y="-0.378196875"/>
-<vertex x="-1.122390625" y="-0.361790625"/>
-<vertex x="-1.0986" y="-0.3414"/>
-<vertex x="-1.078209375" y="-0.317609375"/>
-<vertex x="-1.061803125" y="-0.290803125"/>
-<vertex x="-1.049790625" y="-0.2617875"/>
-<vertex x="-1.0425" y="-0.231309375"/>
-<vertex x="-1.04" y="-0.2"/>
-<vertex x="-1.0425" y="0.2313"/>
-<vertex x="-1.049790625" y="0.261790625"/>
-<vertex x="-1.061803125" y="0.290803125"/>
-<vertex x="-1.078209375" y="0.317609375"/>
-<vertex x="-1.0986" y="0.3414"/>
-<vertex x="-1.122390625" y="0.361790625"/>
-<vertex x="-1.149196875" y="0.378196875"/>
-<vertex x="-1.178209375" y="0.390209375"/>
-<vertex x="-1.20869375" y="0.3975"/>
-<vertex x="-1.23998125" y="0.4"/>
-<vertex x="-2.09001875" y="0.4"/>
-<vertex x="-2.12130625" y="0.3975"/>
-<vertex x="-2.151790625" y="0.390209375"/>
-<vertex x="-2.180803125" y="0.378196875"/>
-<vertex x="-2.207609375" y="0.361790625"/>
-<vertex x="-2.2314" y="0.3414"/>
-<vertex x="-2.251790625" y="0.317609375"/>
-<vertex x="-2.268196875" y="0.290803125"/>
-<vertex x="-2.280209375" y="0.2617875"/>
-<vertex x="-2.2875" y="0.231309375"/>
-<vertex x="-2.29" y="0.2"/>
-<vertex x="-2.2875" y="-0.2313"/>
-<vertex x="-2.280209375" y="-0.261790625"/>
-<vertex x="-2.268196875" y="-0.290803125"/>
-<vertex x="-2.251790625" y="-0.317609375"/>
-<vertex x="-2.2314" y="-0.3414"/>
-<vertex x="-2.207609375" y="-0.361790625"/>
-<vertex x="-2.180803125" y="-0.378196875"/>
-<vertex x="-2.151790625" y="-0.390209375"/>
-<vertex x="-2.12130625" y="-0.3975"/>
-</polygon>
-<polygon width="0.01" layer="29" pour="solid">
-<vertex x="1.23998125" y="-0.4"/>
-<vertex x="2.09001875" y="-0.4"/>
-<vertex x="2.12130625" y="-0.3975"/>
-<vertex x="2.151790625" y="-0.390209375"/>
-<vertex x="2.180803125" y="-0.378196875"/>
-<vertex x="2.207609375" y="-0.361790625"/>
-<vertex x="2.2314" y="-0.3414"/>
-<vertex x="2.251790625" y="-0.317609375"/>
-<vertex x="2.268196875" y="-0.290803125"/>
-<vertex x="2.280209375" y="-0.2617875"/>
-<vertex x="2.2875" y="-0.231309375"/>
-<vertex x="2.29" y="-0.2"/>
-<vertex x="2.2875" y="0.2313"/>
-<vertex x="2.280209375" y="0.261790625"/>
-<vertex x="2.268196875" y="0.290803125"/>
-<vertex x="2.251790625" y="0.317609375"/>
-<vertex x="2.2314" y="0.3414"/>
-<vertex x="2.207609375" y="0.361790625"/>
-<vertex x="2.180803125" y="0.378196875"/>
-<vertex x="2.151790625" y="0.390209375"/>
-<vertex x="2.12130625" y="0.3975"/>
-<vertex x="2.09001875" y="0.4"/>
-<vertex x="1.23998125" y="0.4"/>
-<vertex x="1.20869375" y="0.3975"/>
-<vertex x="1.178209375" y="0.390209375"/>
-<vertex x="1.149196875" y="0.378196875"/>
-<vertex x="1.122390625" y="0.361790625"/>
-<vertex x="1.0986" y="0.3414"/>
-<vertex x="1.078209375" y="0.317609375"/>
-<vertex x="1.061803125" y="0.290803125"/>
-<vertex x="1.049790625" y="0.2617875"/>
-<vertex x="1.0425" y="0.231309375"/>
-<vertex x="1.04" y="0.2"/>
-<vertex x="1.0425" y="-0.2313"/>
-<vertex x="1.049790625" y="-0.261790625"/>
-<vertex x="1.061803125" y="-0.290803125"/>
-<vertex x="1.078209375" y="-0.317609375"/>
-<vertex x="1.0986" y="-0.3414"/>
-<vertex x="1.122390625" y="-0.361790625"/>
-<vertex x="1.149196875" y="-0.378196875"/>
-<vertex x="1.178209375" y="-0.390209375"/>
-<vertex x="1.20869375" y="-0.3975"/>
-</polygon>
-<wire x1="1.35" y1="0.9" x2="-2.47" y2="0.9" width="0.12" layer="21"/>
-<wire x1="1.42" y1="-0.9" x2="-1.42" y2="-0.9" width="0.12" layer="51"/>
-<wire x1="1.42" y1="0.9" x2="1.42" y2="-0.9" width="0.12" layer="51"/>
-<wire x1="2.9" y1="-1.4" x2="-2.9" y2="-1.4" width="0.05" layer="39"/>
-<wire x1="2.9" y1="1.4" x2="2.9" y2="-1.4" width="0.05" layer="39"/>
-<smd name="A" x="1.665" y="0" dx="1.25" dy="0.8" layer="1" roundness="50" stop="no" cream="no"/>
-<smd name="C" x="-1.665" y="0" dx="1.25" dy="0.8" layer="1" roundness="50" rot="R180" stop="no" cream="no"/>
-</package>
 <package name="CAPMP7343X310_HS">
 <description>Capacitor, Polarized, Molded Body; 7.30 mm L X 4.30 mm W X 3.10 mm H body&lt;p&gt;&lt;i&gt;PCB Libraries Packages&lt;/i&gt;</description>
 <wire x1="-2.53" y1="2.3" x2="3.8" y2="2.3" width="0.12" layer="51"/>
@@ -2756,6 +2543,219 @@
 <wire x1="2.9" y1="-1.4" x2="2.9" y2="1.4" width="0.05" layer="39"/>
 <wire x1="2.9" y1="1.4" x2="-2.4" y2="1.4" width="0.05" layer="39"/>
 </package>
+<package name="SODFL3516X96" urn="urn:adsk.eagle:footprint:11793377/1" locally_modified="yes">
+<description>SODFL, 3.50 mm span, 2.70 X 1.65 X 0.96 mm body
+&lt;p&gt;SODFL package with 3.50 mm span with body size 2.70 X 1.65 X 0.96 mm&lt;/p&gt;</description>
+<wire x1="-1.4" y1="-0.9" x2="-1.4" y2="0.9" width="0.12" layer="51"/>
+<wire x1="-1.4" y1="0.9" x2="1.4" y2="0.9" width="0.12" layer="51"/>
+<wire x1="-2.3199" y1="-0.8286" x2="1.35" y2="-0.8286" width="0.12" layer="21"/>
+<wire x1="-2.3199" y1="0.8286" x2="-2.3199" y2="-0.8286" width="0.12" layer="21"/>
+<wire x1="-3.4" y1="-1.9" x2="-3.4" y2="1.9" width="0.05" layer="39"/>
+<wire x1="-3.4" y1="1.9" x2="2.9" y2="1.9" width="0.05" layer="39"/>
+<text x="0" y="1.535" size="0.9" layer="25" font="vector" align="center">&gt;NAME</text>
+<wire x1="1.35" y1="0.8286" x2="-2.3199" y2="0.8286" width="0.12" layer="21"/>
+<wire x1="1.4" y1="-0.9" x2="-1.4" y2="-0.9" width="0.12" layer="51"/>
+<wire x1="1.4" y1="0.9" x2="1.4" y2="-0.9" width="0.12" layer="51"/>
+<wire x1="2.9" y1="-1.9" x2="-3.4" y2="-1.9" width="0.05" layer="39"/>
+<wire x1="2.9" y1="1.9" x2="2.9" y2="-1.9" width="0.05" layer="39"/>
+<smd name="1" x="-1.525" y="0" dx="0.9618" dy="1.0291" layer="1"/>
+<smd name="2" x="1.525" y="0" dx="0.9618" dy="1.0291" layer="1"/>
+</package>
+<package name="SOD3716X135_HS">
+<description>Small Outline Diode (SOD); 2.69 mm L X 1.60 mm W X 1.35 mm H body&lt;p&gt;&lt;i&gt;PCB Libraries Packages&lt;/i&gt;</description>
+<wire x1="-0.82" y1="0.9" x2="1.42" y2="0.9" width="0.12" layer="51"/>
+<wire x1="-1.42" y1="-0.9" x2="-1.42" y2="0.3" width="0.12" layer="51"/>
+<wire x1="-1.42" y1="0.3" x2="-0.82" y2="0.9" width="0.12" layer="51"/>
+<wire x1="-2.47" y1="-0.9" x2="1.35" y2="-0.9" width="0.12" layer="21"/>
+<wire x1="-2.47" y1="0.9" x2="-2.47" y2="-0.9" width="0.12" layer="21"/>
+<circle x="-2.79" y="0" radius="0.1" width="0.2" layer="21"/>
+<wire x1="-2.9" y1="-1.4" x2="-2.9" y2="1.4" width="0.05" layer="39"/>
+<wire x1="-2.9" y1="1.4" x2="2.9" y2="1.4" width="0.05" layer="39"/>
+<text x="0" y="1.6" size="0.9" layer="25" font="vector" align="center">&gt;NAME</text>
+<polygon width="0.01" layer="31" pour="solid">
+<vertex x="-2.09001875" y="-0.4"/>
+<vertex x="-1.23998125" y="-0.4"/>
+<vertex x="-1.20869375" y="-0.3975"/>
+<vertex x="-1.178209375" y="-0.390209375"/>
+<vertex x="-1.149196875" y="-0.378196875"/>
+<vertex x="-1.122390625" y="-0.361790625"/>
+<vertex x="-1.0986" y="-0.3414"/>
+<vertex x="-1.078209375" y="-0.317609375"/>
+<vertex x="-1.061803125" y="-0.290803125"/>
+<vertex x="-1.049790625" y="-0.2617875"/>
+<vertex x="-1.0425" y="-0.231309375"/>
+<vertex x="-1.04" y="-0.2"/>
+<vertex x="-1.0425" y="0.2313"/>
+<vertex x="-1.049790625" y="0.261790625"/>
+<vertex x="-1.061803125" y="0.290803125"/>
+<vertex x="-1.078209375" y="0.317609375"/>
+<vertex x="-1.0986" y="0.3414"/>
+<vertex x="-1.122390625" y="0.361790625"/>
+<vertex x="-1.149196875" y="0.378196875"/>
+<vertex x="-1.178209375" y="0.390209375"/>
+<vertex x="-1.20869375" y="0.3975"/>
+<vertex x="-1.23998125" y="0.4"/>
+<vertex x="-2.09001875" y="0.4"/>
+<vertex x="-2.12130625" y="0.3975"/>
+<vertex x="-2.151790625" y="0.390209375"/>
+<vertex x="-2.180803125" y="0.378196875"/>
+<vertex x="-2.207609375" y="0.361790625"/>
+<vertex x="-2.2314" y="0.3414"/>
+<vertex x="-2.251790625" y="0.317609375"/>
+<vertex x="-2.268196875" y="0.290803125"/>
+<vertex x="-2.280209375" y="0.2617875"/>
+<vertex x="-2.2875" y="0.231309375"/>
+<vertex x="-2.29" y="0.2"/>
+<vertex x="-2.2875" y="-0.2313"/>
+<vertex x="-2.280209375" y="-0.261790625"/>
+<vertex x="-2.268196875" y="-0.290803125"/>
+<vertex x="-2.251790625" y="-0.317609375"/>
+<vertex x="-2.2314" y="-0.3414"/>
+<vertex x="-2.207609375" y="-0.361790625"/>
+<vertex x="-2.180803125" y="-0.378196875"/>
+<vertex x="-2.151790625" y="-0.390209375"/>
+<vertex x="-2.12130625" y="-0.3975"/>
+</polygon>
+<polygon width="0.01" layer="31" pour="solid">
+<vertex x="1.23998125" y="-0.4"/>
+<vertex x="2.09001875" y="-0.4"/>
+<vertex x="2.12130625" y="-0.3975"/>
+<vertex x="2.151790625" y="-0.390209375"/>
+<vertex x="2.180803125" y="-0.378196875"/>
+<vertex x="2.207609375" y="-0.361790625"/>
+<vertex x="2.2314" y="-0.3414"/>
+<vertex x="2.251790625" y="-0.317609375"/>
+<vertex x="2.268196875" y="-0.290803125"/>
+<vertex x="2.280209375" y="-0.2617875"/>
+<vertex x="2.2875" y="-0.231309375"/>
+<vertex x="2.29" y="-0.2"/>
+<vertex x="2.2875" y="0.2313"/>
+<vertex x="2.280209375" y="0.261790625"/>
+<vertex x="2.268196875" y="0.290803125"/>
+<vertex x="2.251790625" y="0.317609375"/>
+<vertex x="2.2314" y="0.3414"/>
+<vertex x="2.207609375" y="0.361790625"/>
+<vertex x="2.180803125" y="0.378196875"/>
+<vertex x="2.151790625" y="0.390209375"/>
+<vertex x="2.12130625" y="0.3975"/>
+<vertex x="2.09001875" y="0.4"/>
+<vertex x="1.23998125" y="0.4"/>
+<vertex x="1.20869375" y="0.3975"/>
+<vertex x="1.178209375" y="0.390209375"/>
+<vertex x="1.149196875" y="0.378196875"/>
+<vertex x="1.122390625" y="0.361790625"/>
+<vertex x="1.0986" y="0.3414"/>
+<vertex x="1.078209375" y="0.317609375"/>
+<vertex x="1.061803125" y="0.290803125"/>
+<vertex x="1.049790625" y="0.2617875"/>
+<vertex x="1.0425" y="0.231309375"/>
+<vertex x="1.04" y="0.2"/>
+<vertex x="1.0425" y="-0.2313"/>
+<vertex x="1.049790625" y="-0.261790625"/>
+<vertex x="1.061803125" y="-0.290803125"/>
+<vertex x="1.078209375" y="-0.317609375"/>
+<vertex x="1.0986" y="-0.3414"/>
+<vertex x="1.122390625" y="-0.361790625"/>
+<vertex x="1.149196875" y="-0.378196875"/>
+<vertex x="1.178209375" y="-0.390209375"/>
+<vertex x="1.20869375" y="-0.3975"/>
+</polygon>
+<polygon width="0.01" layer="29" pour="solid">
+<vertex x="-2.09001875" y="-0.4"/>
+<vertex x="-1.23998125" y="-0.4"/>
+<vertex x="-1.20869375" y="-0.3975"/>
+<vertex x="-1.178209375" y="-0.390209375"/>
+<vertex x="-1.149196875" y="-0.378196875"/>
+<vertex x="-1.122390625" y="-0.361790625"/>
+<vertex x="-1.0986" y="-0.3414"/>
+<vertex x="-1.078209375" y="-0.317609375"/>
+<vertex x="-1.061803125" y="-0.290803125"/>
+<vertex x="-1.049790625" y="-0.2617875"/>
+<vertex x="-1.0425" y="-0.231309375"/>
+<vertex x="-1.04" y="-0.2"/>
+<vertex x="-1.0425" y="0.2313"/>
+<vertex x="-1.049790625" y="0.261790625"/>
+<vertex x="-1.061803125" y="0.290803125"/>
+<vertex x="-1.078209375" y="0.317609375"/>
+<vertex x="-1.0986" y="0.3414"/>
+<vertex x="-1.122390625" y="0.361790625"/>
+<vertex x="-1.149196875" y="0.378196875"/>
+<vertex x="-1.178209375" y="0.390209375"/>
+<vertex x="-1.20869375" y="0.3975"/>
+<vertex x="-1.23998125" y="0.4"/>
+<vertex x="-2.09001875" y="0.4"/>
+<vertex x="-2.12130625" y="0.3975"/>
+<vertex x="-2.151790625" y="0.390209375"/>
+<vertex x="-2.180803125" y="0.378196875"/>
+<vertex x="-2.207609375" y="0.361790625"/>
+<vertex x="-2.2314" y="0.3414"/>
+<vertex x="-2.251790625" y="0.317609375"/>
+<vertex x="-2.268196875" y="0.290803125"/>
+<vertex x="-2.280209375" y="0.2617875"/>
+<vertex x="-2.2875" y="0.231309375"/>
+<vertex x="-2.29" y="0.2"/>
+<vertex x="-2.2875" y="-0.2313"/>
+<vertex x="-2.280209375" y="-0.261790625"/>
+<vertex x="-2.268196875" y="-0.290803125"/>
+<vertex x="-2.251790625" y="-0.317609375"/>
+<vertex x="-2.2314" y="-0.3414"/>
+<vertex x="-2.207609375" y="-0.361790625"/>
+<vertex x="-2.180803125" y="-0.378196875"/>
+<vertex x="-2.151790625" y="-0.390209375"/>
+<vertex x="-2.12130625" y="-0.3975"/>
+</polygon>
+<polygon width="0.01" layer="29" pour="solid">
+<vertex x="1.23998125" y="-0.4"/>
+<vertex x="2.09001875" y="-0.4"/>
+<vertex x="2.12130625" y="-0.3975"/>
+<vertex x="2.151790625" y="-0.390209375"/>
+<vertex x="2.180803125" y="-0.378196875"/>
+<vertex x="2.207609375" y="-0.361790625"/>
+<vertex x="2.2314" y="-0.3414"/>
+<vertex x="2.251790625" y="-0.317609375"/>
+<vertex x="2.268196875" y="-0.290803125"/>
+<vertex x="2.280209375" y="-0.2617875"/>
+<vertex x="2.2875" y="-0.231309375"/>
+<vertex x="2.29" y="-0.2"/>
+<vertex x="2.2875" y="0.2313"/>
+<vertex x="2.280209375" y="0.261790625"/>
+<vertex x="2.268196875" y="0.290803125"/>
+<vertex x="2.251790625" y="0.317609375"/>
+<vertex x="2.2314" y="0.3414"/>
+<vertex x="2.207609375" y="0.361790625"/>
+<vertex x="2.180803125" y="0.378196875"/>
+<vertex x="2.151790625" y="0.390209375"/>
+<vertex x="2.12130625" y="0.3975"/>
+<vertex x="2.09001875" y="0.4"/>
+<vertex x="1.23998125" y="0.4"/>
+<vertex x="1.20869375" y="0.3975"/>
+<vertex x="1.178209375" y="0.390209375"/>
+<vertex x="1.149196875" y="0.378196875"/>
+<vertex x="1.122390625" y="0.361790625"/>
+<vertex x="1.0986" y="0.3414"/>
+<vertex x="1.078209375" y="0.317609375"/>
+<vertex x="1.061803125" y="0.290803125"/>
+<vertex x="1.049790625" y="0.2617875"/>
+<vertex x="1.0425" y="0.231309375"/>
+<vertex x="1.04" y="0.2"/>
+<vertex x="1.0425" y="-0.2313"/>
+<vertex x="1.049790625" y="-0.261790625"/>
+<vertex x="1.061803125" y="-0.290803125"/>
+<vertex x="1.078209375" y="-0.317609375"/>
+<vertex x="1.0986" y="-0.3414"/>
+<vertex x="1.122390625" y="-0.361790625"/>
+<vertex x="1.149196875" y="-0.378196875"/>
+<vertex x="1.178209375" y="-0.390209375"/>
+<vertex x="1.20869375" y="-0.3975"/>
+</polygon>
+<wire x1="1.35" y1="0.9" x2="-2.47" y2="0.9" width="0.12" layer="21"/>
+<wire x1="1.42" y1="-0.9" x2="-1.42" y2="-0.9" width="0.12" layer="51"/>
+<wire x1="1.42" y1="0.9" x2="1.42" y2="-0.9" width="0.12" layer="51"/>
+<wire x1="2.9" y1="-1.4" x2="-2.9" y2="-1.4" width="0.05" layer="39"/>
+<wire x1="2.9" y1="1.4" x2="2.9" y2="-1.4" width="0.05" layer="39"/>
+<smd name="A" x="1.665" y="0" dx="1.25" dy="0.8" layer="1" roundness="50" stop="no" cream="no"/>
+<smd name="C" x="-1.665" y="0" dx="1.25" dy="0.8" layer="1" roundness="50" rot="R180" stop="no" cream="no"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="CAPC1608X100" urn="urn:adsk.eagle:package:11135716/1" locally_modified="yes" type="model">
@@ -2779,13 +2779,6 @@
 <packageinstance name="HDRVR4W80P254_1X4_1066X254X850B"/>
 </packageinstances>
 </package3d>
-<package3d name="SODFL3516X96" urn="urn:adsk.eagle:package:11793366/1" type="model">
-<description>SODFL, 3.50 mm span, 2.70 X 1.65 X 0.96 mm body
-&lt;p&gt;SODFL package with 3.50 mm span with body size 2.70 X 1.65 X 0.96 mm&lt;/p&gt;</description>
-<packageinstances>
-<packageinstance name="SODFL3516X96"/>
-</packageinstances>
-</package3d>
 <package3d name="CAPMP3216X180" urn="urn:adsk.eagle:package:11793387/1" type="model">
 <description>Molded Body, 3.20 X 1.65 X 1.80 mm body
 &lt;p&gt;Molded Body package with body size 3.20 X 1.65 X 1.80 mm&lt;/p&gt;</description>
@@ -2805,6 +2798,13 @@
 &lt;p&gt;Molded Body package with body size 6.00 X 3.20 X 2.80 mm&lt;/p&gt;</description>
 <packageinstances>
 <packageinstance name="CAPMP6032X280"/>
+</packageinstances>
+</package3d>
+<package3d name="SODFL3516X96" urn="urn:adsk.eagle:package:11793366/1" type="model">
+<description>SODFL, 3.50 mm span, 2.70 X 1.65 X 0.96 mm body
+&lt;p&gt;SODFL package with 3.50 mm span with body size 2.70 X 1.65 X 0.96 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SODFL3516X96"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -2971,22 +2971,6 @@
 <text x="0" y="2.54" size="1.778" layer="96" rot="R180" align="center">&gt;VALUE</text>
 <wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
 <pin name="VBAT" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
-<symbol name="RESOLVED-DIODE-SCHOTTKY_">
-<description>Schottky diode</description>
-<wire x1="-0.635" y1="-1.016" x2="-0.635" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-1.27" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
-<text x="-4.826" y="-3.683" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-4.826" y="2.159" size="1.778" layer="95">&gt;NAME</text>
-<wire x1="0" y1="-1.27" x2="-0.635" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="0" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="0" y1="1.27" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0.635" y1="1.27" x2="0" y2="1.27" width="0.254" layer="94"/>
-<wire x1="0.635" y1="1.27" x2="0.635" y2="1.016" width="0.254" layer="94"/>
-<pin name="A" x="-5.08" y="0" visible="off" length="short" direction="pas"/>
-<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
 </symbol>
 <symbol name="BAT_GND">
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
@@ -3200,6 +3184,22 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="2.54" y1="1.27" x2="2.54" y2="0" width="0.254" layer="94"/>
 <pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
 <pin name="C" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+<symbol name="RESOLVED-DIODE-SCHOTTKY_">
+<description>Schottky diode</description>
+<wire x1="-0.635" y1="-1.016" x2="-0.635" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-1.27" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
+<text x="-4.826" y="-3.683" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-4.826" y="2.159" size="1.778" layer="95">&gt;NAME</text>
+<wire x1="0" y1="-1.27" x2="-0.635" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="1.27" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0.635" y1="1.27" x2="0" y2="1.27" width="0.254" layer="94"/>
+<wire x1="0.635" y1="1.27" x2="0.635" y2="1.016" width="0.254" layer="94"/>
+<pin name="A" x="-5.08" y="0" visible="off" length="short" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3926,55 +3926,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </device>
 </devices>
 </deviceset>
-<deviceset name="DIODE-SCHOTTKY_" prefix="D">
-<description>Schottky diode</description>
-<gates>
-<gate name="G$1" symbol="RESOLVED-DIODE-SCHOTTKY_" x="0" y="0"/>
-</gates>
-<devices>
-<device name="-SMD-SOD123" package="SODFL3516X96">
-<connects>
-<connect gate="G$1" pin="A" pad="2"/>
-<connect gate="G$1" pin="C" pad="1"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:11793366/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="DIODE SCHOTTKY 30V 1.5A SFLAT"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="CRS08QMCT-ND"/>
-<attribute name="MFR" value="Toshiba Semiconductor and Storage"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="CRS08(TE85L,Q,M)"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="360mV"/>
-</technology>
-</technologies>
-</device>
-<device name="SMD-SOD123-360MV-OLD" package="SOD3716X135_HS">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Swanson"/>
-<attribute name="DESC" value="DIODE SCHOTTKY 30V 1.5A SFLAT"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="CRS08QMCT-ND"/>
-<attribute name="MFR" value="Toshiba Semiconductor and Storage"/>
-<attribute name="MOUNTING" value="SMD"/>
-<attribute name="MPN" value="CRS08(TE85L,Q,M)"/>
-<attribute name="REVIEWER" value="Swanson"/>
-<attribute name="VALUE" value="360mV"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="BAT_GND" prefix="GND">
 <description>Battery Ground</description>
 <gates>
@@ -4563,6 +4514,55 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </device>
 </devices>
 </deviceset>
+<deviceset name="DIODE-SCHOTTKY_" prefix="D">
+<description>Schottky diode</description>
+<gates>
+<gate name="G$1" symbol="RESOLVED-DIODE-SCHOTTKY_" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-SMD-SOD123" package="SODFL3516X96">
+<connects>
+<connect gate="G$1" pin="A" pad="2"/>
+<connect gate="G$1" pin="C" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:11793366/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="Swanson"/>
+<attribute name="DESC" value="DIODE SCHOTTKY 30V 1.5A SFLAT"/>
+<attribute name="DIST" value="Digikey"/>
+<attribute name="DISTPN" value="CRS08QMCT-ND"/>
+<attribute name="MFR" value="Toshiba Semiconductor and Storage"/>
+<attribute name="MOUNTING" value="SMD"/>
+<attribute name="MPN" value="CRS08(TE85L,Q,M)"/>
+<attribute name="REVIEWER" value="Swanson"/>
+<attribute name="VALUE" value="360mV"/>
+</technology>
+</technologies>
+</device>
+<device name="SMD-SOD123-360MV-OLD" package="SOD3716X135_HS">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="Swanson"/>
+<attribute name="DESC" value="DIODE SCHOTTKY 30V 1.5A SFLAT"/>
+<attribute name="DIST" value="Digikey"/>
+<attribute name="DISTPN" value="CRS08QMCT-ND"/>
+<attribute name="MFR" value="Toshiba Semiconductor and Storage"/>
+<attribute name="MOUNTING" value="SMD"/>
+<attribute name="MPN" value="CRS08(TE85L,Q,M)"/>
+<attribute name="REVIEWER" value="Swanson"/>
+<attribute name="VALUE" value="360mV"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="custom_.lbr" urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw">
@@ -5072,22 +5072,18 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <part name="GND18" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+7" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="P+8" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
-<part name="D3" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND20" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND21" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND22" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+9" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
-<part name="D4" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND23" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND24" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND25" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+10" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
-<part name="D5" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND26" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND27" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND28" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+11" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
-<part name="D6" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND29" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND30" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND31" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
@@ -5172,11 +5168,15 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <part name="MOTOR2" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="MOTOR3" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="MOTOR4" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
-<part name="U$1" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
+<part name="MOTOR1" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="Q1" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="Q2" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="Q3" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="Q4" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
+<part name="D3" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="SMD-SOD123-360MV-OLD" value="360mV"/>
+<part name="D4" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="SMD-SOD123-360MV-OLD" value="360mV"/>
+<part name="D5" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="SMD-SOD123-360MV-OLD" value="360mV"/>
+<part name="D6" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="SMD-SOD123-360MV-OLD" value="360mV"/>
 </parts>
 <sheets>
 <sheet>
@@ -5337,10 +5337,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <instance part="P+8" gate="VCC" x="-2.54" y="43.18" smashed="yes">
 <attribute name="VALUE" x="-2.54" y="45.72" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
-<instance part="D3" gate="G$1" x="27.94" y="35.56" smashed="yes" rot="R90">
-<attribute name="VALUE" x="31.623" y="30.734" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="25.781" y="30.734" size="1.778" layer="95" rot="R90"/>
-</instance>
 <instance part="GND20" gate="1" x="7.62" y="20.32" smashed="yes">
 <attribute name="VALUE" x="7.62" y="17.78" size="1.778" layer="96" align="center"/>
 </instance>
@@ -5352,10 +5348,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </instance>
 <instance part="P+9" gate="VCC" x="45.72" y="43.18" smashed="yes">
 <attribute name="VALUE" x="45.72" y="45.72" size="1.778" layer="96" rot="R180" align="center"/>
-</instance>
-<instance part="D4" gate="G$1" x="76.2" y="35.56" smashed="yes" rot="R90">
-<attribute name="VALUE" x="79.883" y="30.734" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="74.041" y="30.734" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="GND23" gate="1" x="55.88" y="20.32" smashed="yes">
 <attribute name="VALUE" x="55.88" y="17.78" size="1.778" layer="96" align="center"/>
@@ -5369,10 +5361,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <instance part="P+10" gate="VCC" x="93.98" y="43.18" smashed="yes">
 <attribute name="VALUE" x="93.98" y="45.72" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
-<instance part="D5" gate="G$1" x="124.46" y="35.56" smashed="yes" rot="R90">
-<attribute name="VALUE" x="128.143" y="30.734" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="122.301" y="30.734" size="1.778" layer="95" rot="R90"/>
-</instance>
 <instance part="GND26" gate="1" x="104.14" y="20.32" smashed="yes">
 <attribute name="VALUE" x="104.14" y="17.78" size="1.778" layer="96" align="center"/>
 </instance>
@@ -5384,10 +5372,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </instance>
 <instance part="P+11" gate="VCC" x="144.78" y="43.18" smashed="yes">
 <attribute name="VALUE" x="144.78" y="45.72" size="1.778" layer="96" rot="R180" align="center"/>
-</instance>
-<instance part="D6" gate="G$1" x="175.26" y="35.56" smashed="yes" rot="R90">
-<attribute name="VALUE" x="178.943" y="30.734" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="173.101" y="30.734" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="GND29" gate="1" x="154.94" y="20.32" smashed="yes">
 <attribute name="VALUE" x="154.94" y="17.78" size="1.778" layer="96" align="center"/>
@@ -5677,7 +5661,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <instance part="MOTOR4" gate="G$1" x="154.94" y="27.94" smashed="yes">
 <attribute name="NAME" x="152.4" y="35.56" size="0.8128" layer="95"/>
 </instance>
-<instance part="U$1" gate="G$1" x="7.62" y="27.94" smashed="yes">
+<instance part="MOTOR1" gate="G$1" x="7.62" y="27.94" smashed="yes">
 <attribute name="NAME" x="5.08" y="35.56" size="0.8128" layer="95"/>
 </instance>
 <instance part="Q1" gate="G$1" x="35.56" y="15.24" smashed="yes">
@@ -5691,6 +5675,22 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </instance>
 <instance part="Q4" gate="G$1" x="182.88" y="15.24" smashed="yes">
 <attribute name="NAME" x="175.26" y="20.32" size="1.778" layer="95"/>
+</instance>
+<instance part="D3" gate="G$1" x="27.94" y="35.56" smashed="yes" rot="R90">
+<attribute name="VALUE" x="31.623" y="30.734" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="25.781" y="30.734" size="1.778" layer="95" rot="R90"/>
+</instance>
+<instance part="D4" gate="G$1" x="76.2" y="35.56" smashed="yes" rot="R90">
+<attribute name="VALUE" x="79.883" y="30.734" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="74.041" y="30.734" size="1.778" layer="95" rot="R90"/>
+</instance>
+<instance part="D5" gate="G$1" x="124.46" y="35.56" smashed="yes" rot="R90">
+<attribute name="VALUE" x="128.143" y="30.734" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="122.301" y="30.734" size="1.778" layer="95" rot="R90"/>
+</instance>
+<instance part="D6" gate="G$1" x="175.26" y="35.56" smashed="yes" rot="R90">
+<attribute name="VALUE" x="178.943" y="30.734" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="173.101" y="30.734" size="1.778" layer="95" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -6191,9 +6191,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="-5.08" y1="33.02" x2="-5.08" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="38.1" x2="-2.54" y2="38.1" width="0.1524" layer="91"/>
 <junction x="-2.54" y="38.1"/>
-<pinref part="D3" gate="G$1" pin="C"/>
 <pinref part="C12" gate="G$1" pin="+"/>
-<pinref part="U$1" gate="G$1" pin="V+"/>
+<pinref part="MOTOR1" gate="G$1" pin="V+"/>
+<pinref part="D3" gate="G$1" pin="C"/>
 </segment>
 <segment>
 <wire x1="63.5" y1="33.02" x2="63.5" y2="38.1" width="0.1524" layer="91" style="longdash"/>
@@ -6202,8 +6202,8 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <pinref part="P+9" gate="VCC" pin="VBAT"/>
 <wire x1="63.5" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
 <junction x="63.5" y="38.1"/>
-<pinref part="D4" gate="G$1" pin="C"/>
 <pinref part="MOTOR2" gate="G$1" pin="V+"/>
+<pinref part="D4" gate="G$1" pin="C"/>
 </segment>
 <segment>
 <wire x1="111.76" y1="33.02" x2="111.76" y2="38.1" width="0.1524" layer="91" style="longdash"/>
@@ -6212,8 +6212,8 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <pinref part="P+10" gate="VCC" pin="VBAT"/>
 <wire x1="111.76" y1="38.1" x2="124.46" y2="38.1" width="0.1524" layer="91"/>
 <junction x="111.76" y="38.1"/>
-<pinref part="D5" gate="G$1" pin="C"/>
 <pinref part="MOTOR3" gate="G$1" pin="V+"/>
+<pinref part="D5" gate="G$1" pin="C"/>
 </segment>
 <segment>
 <wire x1="162.56" y1="33.02" x2="162.56" y2="38.1" width="0.1524" layer="91" style="longdash"/>
@@ -6222,8 +6222,8 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <pinref part="P+11" gate="VCC" pin="VBAT"/>
 <wire x1="162.56" y1="38.1" x2="175.26" y2="38.1" width="0.1524" layer="91"/>
 <junction x="162.56" y="38.1"/>
-<pinref part="D6" gate="G$1" pin="C"/>
 <pinref part="MOTOR4" gate="G$1" pin="V+"/>
+<pinref part="D6" gate="G$1" pin="C"/>
 </segment>
 <segment>
 <pinref part="S1" gate="G$1" pin="ON"/>
@@ -6274,9 +6274,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="27.94" y1="27.94" x2="38.1" y2="27.94" width="0.1524" layer="91"/>
 <junction x="27.94" y="27.94"/>
 <wire x1="38.1" y1="27.94" x2="38.1" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="D3" gate="G$1" pin="A"/>
-<pinref part="U$1" gate="G$1" pin="V-"/>
+<pinref part="MOTOR1" gate="G$1" pin="V-"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
+<pinref part="D3" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="BAT_GND" class="0">
@@ -6285,7 +6285,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="-5.08" y1="25.4" x2="-5.08" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="22.86" x2="7.62" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="C12" gate="G$1" pin="-"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="MOTOR1" gate="G$1" pin="GND"/>
 <junction x="7.62" y="22.86"/>
 </segment>
 <segment>
@@ -6394,9 +6394,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="76.2" y1="27.94" x2="86.36" y2="27.94" width="0.1524" layer="91"/>
 <junction x="76.2" y="27.94"/>
 <wire x1="86.36" y1="27.94" x2="86.36" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="D4" gate="G$1" pin="A"/>
 <pinref part="MOTOR2" gate="G$1" pin="V-"/>
 <pinref part="Q2" gate="G$1" pin="D"/>
+<pinref part="D4" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$16" class="0">
@@ -6405,10 +6405,10 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="124.46" y1="27.94" x2="111.76" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="27.94" x2="134.62" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="27.94" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="D5" gate="G$1" pin="A"/>
 <junction x="124.46" y="27.94"/>
 <pinref part="MOTOR3" gate="G$1" pin="V-"/>
 <pinref part="Q3" gate="G$1" pin="D"/>
+<pinref part="D5" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -6418,9 +6418,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="175.26" y1="27.94" x2="185.42" y2="27.94" width="0.1524" layer="91"/>
 <junction x="175.26" y="27.94"/>
 <wire x1="185.42" y1="27.94" x2="185.42" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="D6" gate="G$1" pin="A"/>
 <pinref part="MOTOR4" gate="G$1" pin="V-"/>
 <pinref part="Q4" gate="G$1" pin="D"/>
+<pinref part="D6" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="PWM1" class="0">
