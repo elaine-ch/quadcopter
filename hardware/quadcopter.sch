@@ -5998,6 +5998,15 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <junction x="256.54" y="22.86"/>
 <pinref part="P+22" gate="G$1" pin="3V"/>
 </segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="VDDIO"/>
+<wire x1="241.3" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="152.4" x2="236.22" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="P+5" gate="G$1" pin="3V"/>
+<pinref part="C10" gate="G$1" pin="1"/>
+<wire x1="231.14" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
+<junction x="236.22" y="152.4"/>
+</segment>
 </net>
 <net name="SCK" class="0">
 <segment>
@@ -6169,17 +6178,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="325.12" y1="215.9" x2="332.74" y2="215.9" width="0.1524" layer="91"/>
 <wire x1="332.74" y1="215.9" x2="332.74" y2="213.36" width="0.1524" layer="91"/>
 <pinref part="C9" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="VDDIO" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="VDDIO"/>
-<wire x1="241.3" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="236.22" y1="152.4" x2="236.22" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="P+5" gate="G$1" pin="3V"/>
-<wire x1="236.22" y1="152.4" x2="231.14" y2="152.4" width="0.1524" layer="91"/>
-<junction x="236.22" y="152.4"/>
-<pinref part="C10" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="VBAT" class="0">
