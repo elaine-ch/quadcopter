@@ -4660,7 +4660,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 </deviceset>
 </devicesets>
 </library>
-<library name="custom.lbr" urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw">
+<library name="custom_.lbr" urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw">
 <packages>
 <package name="0805_RESISTOR" library_version="78">
 <smd name="1" x="-1.05" y="0" dx="0.9" dy="1.2" layer="1"/>
@@ -5101,7 +5101,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="GND15" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="J2" library="quadparts_prebuilt_2022" deviceset="HEADER-4POS" device="-2X2-0.1IN-FEMALE-SMD-BOTTOM-ENTRY"/>
 <part name="GND16" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="U2" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="LSM-IMU" device="-497-18367-1-NDIMU"/>
+<part name="U2" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="LSM-IMU" device="-497-18367-1-NDIMU"/>
 <part name="P+6" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 <part name="GND18" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="P+7" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
@@ -5111,28 +5111,28 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="GND20" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND21" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND22" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="Q1" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
+<part name="Q1" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="FRONT-RIGHT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="P+9" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="D4" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND23" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND24" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND25" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="Q2" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
+<part name="Q2" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="BACK-LEFT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="P+10" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="D5" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND26" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND27" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND28" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="Q3" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
+<part name="Q3" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="BACK-RIGHT-MTR" library="quadparts_prebuilt_2022" deviceset="MOTOR_PADS_GND" device="-MOLEX-SMD"/>
 <part name="P+11" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="D6" library="quadparts_prebuilt_2022" deviceset="DIODE-SCHOTTKY_" device="-SMD-SOD123" package3d_urn="urn:adsk.eagle:package:11793366/1" value="360mV"/>
 <part name="GND29" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND30" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND31" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="Q4" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
+<part name="Q4" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="C12" library="quadparts_prebuilt_2022" deviceset="CAPACITOR-POL_" device="47UF-SMD-1206-TAJA" package3d_urn="urn:adsk.eagle:package:11793387/1" value="47uF"/>
 <part name="REG" library="quadparts_prebuilt_2022" deviceset="TPS73633-DBVT" device="3V" value="3V"/>
 <part name="P+12" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
@@ -5143,7 +5143,7 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="P+13" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND34" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="P+14" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
-<part name="NET-BRIDGE" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="NET-BRIDGE" device=""/>
+<part name="NET-BRIDGE" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="NET-BRIDGE" device=""/>
 <part name="GND37" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND38" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="J3" library="quadparts_prebuilt_2022" deviceset="HEADER-10POS" device="TH-254X10"/>
@@ -5157,12 +5157,12 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="P+18" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND42" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="D7" library="LED" library_urn="urn:adsk.wipprod:fs.file:vf._cQdt3UpSNaQnRZ66ZP-FQ" deviceset="LED" device="-YELLOW-LED"/>
-<part name="Q5" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
+<part name="Q5" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="P+19" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND43" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND44" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="D8" library="LED" library_urn="urn:adsk.wipprod:fs.file:vf._cQdt3UpSNaQnRZ66ZP-FQ" deviceset="LED" device="-YELLOW-LED"/>
-<part name="Q6" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
+<part name="Q6" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="P+20" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND45" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND46" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
@@ -5186,21 +5186,21 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <part name="GND48" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
 <part name="B2" library="quadparts_prebuilt_2022" deviceset="BATTERY" device="-SCREW-TERMINAL-MINI-SMD"/>
 <part name="GND33" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
-<part name="R1" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-0805330OHMRES" value="330"/>
-<part name="R2" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-0805330OHMRES" value="330"/>
-<part name="R3" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08052.2KOHMRES" value="2.2K"/>
-<part name="R10" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08052.2KOHMRES" value="2.2K"/>
-<part name="R11" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R4" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R5" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R12" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R13" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R14" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080520OHMRES" value="20"/>
-<part name="R15" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080520OHMRES" value="20"/>
-<part name="R6" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R7" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R8" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
-<part name="R9" library="custom.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R1" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-0805330OHMRES" value="330"/>
+<part name="R2" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-0805330OHMRES" value="330"/>
+<part name="R3" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08052.2KOHMRES" value="2.2K"/>
+<part name="R10" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-08052.2KOHMRES" value="2.2K"/>
+<part name="R11" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R4" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R5" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R12" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R13" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R14" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080520OHMRES" value="20"/>
+<part name="R15" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080520OHMRES" value="20"/>
+<part name="R6" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R7" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R8" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
+<part name="R9" library="custom_.lbr" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" deviceset="MY-RESISTOR" device="-080510KOHMRES" value="10K"/>
 </parts>
 <sheets>
 <sheet>
