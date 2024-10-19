@@ -5284,112 +5284,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </deviceset>
 </devicesets>
 </library>
-<library name="LED" urn="urn:adsk.wipprod:fs.file:vf._cQdt3UpSNaQnRZ66ZP-FQ">
-<packages>
-<package name="LEDC1507X80" library_version="3">
-<description>Chip LED, 1.50 X 0.75 X 0.80 mm body
- &lt;p&gt;Chip LED package with body size 1.50 X 0.75 X 0.80 mm&lt;/p&gt;</description>
-<smd name="A" x="-1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
-<smd name="C" x="1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
-<wire x1="-1.904" y1="0.914" x2="1.904" y2="0.914" width="0.12" layer="21"/>
-<wire x1="-1.904" y1="0.914" x2="-1.904" y2="-0.914" width="0.12" layer="21"/>
-<wire x1="-1.904" y1="-0.914" x2="1.904" y2="-0.914" width="0.12" layer="21"/>
-<wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.12" layer="51"/>
-<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.12" layer="51"/>
-<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.12" layer="51"/>
-<wire x1="1" y1="-0.625" x2="-1" y2="-0.625" width="0.12" layer="51"/>
-<text x="0" y="1.5" size="0.9" layer="25" font="vector" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-1.5" size="0.9" layer="27" font="vector" align="top-center">&gt;VALUE</text>
-<wire x1="-2.4" y1="1.4" x2="-2.4" y2="-1.4" width="0.05" layer="39"/>
-<wire x1="-2.4" y1="-1.4" x2="2.4" y2="-1.4" width="0.05" layer="39"/>
-<wire x1="2.4" y1="-1.4" x2="2.4" y2="1.4" width="0.05" layer="39"/>
-<wire x1="2.4" y1="1.4" x2="-2.4" y2="1.4" width="0.05" layer="39"/>
-<circle x="2" y="1" radius="0.1018125" width="0.2" layer="21"/>
-<wire x1="1.904" y1="-0.914" x2="1.904" y2="0.914" width="0.127" layer="21"/>
-</package>
-<package name="LEDQLSP30YK" library_version="3">
-<description>yellow led</description>
-<smd name="A" x="-1.385" y="0" dx="3.5" dy="1.55" layer="1" rot="R90"/>
-<smd name="C" x="1.385" y="0" dx="3.5" dy="1.55" layer="1" rot="R90"/>
-<wire x1="-2.5" y1="2" x2="-2.5" y2="-2" width="0.1524" layer="21"/>
-<wire x1="-2.5" y1="-2" x2="2.5" y2="-2" width="0.1524" layer="21"/>
-<wire x1="2.5" y1="-2" x2="2.5" y2="2" width="0.1524" layer="21"/>
-<wire x1="2.5" y1="2" x2="-2.5" y2="2" width="0.1524" layer="21"/>
-<circle x="-3.5" y="1.5" radius="0.19514375" width="0.4" layer="21"/>
-<wire x1="-3.4" y1="2.9" x2="-3.4" y2="-2.9" width="0.05" layer="39"/>
-<wire x1="-3.4" y1="-2.9" x2="3.4" y2="-2.9" width="0.05" layer="39"/>
-<wire x1="3.4" y1="-2.9" x2="3.4" y2="2.9" width="0.05" layer="39"/>
-<wire x1="3.4" y1="2.9" x2="-3.4" y2="2.9" width="0.05" layer="39"/>
-<text x="-2" y="3" size="0.9" layer="25" font="vector">&gt;NAME</text>
-<text x="-2.5" y="-3.5" size="0.9" layer="27" font="vector">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="LED" library_version="3">
-<pin name="A" x="-5.08" y="0" visible="pad" length="short"/>
-<pin name="C" x="5.08" y="0" visible="pad" length="short" rot="R180"/>
-<text x="0" y="5.08" size="1.778" layer="95" align="bottom-center">&gt;Name</text>
-<text x="0" y="-5.08" size="1.778" layer="96" align="bottom-center">&gt;Value</text>
-<wire x1="-2.54" y1="2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-1.0129625" y1="2.60335625" x2="0.625728125" y2="4.729175" width="0.254" layer="94"/>
-<wire x1="0.948853125" y1="1.725303125" x2="2.139175" y2="3.26946875" width="0.254" layer="94"/>
-<wire x1="2.139175" y1="3.26946875" x2="2.445046875" y2="3.666265625" width="0.254" layer="94"/>
-<wire x1="0.625728125" y1="4.729175" x2="-0.19361875" y2="4.382575" width="0.254" layer="94"/>
-<wire x1="-0.19361875" y1="4.382575" x2="0.625728125" y2="3.75098125" width="0.254" layer="94"/>
-<wire x1="0.625728125" y1="3.75098125" x2="0.625728125" y2="4.729175" width="0.254" layer="94"/>
-<wire x1="0.625728125" y1="4.729175" x2="0.06364375" y2="4.3235" width="0.254" layer="94"/>
-<wire x1="0.06364375" y1="4.3235" x2="0.50128125" y2="4.066778125" width="0.254" layer="94"/>
-<wire x1="0.50128125" y1="4.066778125" x2="0.50128125" y2="4.5263375" width="0.254" layer="94"/>
-<wire x1="2.445046875" y1="3.666265625" x2="1.69695" y2="3.409146875" width="0.254" layer="94"/>
-<wire x1="1.69695" y1="3.409146875" x2="2.341853125" y2="2.912025" width="0.254" layer="94"/>
-<wire x1="2.341853125" y1="2.912025" x2="2.445046875" y2="3.666265625" width="0.254" layer="94"/>
-<wire x1="2.445046875" y1="3.666265625" x2="2.019403125" y2="3.409146875" width="0.254" layer="94"/>
-<wire x1="2.139175" y1="3.26946875" x2="2.280425" y2="3.160584375" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="LED" prefix="D" uservalue="yes" library_version="3">
-<gates>
-<gate name="G$1" symbol="LED" x="0" y="0"/>
-</gates>
-<devices>
-<device name="-RED-LED" package="LEDC1507X80">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="ELENA"/>
-<attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="160-1178-1-ND"/>
-<attribute name="VALUE" value="RED"/>
-</technology>
-</technologies>
-</device>
-<device name="-YELLOW-LED" package="LEDQLSP30YK">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="CREATOR" value="Elaine Chao"/>
-<attribute name="CUSTOM" value=""/>
-<attribute name="DIST" value="DigiKey"/>
-<attribute name="DISTPN" value="3970-QLSP30YKCT-ND"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="custom_">
 <packages>
 <package name="LEDC1507X80">
@@ -5640,6 +5534,112 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </deviceset>
 </devicesets>
 </library>
+<library name="LED">
+<packages>
+<package name="LEDC1507X80">
+<description>Chip LED, 1.50 X 0.75 X 0.80 mm body
+ &lt;p&gt;Chip LED package with body size 1.50 X 0.75 X 0.80 mm&lt;/p&gt;</description>
+<smd name="A" x="-1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
+<smd name="C" x="1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
+<wire x1="-1.904" y1="0.914" x2="1.904" y2="0.914" width="0.12" layer="21"/>
+<wire x1="-1.904" y1="0.914" x2="-1.904" y2="-0.914" width="0.12" layer="21"/>
+<wire x1="-1.904" y1="-0.914" x2="1.904" y2="-0.914" width="0.12" layer="21"/>
+<wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.12" layer="51"/>
+<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.12" layer="51"/>
+<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.12" layer="51"/>
+<wire x1="1" y1="-0.625" x2="-1" y2="-0.625" width="0.12" layer="51"/>
+<text x="0" y="1.5" size="0.9" layer="25" font="vector" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.5" size="0.9" layer="27" font="vector" align="top-center">&gt;VALUE</text>
+<wire x1="-2.4" y1="1.4" x2="-2.4" y2="-1.4" width="0.05" layer="39"/>
+<wire x1="-2.4" y1="-1.4" x2="2.4" y2="-1.4" width="0.05" layer="39"/>
+<wire x1="2.4" y1="-1.4" x2="2.4" y2="1.4" width="0.05" layer="39"/>
+<wire x1="2.4" y1="1.4" x2="-2.4" y2="1.4" width="0.05" layer="39"/>
+<circle x="2" y="1" radius="0.1018125" width="0.2" layer="21"/>
+<wire x1="1.904" y1="-0.914" x2="1.904" y2="0.914" width="0.127" layer="21"/>
+</package>
+<package name="LEDQLSP30YK">
+<description>yellow led</description>
+<smd name="A" x="-1.385" y="0" dx="3.5" dy="1.55" layer="1" rot="R90"/>
+<smd name="C" x="1.385" y="0" dx="3.5" dy="1.55" layer="1" rot="R90"/>
+<wire x1="-2.5" y1="2" x2="-2.5" y2="-2" width="0.1524" layer="21"/>
+<wire x1="-2.5" y1="-2" x2="2.5" y2="-2" width="0.1524" layer="21"/>
+<wire x1="2.5" y1="-2" x2="2.5" y2="2" width="0.1524" layer="21"/>
+<wire x1="2.5" y1="2" x2="-2.5" y2="2" width="0.1524" layer="21"/>
+<circle x="-3.5" y="1.5" radius="0.19514375" width="0.4" layer="21"/>
+<wire x1="-3.4" y1="2.9" x2="-3.4" y2="-2.9" width="0.05" layer="39"/>
+<wire x1="-3.4" y1="-2.9" x2="3.4" y2="-2.9" width="0.05" layer="39"/>
+<wire x1="3.4" y1="-2.9" x2="3.4" y2="2.9" width="0.05" layer="39"/>
+<wire x1="3.4" y1="2.9" x2="-3.4" y2="2.9" width="0.05" layer="39"/>
+<text x="-2" y="3" size="0.9" layer="25" font="vector">&gt;NAME</text>
+<text x="-2.5" y="-3.5" size="0.9" layer="27" font="vector">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="LED">
+<pin name="A" x="-5.08" y="0" visible="pad" length="short"/>
+<pin name="C" x="5.08" y="0" visible="pad" length="short" rot="R180"/>
+<text x="0" y="5.08" size="1.778" layer="95" align="bottom-center">&gt;Name</text>
+<text x="0" y="-5.08" size="1.778" layer="96" align="bottom-center">&gt;Value</text>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-1.0129625" y1="2.60335625" x2="0.625728125" y2="4.729175" width="0.254" layer="94"/>
+<wire x1="0.948853125" y1="1.725303125" x2="2.139175" y2="3.26946875" width="0.254" layer="94"/>
+<wire x1="2.139175" y1="3.26946875" x2="2.445046875" y2="3.666265625" width="0.254" layer="94"/>
+<wire x1="0.625728125" y1="4.729175" x2="-0.19361875" y2="4.382575" width="0.254" layer="94"/>
+<wire x1="-0.19361875" y1="4.382575" x2="0.625728125" y2="3.75098125" width="0.254" layer="94"/>
+<wire x1="0.625728125" y1="3.75098125" x2="0.625728125" y2="4.729175" width="0.254" layer="94"/>
+<wire x1="0.625728125" y1="4.729175" x2="0.06364375" y2="4.3235" width="0.254" layer="94"/>
+<wire x1="0.06364375" y1="4.3235" x2="0.50128125" y2="4.066778125" width="0.254" layer="94"/>
+<wire x1="0.50128125" y1="4.066778125" x2="0.50128125" y2="4.5263375" width="0.254" layer="94"/>
+<wire x1="2.445046875" y1="3.666265625" x2="1.69695" y2="3.409146875" width="0.254" layer="94"/>
+<wire x1="1.69695" y1="3.409146875" x2="2.341853125" y2="2.912025" width="0.254" layer="94"/>
+<wire x1="2.341853125" y1="2.912025" x2="2.445046875" y2="3.666265625" width="0.254" layer="94"/>
+<wire x1="2.445046875" y1="3.666265625" x2="2.019403125" y2="3.409146875" width="0.254" layer="94"/>
+<wire x1="2.139175" y1="3.26946875" x2="2.280425" y2="3.160584375" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LED" prefix="D" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-RED-LED" package="LEDC1507X80">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="ELENA"/>
+<attribute name="DIST" value="Digikey"/>
+<attribute name="DISTPN" value="160-1178-1-ND"/>
+<attribute name="VALUE" value="RED"/>
+</technology>
+</technologies>
+</device>
+<device name="-YELLOW-LED" package="LEDQLSP30YK">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="Elaine Chao"/>
+<attribute name="CUSTOM" value=""/>
+<attribute name="DIST" value="DigiKey"/>
+<attribute name="DISTPN" value="3970-QLSP30YKCT-ND"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5714,11 +5714,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <part name="GND41" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="P+18" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND42" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
-<part name="D7" library="LED" library_urn="urn:adsk.wipprod:fs.file:vf._cQdt3UpSNaQnRZ66ZP-FQ" deviceset="LED" device="-YELLOW-LED"/>
 <part name="P+19" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND43" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND44" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
-<part name="D8" library="LED" library_urn="urn:adsk.wipprod:fs.file:vf._cQdt3UpSNaQnRZ66ZP-FQ" deviceset="LED" device="-YELLOW-LED"/>
 <part name="P+20" library="quadparts_prebuilt_2022" deviceset="VBAT" device=""/>
 <part name="GND45" library="quadparts_prebuilt_2022" deviceset="BAT_GND" device=""/>
 <part name="GND46" library="quadparts_prebuilt_2022" deviceset="GND" device=""/>
@@ -5783,6 +5781,8 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <part name="Q5" library="custom_" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="Q6" library="custom_" deviceset="MOSFET" device="-SI2302CDS-T1-E3CT-ND"/>
 <part name="NET_BRIDGE" library="custom_" deviceset="NET-BRIDGE" device=""/>
+<part name="D9" library="LED" deviceset="LED" device="-YELLOW-LED"/>
+<part name="D10" library="LED" deviceset="LED" device="-YELLOW-LED"/>
 </parts>
 <sheets>
 <sheet>
@@ -6054,10 +6054,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <instance part="GND42" gate="1" x="142.24" y="175.26" smashed="yes">
 <attribute name="VALUE" x="142.24" y="172.72" size="1.778" layer="96" align="center"/>
 </instance>
-<instance part="D7" gate="G$1" x="266.7" y="96.52" smashed="yes">
-<attribute name="NAME" x="266.7" y="101.6" size="1.778" layer="95" align="bottom-center"/>
-<attribute name="VALUE" x="266.7" y="91.44" size="1.778" layer="96" align="bottom-center"/>
-</instance>
 <instance part="P+19" gate="VCC" x="238.76" y="127" smashed="yes">
 <attribute name="VALUE" x="238.76" y="129.54" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
@@ -6066,10 +6062,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </instance>
 <instance part="GND44" gate="1" x="238.76" y="68.58" smashed="yes">
 <attribute name="VALUE" x="238.76" y="66.04" size="1.778" layer="96" align="center"/>
-</instance>
-<instance part="D8" gate="G$1" x="330.2" y="96.52" smashed="yes">
-<attribute name="NAME" x="330.2" y="101.6" size="1.778" layer="95" align="bottom-center"/>
-<attribute name="VALUE" x="330.2" y="91.44" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 <instance part="P+20" gate="VCC" x="302.26" y="127" smashed="yes">
 <attribute name="VALUE" x="302.26" y="129.54" size="1.778" layer="96" rot="R180" align="center"/>
@@ -6297,6 +6289,14 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </instance>
 <instance part="NET_BRIDGE" gate="G$1" x="274.32" y="38.1" smashed="yes">
 <attribute name="NAME" x="270.256" y="40.132" size="1.778" layer="95"/>
+</instance>
+<instance part="D9" gate="G$1" x="266.7" y="96.52" smashed="yes">
+<attribute name="NAME" x="266.7" y="101.6" size="1.778" layer="95" align="bottom-center"/>
+<attribute name="VALUE" x="266.7" y="91.44" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="D10" gate="G$1" x="330.2" y="96.52" smashed="yes">
+<attribute name="NAME" x="330.2" y="101.6" size="1.778" layer="95" align="bottom-center"/>
+<attribute name="VALUE" x="330.2" y="91.44" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 </instances>
 <busses>
@@ -6948,16 +6948,16 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <wire x1="142.24" y1="185.42" x2="142.24" y2="177.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="D7" gate="G$1" pin="C"/>
 <wire x1="271.78" y1="96.52" x2="274.32" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="274.32" y1="96.52" x2="274.32" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="GND43" gate="1" pin="BAT_GND"/>
+<pinref part="D9" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<pinref part="D8" gate="G$1" pin="C"/>
 <wire x1="335.28" y1="96.52" x2="337.82" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="96.52" x2="337.82" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="GND45" gate="1" pin="BAT_GND"/>
+<pinref part="D10" gate="G$1" pin="C"/>
 </segment>
 <segment>
 <wire x1="210.82" y1="30.48" x2="210.82" y2="25.4" width="0.1524" layer="91"/>
@@ -7177,9 +7177,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="D7" gate="G$1" pin="A"/>
 <wire x1="256.54" y1="96.52" x2="261.62" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="2"/>
+<pinref part="D9" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="PB5" class="0">
@@ -7206,9 +7206,9 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </net>
 <net name="N$21" class="0">
 <segment>
-<pinref part="D8" gate="G$1" pin="A"/>
 <wire x1="320.04" y1="96.52" x2="325.12" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="D10" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -7249,11 +7249,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <note version="6.3" minversion="6.2.2" severity="warning">
 Since Version 6.2.2 text objects can contain more than one line,
 which will not be processed correctly with this version.
-</note>
-<note version="8.2" severity="warning">
-Since Version 8.2, EAGLE supports online libraries. The ids
-of those online libraries will not be understood (or retained)
-with this version.
 </note>
 <note version="8.3" severity="warning">
 Since Version 8.3, EAGLE supports URNs for individual library
