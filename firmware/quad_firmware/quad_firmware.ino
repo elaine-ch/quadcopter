@@ -1,6 +1,10 @@
 #include <radio.h>
 #include "quad_remote.h"      // Header file with pin definitions and setup
 #include "rf_packet.h"
+#include <Adafruit_Sensor.h>
+#include <QuadClass_LSM6DSOX.h>
+#include <Adafruit_Simple_AHRS.h>
+#include <Wire.h>
 
 #define LED_ARMED 16
 
@@ -19,8 +23,16 @@ int batteryCount = 0;
 
 unsigned long timeSinceLastPacket;
 
+
+// Create LSM9DS0 board instance.
+QuadClass_LSM6DSOX lsm = QuadClass_LSM6DSOX();
+Adafruit_Simple_AHRS *ahrs = NULL;
+Adafruit_Sensor *_accel = NULL;
+Adafruit_Sensor *_gyro = NULL;
+Adafruit_Sensor *_mag = NULL;  // No Yaw orientation | Always NULL
+
 void setup() {
-  const int SERIAL_BAUD = 9600 ;        // Baud rate for serial port 
+  const int SERIAL_BAUD = 115200 ;        // Baud rate for serial port 
 	Serial.begin(SERIAL_BAUD);           // Start up serial
 	delay(100);
   quad_remote_setup();
@@ -53,9 +65,19 @@ void setup() {
   packet.battery = 0;
   packet.armed = armed;
   rfWrite((uint8_t*) (&packet), sizeof(packet));
+
+  if (!lsm.begin_I2C()) {
+    Serial.println("Failed to find LSM6DSOX chip");
+    while (1) {
+      delay(10);
+    }
+  }
+  _accel = lsm.getAccelerometerSensor();
+  _gyro = lsm.getGyroSensor();
+  ahrs = new Adafruit_Simple_AHRS(_accel, _mag, _gyro);
 }
 
-
+unsigned int last = millis();
 void loop() {
   //battery stuff
   batteryCount++;
@@ -98,13 +120,37 @@ void loop() {
     analogWrite(propFrontLeftPin, 0);
     analogWrite(propBackLeftPin, 0);
   }
+
+  //plot data
+  quad_data_t orientation;
+
+  int now = millis();
+  
+  
+  // Use the simple AHRS function to get the current orientation.
+  if (ahrs->getQuadOrientation(&orientation))
+  {
+    /* 'orientation' should have valid .roll and .pitch fields */
+    Serial.print(now - last);
+    Serial.print(F(" "));
+    Serial.print(orientation.roll);
+    Serial.print(F(" "));
+    Serial.print(orientation.pitch);
+    Serial.print(F(" "));
+    Serial.print(orientation.roll_rate);
+    Serial.print(F(" "));
+    Serial.print(orientation.pitch_rate);
+    Serial.print(F(" "));
+    Serial.print(orientation.yaw_rate);
+    Serial.println(F(""));
+  }
+
+  last = now;
 }
 
 void readBattery() {
-  Serial.print("Battery reading: ");
   int batteryRead = analogRead(BATTERY_SENSE_PIN);
   int batteryLevel = map(batteryRead, 792, 890, 0, 100);
-  Serial.println(batteryLevel);
 
   Packet packet;
   packet.propFrontLeft = 0;
