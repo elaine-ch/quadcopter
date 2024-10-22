@@ -35,7 +35,7 @@ void setup() {
 
   calibrate = false;
   armed = false;
-  lcd.setBacklight(255, 255, 255);
+  lcd.setFastBacklight(255, 255, 255);
 
   rfFlush();
 
@@ -110,6 +110,8 @@ void loop() {
     char* armedMessage = "Quad armed!";
     lcd.clear();
     lcd.write(armedMessage);
+
+    lcd.setFastBacklight(255, 0, 0);
   }
 
   //disarm using button 2
@@ -125,9 +127,12 @@ void loop() {
 
     lcd.setCursor(13, 1);
     lcd.print(quadBattery);
+
+    lcd.setFastBacklight(255, 255, 255);
   }
 
   //receive message from quadcopter
+  bool prevArmed = armed;
   uint8_t buf[sizeof(Packet)];
   if(rfAvailable()) {
     rfRead(buf, sizeof(Packet));
@@ -137,7 +142,7 @@ void loop() {
       armed = packet->armed;
       quadBattery = packet->battery;
     }
-    if(!armed) {
+    if(!armed && prevArmed) {
       char* disarmed = "Quad disarmed!";
       lcd.clear();
       lcd.write(disarmed);
@@ -147,6 +152,8 @@ void loop() {
 
       lcd.setCursor(13, 1);
       lcd.print(quadBattery);
+
+      lcd.setFastBacklight(255, 255, 255);
     }
   }
 
@@ -207,6 +214,7 @@ void calibrationMode() {
   lcd.clear();
   char* string = "Calibrating...";
   lcd.write(string);
+  lcd.setFastBacklight(0, 0, 255);
 
   int tDefault = analogRead(PIN_THROTTLE);
   int yDefault = analogRead(PIN_YAW);
@@ -238,8 +246,9 @@ void calibrationMode() {
   }
 
   lcd.clear();
-  string = "Calibration finished!";
+  string = "Finished!";
   lcd.write(string);
+  lcd.setFastBacklight(255, 255, 255);
   Serial.println("Exiting calibration mode");
   Serial.print("Throttle: ");
   Serial.println(cValues.throttleMin);
