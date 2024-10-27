@@ -785,6 +785,51 @@
 </technology>
 </technologies>
 </device>
+<device name="-805110OHMRES" package="0805_RESISTOR">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="Elaine Chao"/>
+<attribute name="CUSTOM" value="" constant="no"/>
+<attribute name="DIST" value="DigiKey"/>
+<attribute name="DISTPN" value="311-110CRCT-ND"/>
+<attribute name="VALUE" value="110"/>
+</technology>
+</technologies>
+</device>
+<device name="-080571.5OHMRES" package="0805_RESISTOR">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="Elaine Chao"/>
+<attribute name="CUSTOM" value=""/>
+<attribute name="DIST" value="DigiKey"/>
+<attribute name="DISTPN" value="311-71.5CRCT-ND"/>
+<attribute name="VALUE" value="71.5"/>
+</technology>
+</technologies>
+</device>
+<device name="-805200OHMRES" package="0805_RESISTOR">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="Elaine Chao"/>
+<attribute name="CUSTOM" value=""/>
+<attribute name="DIST" value="DigiKey"/>
+<attribute name="DISTPN" value="311-200CRCT-ND"/>
+<attribute name="VALUE" value="200"/>
+</technology>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="LED" prefix="D" uservalue="yes">
