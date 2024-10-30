@@ -32,7 +32,7 @@ Adafruit_Sensor *_gyro = NULL;
 Adafruit_Sensor *_mag = NULL;  // No Yaw orientation | Always NULL
 
 void setup() {
-  const int SERIAL_BAUD = 115200 ;        // Baud rate for serial port 
+  const int SERIAL_BAUD = 9600 ;        // Baud rate for serial port 
 	Serial.begin(SERIAL_BAUD);           // Start up serial
 	delay(100);
   quad_remote_setup();
@@ -75,6 +75,7 @@ void setup() {
   _accel = lsm.getAccelerometerSensor();
   _gyro = lsm.getGyroSensor();
   ahrs = new Adafruit_Simple_AHRS(_accel, _mag, _gyro);
+  #
 }
 
 unsigned int last = millis();
@@ -110,9 +111,16 @@ void loop() {
   if (armed) {
     digitalWrite(LED_ARMED, HIGH);
     analogWrite(propBackRightPin, bRValue);
+    Serial.print(bRValue);
+    Serial.print(" ");
     analogWrite(propFrontRightPin, fRValue);
+    Serial.print(fRValue);
+    Serial.print(" ");
     analogWrite(propFrontLeftPin, fLValue);
+    Serial.print(fLValue);
+    Serial.print(" ");
     analogWrite(propBackLeftPin, bLValue);
+    Serial.println(bLValue);
   } else {
     digitalWrite(LED_ARMED, LOW);
     analogWrite(propBackRightPin, 0);
@@ -131,18 +139,18 @@ void loop() {
   if (ahrs->getQuadOrientation(&orientation))
   {
     /* 'orientation' should have valid .roll and .pitch fields */
-    Serial.print(now - last);
-    Serial.print(F(" "));
-    Serial.print(orientation.roll);
-    Serial.print(F(" "));
-    Serial.print(orientation.pitch);
-    Serial.print(F(" "));
-    Serial.print(orientation.roll_rate);
-    Serial.print(F(" "));
-    Serial.print(orientation.pitch_rate);
-    Serial.print(F(" "));
-    Serial.print(orientation.yaw_rate);
-    Serial.println(F(""));
+    // Serial.print(now - last);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.roll);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.roll_rate);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch_rate);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.yaw_rate);
+    // Serial.println(F(""));
   }
 
   last = now;
