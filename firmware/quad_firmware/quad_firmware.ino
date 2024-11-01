@@ -48,10 +48,10 @@ void setup() {
   pinMode(BATTERY_SENSE_PIN, INPUT);
   pinMode(LED_ARMED, OUTPUT);
 
-  analogWrite(propBackRightPin, 0);
-  analogWrite(propFrontRightPin, 0);
-  analogWrite(propFrontLeftPin, 0);
-  analogWrite(propBackLeftPin, 0);
+  // analogWrite(propBackRightPin, 0);
+  // analogWrite(propFrontRightPin, 0);
+  // analogWrite(propFrontLeftPin, 0);
+  // analogWrite(propBackLeftPin, 0);
 
   rfFlush();
 
@@ -78,7 +78,6 @@ void setup() {
   #
 }
 
-unsigned int last = millis();
 void loop() {
   //battery stuff
   batteryCount++;
@@ -131,14 +130,12 @@ void loop() {
 
   //plot data
   quad_data_t orientation;
-
-  int now = millis();
-  
   
   // Use the simple AHRS function to get the current orientation.
   if (ahrs->getQuadOrientation(&orientation))
   {
     /* 'orientation' should have valid .roll and .pitch fields */
+<<<<<<< HEAD
     // Serial.print(now - last);
     // Serial.print(F(" "));
     // Serial.print(orientation.roll);
@@ -151,9 +148,13 @@ void loop() {
     // Serial.print(F(" "));
     // Serial.print(orientation.yaw_rate);
     // Serial.println(F(""));
+=======
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch_rate);
+>>>>>>> 492ae327d7aa34b8000c361d14154b1b57311570
   }
-
-  last = now;
 }
 
 void readBattery() {
