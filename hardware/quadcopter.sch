@@ -23912,7 +23912,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <part name="D15" library="LED" deviceset="RGB-LED" device="-DIFFUSE-LED"/>
 <part name="D16" library="LED" deviceset="RGB-LED" device="-DIFFUSE-LED"/>
 <part name="J1" library="quadparts_prebuilt_2022" deviceset="AVR_SPI_PRG_6" device="-SMD"/>
-<part name="P+31" library="quadparts_prebuilt_2022" deviceset="3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24573,9 +24572,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <attribute name="VALUE" x="252.476" y="208.28" size="1.778" layer="96"/>
 <attribute name="NAME" x="252.222" y="221.742" size="1.778" layer="95"/>
 </instance>
-<instance part="P+31" gate="G$1" x="269.24" y="226.06" smashed="yes">
-<attribute name="VALUE" x="269.24" y="228.6" size="1.778" layer="96" rot="R180" align="center"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -24884,12 +24880,6 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <junction x="236.22" y="152.4"/>
 <pinref part="U2" gate="G$1" pin="VDDIO"/>
 <pinref part="C10" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="P+31" gate="G$1" pin="3V"/>
-<wire x1="269.24" y1="223.52" x2="269.24" y2="218.44" width="0.1524" layer="91"/>
-<wire x1="269.24" y1="218.44" x2="266.7" y2="218.44" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="SCK" class="0">
