@@ -7,6 +7,7 @@
 #include <Wire.h>
 
 #define LED_ARMED 16
+#define RAD_TO_DEG 57.295779513082320876798154814105
 
 int propBackRightPin = 8;
 int propFrontRightPin = 3;
@@ -20,6 +21,20 @@ int fLValue = 0;
 int fRValue = 0;
 
 int batteryCount = 0;
+
+unsigned long current;
+unsigned long dt;
+unsigned long lastTime;
+
+double gain = 0.95;
+
+float cf_angle_pitch;
+float cf_angle_roll;
+
+
+//just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
+float gyro_angle_pitch;
+float gyro_angle_roll;
 
 unsigned long timeSinceLastPacket;
 
@@ -134,8 +149,38 @@ void loop() {
   // Use the simple AHRS function to get the current orientation.
   if (ahrs->getQuadOrientation(&orientation))
   {
+    current = millis();
+    dt = current-lastTime;
+    lastTime = current;
+
+//cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
+cf_angle_pitch = (gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate);
+cf_angle_roll = (gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate);
+
+
+//just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
+gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
+gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
+//gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
+
+
+    Serial.print("gyro pitch angle = ");
+    Serial.print(gyro_angle_pitch);
+    Serial.print(F(" cf pitch angle = "));
+    Serial.print(cf_angle_pitch);
+    Serial.print(F(" accel pitch = "));
+    Serial.println(orientation.pitch_rate);
+
+    Serial.print(F(" gyro roll angle = "));
+    Serial.print(gyro_angle_roll);
+    Serial.print(F(" cf roll angle = "));
+    Serial.println(cf_angle_roll);
+    Serial.print(F(" accel roll = "));
+    Serial.print(orientation.roll_rate);
+
+
+
     /* 'orientation' should have valid .roll and .pitch fields */
-<<<<<<< HEAD
     // Serial.print(now - last);
     // Serial.print(F(" "));
     // Serial.print(orientation.roll);
@@ -148,12 +193,10 @@ void loop() {
     // Serial.print(F(" "));
     // Serial.print(orientation.yaw_rate);
     // Serial.println(F(""));
-=======
     // Serial.print(F(" "));
     // Serial.print(orientation.pitch);
     // Serial.print(F(" "));
     // Serial.print(orientation.pitch_rate);
->>>>>>> 492ae327d7aa34b8000c361d14154b1b57311570
   }
 }
 
