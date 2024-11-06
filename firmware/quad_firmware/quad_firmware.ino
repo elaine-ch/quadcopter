@@ -36,6 +36,8 @@ float cf_angle_roll;
 float gyro_angle_pitch;
 float gyro_angle_roll;
 
+int counter = 0;
+
 unsigned long timeSinceLastPacket;
 
 
@@ -95,11 +97,11 @@ void setup() {
 
 void loop() {
   //battery stuff
-  batteryCount++;
-  if(batteryCount == 5000) {
-    readBattery();
-    batteryCount = 0;
-  }
+  // batteryCount++;
+  // if(batteryCount == 5000) {
+  //   readBattery();
+  //   batteryCount = 0;
+  // }
 
   //read from radio
   uint8_t buf[sizeof(Packet)];
@@ -113,28 +115,27 @@ void loop() {
       fLValue = packet->propFrontLeft;
       fRValue = packet->propFrontRight;
       armed = packet->armed;
+      timeSinceLastPacket = millis();
     }
-    timeSinceLastPacket = millis();
   }
 
   //if haven't recieved packet from remote in a while, disarm
   if(millis() - timeSinceLastPacket > 500){
     armed = false;
   }
-
   if (armed) {
     digitalWrite(LED_ARMED, HIGH);
-    analogWrite(propBackRightPin, bRValue);
-    Serial.print(bRValue);
-    Serial.print(" ");
+    analogWrite(propBackRightPin, fRValue);
+    // Serial.print(bRValue);
+    // Serial.print(" ");
     analogWrite(propFrontRightPin, fRValue);
-    Serial.print(fRValue);
-    Serial.print(" ");
-    analogWrite(propFrontLeftPin, fLValue);
-    Serial.print(fLValue);
-    Serial.print(" ");
-    analogWrite(propBackLeftPin, bLValue);
-    Serial.println(bLValue);
+    // Serial.print(fRValue);
+    // Serial.print(" ");
+    analogWrite(propFrontLeftPin, fRValue);
+    // Serial.print(fLValue);
+    // Serial.print(" ");
+    analogWrite(propBackLeftPin, fRValue);
+    // Serial.println(bLValue);
   } else {
     digitalWrite(LED_ARMED, LOW);
     analogWrite(propBackRightPin, 0);
@@ -144,60 +145,60 @@ void loop() {
   }
 
   //plot data
-  quad_data_t orientation;
+  // quad_data_t orientation;
   
   // Use the simple AHRS function to get the current orientation.
-  if (ahrs->getQuadOrientation(&orientation))
-  {
-    current = millis();
-    dt = current-lastTime;
-    lastTime = current;
+  // if (ahrs->getQuadOrientation(&orientation))
+  // {
+  //   current = millis();
+  //   dt = current-lastTime;
+  //   lastTime = current;
 
-//cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
-cf_angle_pitch = (gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate);
-cf_angle_roll = (gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate);
-
-
-//just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
-gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
-gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
-//gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
+  //   //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
+  //   cf_angle_pitch = (gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate);
+  //   cf_angle_roll = (gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate);
 
 
-    Serial.print("gyro pitch angle = ");
-    Serial.print(gyro_angle_pitch);
-    Serial.print(F(" cf pitch angle = "));
-    Serial.print(cf_angle_pitch);
-    Serial.print(F(" accel pitch = "));
-    Serial.println(orientation.pitch_rate);
-
-    Serial.print(F(" gyro roll angle = "));
-    Serial.print(gyro_angle_roll);
-    Serial.print(F(" cf roll angle = "));
-    Serial.println(cf_angle_roll);
-    Serial.print(F(" accel roll = "));
-    Serial.print(orientation.roll_rate);
+  //   //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
+  //   gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
+  //   gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
+  //   //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
 
 
+  //   Serial.print("gyro pitch angle = ");
+  //   Serial.print(gyro_angle_pitch);
+  //   Serial.print(F(" cf pitch angle = "));
+  //   Serial.print(cf_angle_pitch);
+  //   Serial.print(F(" accel pitch = "));
+  //   Serial.println(orientation.pitch_rate);
 
-    /* 'orientation' should have valid .roll and .pitch fields */
-    // Serial.print(now - last);
-    // Serial.print(F(" "));
-    // Serial.print(orientation.roll);
-    // Serial.print(F(" "));
-    // Serial.print(orientation.pitch);
-    // Serial.print(F(" "));
-    // Serial.print(orientation.roll_rate);
-    // Serial.print(F(" "));
-    // Serial.print(orientation.pitch_rate);
-    // Serial.print(F(" "));
-    // Serial.print(orientation.yaw_rate);
-    // Serial.println(F(""));
-    // Serial.print(F(" "));
-    // Serial.print(orientation.pitch);
-    // Serial.print(F(" "));
-    // Serial.print(orientation.pitch_rate);
-  }
+  //   Serial.print(F(" gyro roll angle = "));
+  //   Serial.print(gyro_angle_roll);
+  //   Serial.print(F(" cf roll angle = "));
+  //   Serial.println(cf_angle_roll);
+  //   Serial.print(F(" accel roll = "));
+  //   Serial.print(orientation.roll_rate);
+
+
+
+  //   /* 'orientation' should have valid .roll and .pitch fields */
+  //   // Serial.print(now - last);
+  //   // Serial.print(F(" "));
+  //   // Serial.print(orientation.roll);
+  //   // Serial.print(F(" "));
+  //   // Serial.print(orientation.pitch);
+  //   // Serial.print(F(" "));
+  //   // Serial.print(orientation.roll_rate);
+  //   // Serial.print(F(" "));
+  //   // Serial.print(orientation.pitch_rate);
+  //   // Serial.print(F(" "));
+  //   // Serial.print(orientation.yaw_rate);
+  //   // Serial.println(F(""));
+  //   // Serial.print(F(" "));
+  //   // Serial.print(orientation.pitch);
+  //   // Serial.print(F(" "));
+  //   // Serial.print(orientation.pitch_rate);
+  // }
 }
 
 void readBattery() {
