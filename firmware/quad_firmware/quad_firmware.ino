@@ -31,6 +31,8 @@ double gain = 0.95;
 float cf_angle_pitch;
 float cf_angle_roll;
 
+float prevError = 0;
+
 
 //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
 float gyro_angle_pitch;
@@ -40,6 +42,11 @@ int counter = 0;
 
 unsigned long timeSinceLastPacket;
 
+struct PIDVals {
+  float Pr, Ir, Dr, Py, Iy, Dy;
+};
+
+PIDVals pvals;
 
 // Create LSM9DS0 board instance.
 QuadClass_LSM6DSOX lsm = QuadClass_LSM6DSOX();
@@ -92,6 +99,9 @@ void setup() {
   _accel = lsm.getAccelerometerSensor();
   _gyro = lsm.getGyroSensor();
   ahrs = new Adafruit_Simple_AHRS(_accel, _mag, _gyro);
+  // lsm.setAccelDataRate(6);
+  // lsm.setGyroDataRate(6);
+  // lsm.setGyroRange();
   #
 }
 
@@ -114,6 +124,12 @@ void loop() {
       bLValue = packet->propBackLeft;
       fLValue = packet->propFrontLeft;
       fRValue = packet->propFrontRight;
+      pvals.Pr = packet->Pr;
+      pvals.Ir = packet->Ir;
+      pvals.Dr = packet->Dr;
+      pvals.Py = packet->Py;
+      pvals.Iy = packet->Iy;
+      pvals.Dy = packet->Dy;
       armed = packet->armed;
       timeSinceLastPacket = millis();
     }
@@ -146,60 +162,78 @@ void loop() {
   }
 
   //plot data
-  // quad_data_t orientation;
+  quad_data_t orientation;
   
   // Use the simple AHRS function to get the current orientation.
-  // if (ahrs->getQuadOrientation(&orientation))
-  // {
-  //   current = millis();
-  //   dt = current-lastTime;
-  //   lastTime = current;
+  if (ahrs->getQuadOrientation(&orientation))
+  {
+    current = millis();
+    dt = current-lastTime;
+    lastTime = current;
 
-  //   //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
-  //   cf_angle_pitch = (gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate);
-  //   cf_angle_roll = (gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate);
-
-
-  //   //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
-  //   gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
-  //   gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
-  //   //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
+    //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
+    cf_angle_pitch = (gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate);
+    cf_angle_roll = (gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate);
 
 
-  //   Serial.print("gyro pitch angle = ");
-  //   Serial.print(gyro_angle_pitch);
-  //   Serial.print(F(" cf pitch angle = "));
-  //   Serial.print(cf_angle_pitch);
-  //   Serial.print(F(" accel pitch = "));
-  //   Serial.println(orientation.pitch_rate);
+    //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
+    gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
+    gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
+    //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
+    float rollStick = 0; //value from stick TODO
+    float pTerm = pvals.Pr * (cf_angle_roll - rollStick);
+    float iTerm = iTerm + pvals.Ir * (cf_angle_roll - rollStick);
+    float dTerm = pvals.Dr * ((cf_angle_roll - rollStick) - prevError);
+    prevError = (cf_angle_roll - rollStick);
 
-  //   Serial.print(F(" gyro roll angle = "));
-  //   Serial.print(gyro_angle_roll);
-  //   Serial.print(F(" cf roll angle = "));
-  //   Serial.println(cf_angle_roll);
-  //   Serial.print(F(" accel roll = "));
-  //   Serial.print(orientation.roll_rate);
+
+
+    Serial.print(gyro_angle_pitch);
+    Serial.print(F(" "));
+    Serial.print(cf_angle_pitch);
+    Serial.print(F(" "));
+    Serial.print(orientation.pitch_rate);
+    Serial.print(F(" "));
+    Serial.print(gyro_angle_roll);
+    Serial.print(F(" "));
+    Serial.print(cf_angle_roll);
+    Serial.print(F(" "));
+    Serial.print(orientation.roll_rate);
+    Serial.println(F(" "));
+    // Serial.print(F("gyro pitch angle = "));
+    // Serial.print(gyro_angle_pitch);
+    // Serial.print(F(" cf pitch angle = "));
+    // Serial.print(cf_angle_pitch);
+    // Serial.print(F(" accel pitch = "));
+    // Serial.println(orientation.pitch_rate);
+
+    // Serial.print(F(" gyro roll angle = "));
+    // Serial.print(gyro_angle_roll);
+    // Serial.print(F(" cf roll angle = "));
+    // Serial.println(cf_angle_roll);
+    // Serial.print(F(" accel roll = "));
+    // Serial.print(orientation.roll_rate);
 
 
 
   //   /* 'orientation' should have valid .roll and .pitch fields */
-  //   // Serial.print(now - last);
-  //   // Serial.print(F(" "));
-  //   // Serial.print(orientation.roll);
-  //   // Serial.print(F(" "));
-  //   // Serial.print(orientation.pitch);
-  //   // Serial.print(F(" "));
-  //   // Serial.print(orientation.roll_rate);
-  //   // Serial.print(F(" "));
-  //   // Serial.print(orientation.pitch_rate);
-  //   // Serial.print(F(" "));
-  //   // Serial.print(orientation.yaw_rate);
-  //   // Serial.println(F(""));
-  //   // Serial.print(F(" "));
-  //   // Serial.print(orientation.pitch);
-  //   // Serial.print(F(" "));
-  //   // Serial.print(orientation.pitch_rate);
-  // }
+    // Serial.print(now - last);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.roll);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.roll_rate);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch_rate);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.yaw_rate);
+    // Serial.println(F(""));
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch);
+    // Serial.print(F(" "));
+    // Serial.print(orientation.pitch_rate);
+  }
 }
 
 void readBattery() {
