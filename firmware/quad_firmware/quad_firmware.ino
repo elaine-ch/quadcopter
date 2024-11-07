@@ -123,6 +123,7 @@ void loop() {
   if(millis() - timeSinceLastPacket > 500){
     armed = false;
   }
+  
   if (armed) {
     digitalWrite(LED_ARMED, HIGH);
     analogWrite(propBackRightPin, fRValue);

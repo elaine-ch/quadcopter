@@ -3,11 +3,17 @@
 #include "rf_packet.h"
 #include <EEPROM.h>
 bool calibrate = false;
+bool pidCalibrate = false;
+int pidCalMode = 0; //0 for Pr 1 for Ir 2 for Dr 3 for Py 4 for Iy 5 for Dy
 bool armed = false;
 bool printOnce = true;
 int batteryCount = 0;
 int quadBattery = 0;
 int batteryLevel = 0;
+
+float pInc = 0.1;
+float iInc = 0.1;
+float dInc = 0.1;
 
 struct MinMaxGimbals {
   int throttleMax;
@@ -20,7 +26,18 @@ struct MinMaxGimbals {
   int pitchMin;
 };
 
+struct PIDVals {
+  float Pr, Ir, Dr, Py, Iy, Dy;
+};
+
+struct WholeEeprom {
+  MinMaxGimbals gimbalVals;
+  PIDVals pidVals;
+};
+
 MinMaxGimbals cValues;
+PIDVals pvals;
+WholeEeprom wholeEeprom;
 
 void setup() {
   const int SERIAL_BAUD = 9600 ;        // Baud rate for serial port 
@@ -32,7 +49,8 @@ void setup() {
   pinMode(BATTERY_SENSE_PIN, INPUT);
   pinMode(BUTTON1_PIN, INPUT);
   pinMode(BUTTON2_PIN, INPUT);
-
+  pinMode(ENC1_A_PIN, INPUT);
+  pinMode(ENC1_B_PIN, INPUT);
   calibrate = false;
   armed = false;
   lcd.setFastBacklight(255, 255, 255);
@@ -74,8 +92,17 @@ void loop() {
     cValues.rollMin = 113;
     cValues.pitchMax = 721;
     cValues.pitchMin = 66;
+    pvals.Pr = 2;
+    pvals.Ir = 0;
+    pvals.Dr = 0;
+    pvals.Py = 2;
+    pvals.Iy = 0;
+    pvals.Dy = 0;
+
   } else {
-    EEPROM.get(0, cValues);
+    EEPROM.get(0, wholeEeprom);
+    cValues = wholeEeprom.gimbalVals;
+    pvals = wholeEeprom.pidVals;
   }
   
   //declaring additional variables to avoid calling functions inside of constrain
@@ -99,6 +126,12 @@ void loop() {
     packet.magicNumber = 1829;
     packet.battery = 0;
     packet.armed = armed;
+    packet.Pr = pvals.Pr;
+    packet.Ir = pvals.Ir;
+    packet.Dr = pvals.Dr;
+    packet.Py = pvals.Py;
+    packet.Iy = pvals.Iy;
+    packet.Dy = pvals.Dy;
     rfWrite((uint8_t*) (&packet), sizeof(packet));
   }
 
@@ -187,6 +220,10 @@ void loop() {
     calibrate = true;
     calibrationMode();
   }
+  else if(digitalRead(BUTTON_CENTER_PIN) == 0 && !armed) {
+    pidCalibrate = true;
+    pidCalibrationMode();
+  }
 
   //calibration fails if quad is armed
   // if(digitalRead(BUTTON1_PIN) == 0 && !armed) {
@@ -208,6 +245,63 @@ void readBattery() {
   lcd.setCursor(13, 1);
   lcd.print(quadBattery);
 }
+
+
+void pidCalibrationMode() {
+  //write to lcd
+  lcd.clear();
+  char* string = "PID Calibrating...";
+  lcd.write(string);
+  lcd.setFastBacklight(0, 255, 250);
+  int toAdd = 0;
+  while(calibrate){
+    if(digitalRead(ENC1_A_PIN)){
+      switch(pidCalMode){
+        case 0: pvals.Pr += pIncr;
+        case 1: pvals.Ir += iIncr;
+        case 2: pvals.Dr += dIncr;
+        case 3: pvals.Py += pIncr;
+        case 4: pvals.Iy += iIncr;
+        case 5: pvals.Dy += dIncr;
+      }
+    }
+    else if(digitalRead(ENC1_B_PIN)){
+      switch(pidCalMode){
+        case 0: pvals.Pr -= pIncr;
+        case 1: pvals.Ir -= iIncr;
+        case 2: pvals.Dr -= dIncr;
+        case 3: pvals.Py -= pIncr;
+        case 4: pvals.Iy -= iIncr;
+        case 5: pvals.Dy -= dIncr;
+      }
+    }
+    if(digitalRead(BUTTON2_PIN) == 0){
+      wholeEeprom.gimbalVals = cValues;
+      wholeEeprom.pidVals = pvals;
+      EEPROM.put(0, wholeEeprom);
+      pidCalibrate = false;
+    }
+  }
+
+  lcd.clear();
+  string = "Finished!";
+  lcd.write(string);
+  lcd.setFastBacklight(255, 255, 255);
+  // Serial.println("Exiting calibration mode");
+  // Serial.print("Throttle: ");
+  // Serial.println(cValues.throttleMin);
+  // Serial.println(cValues.throttleMax);
+  // Serial.print("Yaw: ");
+  // Serial.println(cValues.yawMin);
+  // Serial.println(cValues.yawMax);
+  // Serial.print("Roll: ");
+  // Serial.println(cValues.rollMin);
+  // Serial.println(cValues.rollMax);
+  // Serial.print("Pitch: ");
+  // Serial.println(cValues.pitchMin);
+  // Serial.println(cValues.pitchMax);
+}
+
 
 void calibrationMode() {
   //write to lcd
@@ -240,7 +334,9 @@ void calibrationMode() {
     cValues.pitchMin = min(cValues.pitchMin, analogRead(PIN_PITCH));
 
     if(digitalRead(BUTTON2_PIN) == 0){
-      EEPROM.put(0, cValues);
+      wholeEeprom.gimbalVals = cValues;
+      wholeEeprom.pidVals = pvals;
+      EEPROM.put(0, wholeEeprom);
       calibrate = false;
     }
   }

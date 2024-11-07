@@ -12,6 +12,7 @@ struct Packet {
     int magicNumber;
     int battery;
     bool armed;
+    float Pr, Ir, Dr, Py, Iy, Dy;
 };
 
 #endif
