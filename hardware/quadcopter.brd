@@ -4970,7 +4970,7 @@ design rules under a new name.</description>
 </element>
 <element name="DECO1" library="quadparts_prebuilt_2022" package="LAYER_LABELS" value="DECORATION-LAYER-LABELS" x="0" y="74" smashed="yes">
 </element>
-<element name="U$1" library="custom_" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" package="VORTEX-LOGO" value="" x="-0.128" y="-20.661" smashed="yes" rot="MR0">
+<element name="LG1" library="custom_" library_urn="urn:adsk.wipprod:fs.file:vf.FjMADskDQ2Se9fX1PD5xcw" package="VORTEX-LOGO" value="" x="-0.128" y="-20.661" smashed="yes" rot="MR0">
 </element>
 <element name="J1" library="quadparts_prebuilt_2022" package="2X3-SMD" value="AVR_SPI_PRG_6-SMD" x="28" y="0" smashed="yes" rot="R90">
 <attribute name="CREATOR" value="Swanson" x="28" y="0" size="1.778" layer="27" rot="R90" display="off"/>
