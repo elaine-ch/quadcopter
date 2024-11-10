@@ -237,7 +237,8 @@ void loop() {
 
     Serial.print(cf_angle_pitch);
     Serial.print(F(" "));
-    Serial.print(cf_angle_roll);
+    Serial.print(pitch);
+    // Serial.print(cf_angle_roll);
     Serial.println(F(" "));
 
   }

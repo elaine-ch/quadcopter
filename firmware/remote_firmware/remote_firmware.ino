@@ -226,7 +226,7 @@ void loop() {
     calibrate = true;
     calibrationMode();
   }
-  else if(digitalRead(BUTTON_CENTER_PIN) == 0 && !armed) {
+  else if(digitalRead(BUTTON_CENTER_PIN) == 0) {
     pidCalibrate = true;
     lastKnobPos = knob1.getCurrentPos();
     pidCalibrationMode();
@@ -259,7 +259,7 @@ void pidCalibrationMode() {
   lcd.clear();
   char* string = "PID Calibrating...";
   lcd.write(string);
-  lcd.setFastBacklight(0, 255, 150);
+  // lcd.setFastBacklight(0, 255, 150);
   int toAdd = 0;
   while(pidCalibrate){
     lcd.setCursor(0, 1);
