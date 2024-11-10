@@ -31,6 +31,9 @@ int yaw = 0;
 int pitch = 0;
 int roll = 0;
 
+float iTermPitch = 0;
+float iTermYaw = 0;
+
 int deadzone = 3;
 
 int min_gimbal = -128;
@@ -184,6 +187,7 @@ void loop() {
   if(roll > -deadzone && roll < deadzone){ roll = 0; }
   if(pitch > -deadzone && pitch < deadzone){ pitch = 0; }
 
+  
 
   //plot data
   quad_data_t orientation;
@@ -205,22 +209,31 @@ void loop() {
     // gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
     //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
     float pTerm = pvals.Pr * (cf_angle_pitch - pitch);
-    float iTerm = iTerm + pvals.Ir * (cf_angle_pitch - pitch);
+    iTermPitch = iTermPitch + pvals.Ir * (cf_angle_pitch - pitch);
     float dTerm = pvals.Dr * ((cf_angle_pitch - pitch) - pitchPrevError);
     pitchPrevError = (cf_angle_pitch - pitch);
-    float pitchPIDCorrection = pTerm + iTerm + dTerm;
+    float pitchPIDCorrection = pTerm + iTermPitch + dTerm;
   
   
     pTerm = pvals.Py * (angle_yaw - yaw);
-    iTerm = iTerm + pvals.Iy * (angle_yaw - yaw);
+    iTermYaw = iTermYaw + pvals.Iy * (angle_yaw - yaw);
     dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError);
     yawPrevError = (angle_yaw - yaw);
-    float yawPIDCorrection = pTerm + iTerm + dTerm;
+    float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
     fRValue = throttle - pitchPIDCorrection - yawPIDCorrection;
     fLValue = throttle - pitchPIDCorrection + yawPIDCorrection;
     bRValue = throttle + pitchPIDCorrection + yawPIDCorrection;
     bLValue = throttle + pitchPIDCorrection - yawPIDCorrection;
+
+    if(throttle < deadzone){
+      fRValue = 0;
+      fLValue = 0;
+      bRValue = 0;
+      bLValue = 0;
+      iTermPitch = 0;
+      iTermYaw = 0;
+    }
 
     Serial.print(cf_angle_pitch);
     Serial.print(F(" "));
