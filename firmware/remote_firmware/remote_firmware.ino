@@ -65,10 +65,10 @@ void setup() {
 
   //tell quad about reset
   Packet packet;
-  packet.propFrontLeft = 0;
-  packet.propFrontRight = 0;
-  packet.propBackLeft = 0;
-  packet.propBackRight = 0;
+  packet.throttle_stick = 0;
+  packet.yaw_stick = 0;
+  packet.pitch_stick = 0;
+  packet.roll_stick = 0;
   packet.magicNumber = 1829;
   packet.battery = 0;
   packet.armed = armed;
@@ -125,10 +125,10 @@ void loop() {
   //for now, send throttle value
   if(millis() % 100 == 0) {
     Packet packet;
-    packet.propFrontLeft = throttle;
-    packet.propFrontRight = throttle;
-    packet.propBackLeft = throttle;
-    packet.propBackRight = throttle;
+    packet.throttle_stick = throttle;
+    packet.yaw_stick = yaw;
+    packet.roll_stick = roll;
+    packet.pitch_stick = pitch;
     packet.magicNumber = 1829;
     packet.battery = 0;
     packet.armed = armed;
@@ -355,6 +355,7 @@ void pidCalibrationMode() {
       wholeEeprom.pidVals = pvals;
       EEPROM.put(0, wholeEeprom);
       pidCalibrate = false;
+      calibrate = false;
     }
   }
 
