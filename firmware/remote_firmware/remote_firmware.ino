@@ -8,6 +8,7 @@ int yawMode = 0;
 int pidCalMode = 0; //0 for Pr 1 for Ir 2 for Dr 3 for Py 4 for Iy 5 for Dy
 int prevDownPushed = 0;
 int prevOnePushed = 0;
+int prevEncPushed = 0;
 bool armed = false;
 bool printOnce = true;
 int batteryCount = 0;
@@ -285,14 +286,14 @@ void pidCalibrationMode() {
         case 5: pvals.Dy -= dInc; break;
       }
     }
-    if(digitalRead(BUTTON1_PIN) == 0 && prevOnePushed !=0){
+    if(digitalRead(ENC1_BUTTON_PIN) == 0 && prevOnePushed !=0){
       switch(pidCalMode){
-        case 0: pvals.Pr += pInc;
-        case 1: pvals.Ir += iInc;
-        case 2: pvals.Dr += dInc;
-        case 3: pvals.Py += pInc;
-        case 4: pvals.Iy += iInc;
-        case 5: pvals.Dy += dInc;
+        case 0: pvals.Pr = 0;
+        case 1: pvals.Ir = 0;
+        case 2: pvals.Dr = 0;
+        case 3: pvals.Py = 0;
+        case 4: pvals.Iy = 0;
+        case 5: pvals.Dy = 0;
       }
         // pvals.Pr = 0;
         // pvals.Ir = 0;
@@ -301,7 +302,19 @@ void pidCalibrationMode() {
         // pvals.Iy = 0;
         // pvals.Dy = 0;
     }
+    if(digitalRead(BUTTON1_PIN) == 0 && prevEncPushed !=0){
+      switch(pidCalMode){
+        case 0: pvals.Pr += pInc;
+        case 1: pvals.Ir += iInc;
+        case 2: pvals.Dr += dInc;
+        case 3: pvals.Py += pInc;
+        case 4: pvals.Iy += iInc;
+        case 5: pvals.Dy += dInc;
+      }
+    }
     prevOnePushed = digitalRead(BUTTON1_PIN);
+    prevEncPushed = digitalRead(BUTTON1_PIN);
+
 
     if(digitalRead(BUTTON_LEFT_PIN) == 0){
       pidCalMode = 0 + yawMode;
