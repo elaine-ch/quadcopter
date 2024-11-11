@@ -225,11 +225,11 @@ void loop() {
     yawPrevError = (angle_yaw - yaw);
     float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
-    //FRONT NEGATIVE PITCH CORRECTION, BACK POSITIVE PITCH CORRECTION
-    fRValue = throttle - pitchPIDCorrection - yawPIDCorrection;
-    fLValue = throttle - pitchPIDCorrection + yawPIDCorrection;
-    bRValue = throttle + pitchPIDCorrection + yawPIDCorrection;
-    bLValue = throttle + pitchPIDCorrection - yawPIDCorrection;
+    //FRONT POSITIVE PITCH CORRECTION, BACK NEGATIVE PITCH CORRECTION
+    fRValue = throttle + pitchPIDCorrection - yawPIDCorrection;
+    fLValue = throttle + pitchPIDCorrection + yawPIDCorrection;
+    bRValue = throttle - pitchPIDCorrection + yawPIDCorrection;
+    bLValue = throttle - pitchPIDCorrection - yawPIDCorrection;
 
     if(throttle < deadzone){
       fRValue = 0;
