@@ -196,12 +196,16 @@ void loop() {
   if (ahrs->getQuadOrientation(&orientation))
   {
     current = millis();
-    dt = (current-lastTime) / 1000.0;
+    //dt = (current-lastTime) / 1000.0;
+    dt = (current-lastTime);
     lastTime = current;
 
+    Serial.print(orientation.pitch);
+    Serial.print(F(" "));
+
     //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
-    cf_angle_pitch = (gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate);
-    cf_angle_roll = (gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate);
+    cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0;
+    cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
     angle_yaw = orientation.yaw_rate;
 
     //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them

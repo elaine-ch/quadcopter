@@ -9,6 +9,7 @@ int pidCalMode = 0; //0 for Pr 1 for Ir 2 for Dr 3 for Py 4 for Iy 5 for Dy
 int prevDownPushed = 0;
 int prevOnePushed = 0;
 int prevEncPushed = 0;
+int prevCenterPushed = 0;
 bool armed = false;
 bool printOnce = true;
 int batteryCount = 0;
@@ -230,6 +231,7 @@ void loop() {
   else if(digitalRead(BUTTON_CENTER_PIN) == 0) {
     pidCalibrate = true;
     lastKnobPos = knob1.getCurrentPos();
+    prevCenterPushed = 1;
     pidCalibrationMode();
   }
 
@@ -363,13 +365,15 @@ void pidCalibrationMode() {
           break;
         }
       }
-    if(digitalRead(BUTTON2_PIN) == 0){
+    if(digitalRead(BUTTON_CENTER_PIN) == 0 && prevCenterPushed){
       wholeEeprom.gimbalVals = cValues;
       wholeEeprom.pidVals = pvals;
       EEPROM.put(0, wholeEeprom);
       pidCalibrate = false;
       calibrate = false;
+      
     }
+    prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
   }
 
   lcd.clear();
