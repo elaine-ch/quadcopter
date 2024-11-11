@@ -291,7 +291,7 @@ void pidCalibrationMode() {
         case 5: pvals.Dy -= dInc; break;
       }
     }
-    if(digitalRead(ENC1_BUTTON_PIN) == 0 && prevOnePushed !=0){
+    if(digitalRead(ENC1_BUTTON_PIN) == 0 && prevEncPushed !=0){
       switch(pidCalMode){
         case 0: pvals.Pr = 0; break;
         case 1: pvals.Ir = 0; break;
@@ -301,7 +301,7 @@ void pidCalibrationMode() {
         case 5: pvals.Dy = 0; break;
       }
     }
-    if(digitalRead(BUTTON1_PIN) == 0 && prevEncPushed !=0){
+    if(digitalRead(BUTTON1_PIN) == 0 && prevOnePushed !=0){
       switch(pidCalMode){
         case 0: pvals.Pr += pInc; break;
         case 1: pvals.Ir += iInc; break;
