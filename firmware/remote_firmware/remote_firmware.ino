@@ -300,12 +300,6 @@ void pidCalibrationMode() {
         case 4: pvals.Iy = 0; break;
         case 5: pvals.Dy = 0; break;
       }
-        // pvals.Pr = 0;
-        // pvals.Ir = 0;
-        // pvals.Dr = 0;
-        // pvals.Py = 0;
-        // pvals.Iy = 0;
-        // pvals.Dy = 0;
     }
     if(digitalRead(BUTTON1_PIN) == 0 && prevEncPushed !=0){
       switch(pidCalMode){
@@ -317,11 +311,7 @@ void pidCalibrationMode() {
         case 5: pvals.Dy += dInc; break;
       }
     }
-    prevOnePushed = digitalRead(BUTTON1_PIN);
-    prevEncPushed = digitalRead(BUTTON1_PIN);
-
-
-    if(digitalRead(BUTTON_LEFT_PIN) == 0){
+    if(digitalRead(BUTTON_LEFT_PIN) == 0 && prevLeftPushed){
       switch(pidCalMode){
         case 0: pvals.Pr -= pInc; break;
         case 1: pvals.Ir -= iInc; break;
@@ -331,7 +321,7 @@ void pidCalibrationMode() {
         case 5: pvals.Dy -= dInc; break;
       }
     }
-    else if(digitalRead(BUTTON_UP_PIN) == 0){
+    else if(digitalRead(BUTTON_UP_PIN) == 0 && prevUpPushed){
       switch(pidCalMode){
         case 0: pvals.Pr += (10 * pInc); break;
         case 1: pvals.Ir += (10 * iInc); break;
@@ -358,7 +348,13 @@ void pidCalibrationMode() {
         pidCalMode = 0;
       }
     }
+    
+    prevOnePushed = digitalRead(BUTTON1_PIN);
+    prevEncPushed = digitalRead(ENC1_BUTTON_PIN);
     prevDownPushed = digitalRead(BUTTON_DOWN_PIN);
+    prevUpPushed = digitalRead(BUTTON_UP_PIN);
+    prevLeftPushed = digitalRead(BUTTON_LEFT_PIN);
+    prevRightPushed = digitalRead(BUTTON_RIGHT_PIN);
     switch(pidCalMode){
         case 0: {
           lcd.print("Pr: ");
