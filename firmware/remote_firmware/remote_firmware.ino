@@ -348,6 +348,14 @@ void pidCalibrationMode() {
         pidCalMode = 0;
       }
     }
+
+    if(digitalRead(BUTTON_CENTER_PIN) == 0 && prevCenterPushed != 0){
+      wholeEeprom.gimbalVals = cValues;
+      wholeEeprom.pidVals = pvals;
+      EEPROM.put(0, wholeEeprom);
+      pidCalibrate = false;
+      calibrate = false;
+    }
     
     prevOnePushed = digitalRead(BUTTON1_PIN);
     prevEncPushed = digitalRead(ENC1_BUTTON_PIN);
@@ -355,6 +363,7 @@ void pidCalibrationMode() {
     prevUpPushed = digitalRead(BUTTON_UP_PIN);
     prevLeftPushed = digitalRead(BUTTON_LEFT_PIN);
     prevRightPushed = digitalRead(BUTTON_RIGHT_PIN);
+    prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
     switch(pidCalMode){
         case 0: {
           lcd.print("Pr: ");
@@ -387,16 +396,6 @@ void pidCalibrationMode() {
           break;
         }
       }
-    if(digitalRead(BUTTON_CENTER_PIN) == 0 && prevCenterPushed){
-      wholeEeprom.gimbalVals = cValues;
-      wholeEeprom.pidVals = pvals;
-      EEPROM.put(0, wholeEeprom);
-      pidCalibrate = false;
-      calibrate = false;
-      prevCenterPushed = 0; 
-      return;
-    }
-    prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
   }
 
   lcd.clear();
