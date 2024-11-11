@@ -250,6 +250,11 @@ void loop() {
 
     if (armed) {
     digitalWrite(LED_ARMED, HIGH);
+    bRValue = constrain(bRValue, 0, 255);
+    bLValue = constrain(bLValue, 0, 255);
+    fRValue = constrain(fRValue, 0, 255);
+    fLValue = constrain(fLValue, 0, 255);
+    
     analogWrite(propBackRightPin, bRValue);
     // Serial.print(bRValue);
     // Serial.print(" ");
