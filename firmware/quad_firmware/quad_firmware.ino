@@ -204,7 +204,7 @@ void loop() {
     Serial.print(F(" "));
 
     //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
-    cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0;
+    cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0;
     cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
     angle_yaw = orientation.yaw_rate;
 
