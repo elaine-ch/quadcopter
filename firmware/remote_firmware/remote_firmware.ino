@@ -393,7 +393,8 @@ void pidCalibrationMode() {
       EEPROM.put(0, wholeEeprom);
       pidCalibrate = false;
       calibrate = false;
-      prevCenterPushed = digitalRead(BUTTON_CENTER_PIN); 
+      prevCenterPushed = 0; 
+      return;
     }
     prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
   }
