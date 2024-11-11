@@ -231,10 +231,10 @@ void loop() {
     calibrate = true;
     calibrationMode();
   }
-  else if(digitalRead(BUTTON_CENTER_PIN) == 0 && prevCenterPushed != 0) {
+  else if(digitalRead(BUTTON_CENTER_PIN) == 0) {
     pidCalibrate = true;
     lastKnobPos = knob1.getCurrentPos();
-    prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
+    //prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
     pidCalibrationMode();
   }
 
@@ -321,8 +321,24 @@ void pidCalibrationMode() {
         case 5: pvals.Dy -= dInc; break;
       }
     }
-    else if(digitalRead(BUTTON_UP_PIN) == 0 && prevUpPushed){
+    // else if(digitalRead(BUTTON_UP_PIN) == 0 && prevUpPushed){
+    //   switch(pidCalMode){
+    //     case 0: pvals.Pr += (10 * pInc); break;
+    //     case 1: pvals.Ir += (10 * iInc); break;
+    //     case 2: pvals.Dr += (10 * dInc); break;
+    //     case 3: pvals.Py += (10 * pInc); break;
+    //     case 4: pvals.Iy += (10 * iInc); break;
+    //     case 5: pvals.Dy += (10 * dInc); break;
+    //   }
+    // }
+    else if(digitalRead(BUTTON_RIGHT_PIN) == 0 && prevRightPushed != 0){
       switch(pidCalMode){
+        // case 0: pvals.Pr -= (10 * pInc); break;
+        // case 1: pvals.Ir -= (10 * iInc); break;
+        // case 2: pvals.Dr -= (10 * dInc); break;
+        // case 3: pvals.Py -= (10 * pInc); break;
+        // case 4: pvals.Iy -= (10 * iInc); break;
+        // case 5: pvals.Dy -= (10 * dInc); break;
         case 0: pvals.Pr += (10 * pInc); break;
         case 1: pvals.Ir += (10 * iInc); break;
         case 2: pvals.Dr += (10 * dInc); break;
@@ -331,30 +347,12 @@ void pidCalibrationMode() {
         case 5: pvals.Dy += (10 * dInc); break;
       }
     }
-    else if(digitalRead(BUTTON_RIGHT_PIN) == 0 && prevRightPushed != 0){
-      switch(pidCalMode){
-        case 0: pvals.Pr -= (10 * pInc); break;
-        case 1: pvals.Ir -= (10 * iInc); break;
-        case 2: pvals.Dr -= (10 * dInc); break;
-        case 3: pvals.Py -= (10 * pInc); break;
-        case 4: pvals.Iy -= (10 * iInc); break;
-        case 5: pvals.Dy -= (10 * dInc); break;
-      }
-    }
 
     else if(digitalRead(BUTTON_DOWN_PIN) == 0 && prevDownPushed !=0){
       pidCalMode ++;
       if(pidCalMode > 5){
         pidCalMode = 0;
       }
-    }
-
-    if(digitalRead(BUTTON_CENTER_PIN) == 0 && prevCenterPushed != 0){
-      wholeEeprom.gimbalVals = cValues;
-      wholeEeprom.pidVals = pvals;
-      EEPROM.put(0, wholeEeprom);
-      pidCalibrate = false;
-      calibrate = false;
     }
     
     prevOnePushed = digitalRead(BUTTON1_PIN);
@@ -396,6 +394,14 @@ void pidCalibrationMode() {
           break;
         }
       }
+
+    if(digitalRead(BUTTON_UP_PIN) == 0){
+      wholeEeprom.gimbalVals = cValues;
+      wholeEeprom.pidVals = pvals;
+      EEPROM.put(0, wholeEeprom);
+      pidCalibrate = false;
+      calibrate = false;
+    }
   }
 
   lcd.clear();
