@@ -7,6 +7,9 @@ bool pidCalibrate = false;
 int yawMode = 0;
 int pidCalMode = 0; //0 for Pr 1 for Ir 2 for Dr 3 for Py 4 for Iy 5 for Dy
 int prevDownPushed = 0;
+int prevLeftPushed = 0;
+int prevRightPushed = 0;
+int prevUpPushed = 0;
 int prevOnePushed = 0;
 int prevEncPushed = 0;
 int prevCenterPushed = 0;
@@ -269,12 +272,12 @@ void pidCalibrationMode() {
     if(knob1.getCurrentPos() > lastKnobPos){
       lastKnobPos = knob1.getCurrentPos();
       switch(pidCalMode){
-        case 0: pvals.Pr += pInc;
-        case 1: pvals.Ir += iInc;
-        case 2: pvals.Dr += dInc;
-        case 3: pvals.Py += pInc;
-        case 4: pvals.Iy += iInc;
-        case 5: pvals.Dy += dInc;
+        case 0: pvals.Pr += pInc; break;
+        case 1: pvals.Ir += iInc; break;
+        case 2: pvals.Dr += dInc; break;
+        case 3: pvals.Py += pInc; break;
+        case 4: pvals.Iy += iInc; break;
+        case 5: pvals.Dy += dInc; break;
       }
     }
     else if(knob1.getCurrentPos() < lastKnobPos){
@@ -290,49 +293,68 @@ void pidCalibrationMode() {
     }
     if(digitalRead(ENC1_BUTTON_PIN) == 0 && prevOnePushed !=0){
       switch(pidCalMode){
-        case 0: pvals.Pr = 0;
-        case 1: pvals.Ir = 0;
-        case 2: pvals.Dr = 0;
-        case 3: pvals.Py = 0;
-        case 4: pvals.Iy = 0;
-        case 5: pvals.Dy = 0;
+        case 0: pvals.Pr = 0; break;
+        case 1: pvals.Ir = 0; break;
+        case 2: pvals.Dr = 0; break;
+        case 3: pvals.Py = 0; break;
+        case 4: pvals.Iy = 0; break;
+        case 5: pvals.Dy = 0; break;
       }
-        // pvals.Pr = 0;
-        // pvals.Ir = 0;
-        // pvals.Dr = 0;
-        // pvals.Py = 0;
-        // pvals.Iy = 0;
-        // pvals.Dy = 0;
     }
     if(digitalRead(BUTTON1_PIN) == 0 && prevEncPushed !=0){
       switch(pidCalMode){
-        case 0: pvals.Pr += pInc;
-        case 1: pvals.Ir += iInc;
-        case 2: pvals.Dr += dInc;
-        case 3: pvals.Py += pInc;
-        case 4: pvals.Iy += iInc;
-        case 5: pvals.Dy += dInc;
+        case 0: pvals.Pr += pInc; break;
+        case 1: pvals.Ir += iInc; break;
+        case 2: pvals.Dr += dInc; break;
+        case 3: pvals.Py += pInc; break;
+        case 4: pvals.Iy += iInc; break;
+        case 5: pvals.Dy += dInc; break;
       }
     }
-    prevOnePushed = digitalRead(BUTTON1_PIN);
-    prevEncPushed = digitalRead(BUTTON1_PIN);
-
-
-    if(digitalRead(BUTTON_LEFT_PIN) == 0){
-      pidCalMode = 0 + yawMode;
+    if(digitalRead(BUTTON_LEFT_PIN) == 0 && prevLeftPushed){
+      switch(pidCalMode){
+        case 0: pvals.Pr -= pInc; break;
+        case 1: pvals.Ir -= iInc; break;
+        case 2: pvals.Dr -= dInc; break;
+        case 3: pvals.Py -= pInc; break;
+        case 4: pvals.Iy -= iInc; break;
+        case 5: pvals.Dy -= dInc; break;
+      }
     }
-    else if(digitalRead(BUTTON_UP_PIN) == 0){
-      pidCalMode = 1 + yawMode;
+    else if(digitalRead(BUTTON_UP_PIN) == 0 && prevUpPushed){
+      switch(pidCalMode){
+        case 0: pvals.Pr += (10 * pInc); break;
+        case 1: pvals.Ir += (10 * iInc); break;
+        case 2: pvals.Dr += (10 * dInc); break;
+        case 3: pvals.Py += (10 * pInc); break;
+        case 4: pvals.Iy += (10 * iInc); break;
+        case 5: pvals.Dy += (10 * dInc); break;
+      }
     }
-    else if(digitalRead(BUTTON_RIGHT_PIN) == 0){
-      pidCalMode = 2 + yawMode;
+    else if(digitalRead(BUTTON_RIGHT_PIN) == 0 && prevRightPushed != 0){
+      switch(pidCalMode){
+        case 0: pvals.Pr -= (10 * pInc); break;
+        case 1: pvals.Ir -= (10 * iInc); break;
+        case 2: pvals.Dr -= (10 * dInc); break;
+        case 3: pvals.Py -= (10 * pInc); break;
+        case 4: pvals.Iy -= (10 * iInc); break;
+        case 5: pvals.Dy -= (10 * dInc); break;
+      }
     }
 
     else if(digitalRead(BUTTON_DOWN_PIN) == 0 && prevDownPushed !=0){
-      if(yawMode == 0) { yawMode = 3; }
-      else { yawMode = 0; }
+      pidCalMode ++;
+      if(pidCalMode > 5){
+        pidCalMode = 0;
+      }
     }
+    
+    prevOnePushed = digitalRead(BUTTON1_PIN);
+    prevEncPushed = digitalRead(ENC1_BUTTON_PIN);
     prevDownPushed = digitalRead(BUTTON_DOWN_PIN);
+    prevUpPushed = digitalRead(BUTTON_UP_PIN);
+    prevLeftPushed = digitalRead(BUTTON_LEFT_PIN);
+    prevRightPushed = digitalRead(BUTTON_RIGHT_PIN);
     switch(pidCalMode){
         case 0: {
           lcd.print("Pr: ");
