@@ -231,10 +231,10 @@ void loop() {
     calibrate = true;
     calibrationMode();
   }
-  else if(digitalRead(BUTTON_CENTER_PIN) == 0) {
+  else if(digitalRead(BUTTON_CENTER_PIN) == 0 && prevCenterPushed != 0) {
     pidCalibrate = true;
     lastKnobPos = knob1.getCurrentPos();
-    prevCenterPushed = 1;
+    prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
     pidCalibrationMode();
   }
 
@@ -393,7 +393,7 @@ void pidCalibrationMode() {
       EEPROM.put(0, wholeEeprom);
       pidCalibrate = false;
       calibrate = false;
-      
+      prevCenterPushed = digitalRead(BUTTON_CENTER_PIN); 
     }
     prevCenterPushed = digitalRead(BUTTON_CENTER_PIN);
   }
