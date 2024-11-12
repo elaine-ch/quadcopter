@@ -221,7 +221,7 @@ void loop() {
     // gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
     //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
     float pTerm = pvals.Pr * (cf_angle_pitch - pitch);
-    iTermPitch = iTermPitch + pvals.Ir * (cf_angle_pitch - pitch);
+    iTermPitch = iTermPitch * 0.9 + pvals.Ir * (cf_angle_pitch - pitch);
     float dTerm = pvals.Dr * ((cf_angle_pitch - pitch) - pitchPrevError);
     pitchPrevError = (cf_angle_pitch - pitch);
     if((cf_angle_pitch - pitch) < iTolerance && (cf_angle_pitch - pitch) > (0.0-iTolerance)){
@@ -239,7 +239,7 @@ void loop() {
     }
     float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
-    pitchPIDCorrection = 0;
+    // pitchPIDCorrection = 0;
     //FRONT POSITIVE PITCH CORRECTION, BACK NEGATIVE PITCH CORRECTION
     //YAW is POSITIVE FR and BL
     fRValue = throttle + pitchPIDCorrection + yawPIDCorrection;
