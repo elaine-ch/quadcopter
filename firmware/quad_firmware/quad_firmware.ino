@@ -78,7 +78,7 @@ Adafruit_Sensor *_gyro = NULL;
 Adafruit_Sensor *_mag = NULL;  // No Yaw orientation | Always NULL
 
 void setup() {
-  const int SERIAL_BAUD = 9600 ;        // Baud rate for serial port 
+  const int SERIAL_BAUD = 19200 ;        // Baud rate for serial port 
 	Serial.begin(SERIAL_BAUD);           // Start up serial
 	delay(100);
   // quad_remote_setup();  don't you dare add this line back in it will break everything
@@ -208,6 +208,8 @@ void loop() {
     cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0;
     cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
     angle_yaw = orientation.yaw_rate;
+    Serial.print(orientation.yaw_rate);
+    Serial.println(F(" "));
 
     //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
     // gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
@@ -227,16 +229,18 @@ void loop() {
     iTermYaw = iTermYaw + pvals.Iy * (angle_yaw - yaw);
     dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError);
     yawPrevError = (angle_yaw - yaw);
-    // if((cf_angle_pitch - pitch) < iTolerance && (cf_angle_pitch - pitch) > (0.0-iTolerance)){
-    //   iTolerance = 0;
-    // }
+    if((angle_yaw - yaw) < iTolerance && (angle_yaw - yaw) > (0.0-iTolerance)){
+      iTermYaw = 0;
+    }
     float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
+    pitchPIDCorrection = 0;
     //FRONT POSITIVE PITCH CORRECTION, BACK NEGATIVE PITCH CORRECTION
-    fRValue = throttle + pitchPIDCorrection - yawPIDCorrection;
-    fLValue = throttle + pitchPIDCorrection + yawPIDCorrection;
-    bRValue = throttle - pitchPIDCorrection + yawPIDCorrection;
-    bLValue = throttle - pitchPIDCorrection - yawPIDCorrection;
+    //YAW is POSITIVE FR and BL
+    fRValue = throttle + pitchPIDCorrection + yawPIDCorrection;
+    fLValue = throttle + pitchPIDCorrection - yawPIDCorrection;
+    bRValue = throttle - pitchPIDCorrection - yawPIDCorrection;
+    bLValue = throttle - pitchPIDCorrection + yawPIDCorrection;
 
     if(throttle < deadzone){
       fRValue = 0;
@@ -273,10 +277,6 @@ void loop() {
     // Serial.print(" ");
     analogWrite(propBackLeftPin, bLValue);
     // Serial.println(bLValue);
-    Serial.println(bRValue);
-    Serial.println(fRValue);
-    Serial.println(fLValue);
-    Serial.println(bLValue);
   } else {
     digitalWrite(LED_ARMED, LOW);
     analogWrite(propBackRightPin, 0);

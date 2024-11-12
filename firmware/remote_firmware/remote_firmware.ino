@@ -19,8 +19,9 @@ int batteryCount = 0;
 int quadBattery = 0;
 int batteryLevel = 0;
 
+int packetSendTimer = 0;
 float pInc = 0.1;
-float iInc = 0.1;
+float iInc = 0.01;
 float dInc = 0.1;
 
 extern RotaryEncoder knob1;
@@ -51,7 +52,7 @@ PIDVals pvals;
 WholeEeprom wholeEeprom;
 
 void setup() {
-  const int SERIAL_BAUD = 9600 ;        // Baud rate for serial port 
+  const int SERIAL_BAUD = 19200;        // Baud rate for serial port 
 	Serial.begin(SERIAL_BAUD);           // Start up serial
 	delay(100);
 	quad_remote_setup();
@@ -411,9 +412,10 @@ void pidCalibrationMode() {
     int roll = constrain(rMap, 0, 255);
     int pMap = map(analogRead(PIN_PITCH), cValues.pitchMin, cValues.pitchMax, 0, 255);
     int pitch = constrain(pMap, 0, 255);
-    
+
      //transmitting to quad
-    if(millis() % 100 == 0) {
+    if(packetSendTimer == 1) {
+      packetSendTimer = 0;
       Packet packet;
       packet.throttle_stick = throttle;
       packet.yaw_stick = yaw;
@@ -430,6 +432,7 @@ void pidCalibrationMode() {
       packet.Dy = pvals.Dy;
       rfWrite((uint8_t*) (&packet), sizeof(packet));
     }
+    packetSendTimer ++;
   }
 
   lcd.clear();
