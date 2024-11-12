@@ -4,14 +4,16 @@
 #include <Arduino.h>
 
 struct Packet {
-    int propFrontLeft;
-    int propFrontRight;
-    int propBackLeft;
-    int propBackRight;
+    int throttle_stick;
+    int yaw_stick;
+    int pitch_stick;
+    int roll_stick;
     //int LED[8];
     int magicNumber;
     int battery;
     bool armed;
+    float Pr, Ir, Dr, Py, Iy, Dy;
+    float yawTrim, pitchTrim;
 };
 
 #endif

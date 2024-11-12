@@ -21,6 +21,9 @@ int bLValue = 0;
 int fLValue = 0;
 int fRValue = 0;
 
+int pitchTrim = 0;
+int yawTrim = 0;
+
 int throttle_stick = 0;
 int yaw_stick = 0;
 int pitch_stick = 0;
@@ -169,6 +172,8 @@ void loop() {
       pvals.Iy = packet->Iy;
       pvals.Dy = packet->Dy;
       armed = packet->armed;
+      pitchTrim = packet->pitchTrim;
+      yawTrim = packet->yawTrim;
       timeSinceLastPacket = millis();
     }
   }
@@ -205,9 +210,9 @@ void loop() {
     // Serial.print(F(" "));
 
     //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
-    cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0;
+    cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0 + pitchTrim;
     cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
-    angle_yaw = orientation.yaw_rate;
+    angle_yaw = orientation.yaw_rate + yawTrim;
     Serial.print(orientation.yaw_rate);
     Serial.println(F(" "));
 
@@ -226,7 +231,7 @@ void loop() {
   
   
     pTerm = pvals.Py * (angle_yaw - yaw);
-    iTermYaw = iTermYaw + pvals.Iy * (angle_yaw - yaw);
+    iTermYaw = iTermYaw *0.75 + pvals.Iy * (angle_yaw - yaw);
     dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError);
     yawPrevError = (angle_yaw - yaw);
     if((angle_yaw - yaw) < iTolerance && (angle_yaw - yaw) > (0.0-iTolerance)){

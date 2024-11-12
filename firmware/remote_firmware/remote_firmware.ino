@@ -19,6 +19,9 @@ int batteryCount = 0;
 int quadBattery = 0;
 int batteryLevel = 0;
 
+float yawTrim = 0;
+float pitchTrim = 0;
+
 int packetSendTimer = 0;
 float pInc = 0.1;
 float iInc = 0.01;
@@ -78,6 +81,8 @@ void setup() {
   packet.magicNumber = 1829;
   packet.battery = 0;
   packet.armed = armed;
+  packet.yawTrim = yawTrim;
+  packet.pitchTrim = pitchTrim;
   rfWrite((uint8_t*) (&packet), sizeof(packet));
 }
 
@@ -143,6 +148,8 @@ void loop() {
     packet.Py = pvals.Py;
     packet.Iy = pvals.Iy;
     packet.Dy = pvals.Dy;
+    packet.yawTrim = yawTrim;
+    packet.pitchTrim = pitchTrim;
     rfWrite((uint8_t*) (&packet), sizeof(packet));
   }
 
@@ -174,6 +181,37 @@ void loop() {
 
     lcd.setFastBacklight(255, 255, 255);
   }
+
+  //trim
+  //d-pad up down for pitch, left right for yaw
+  if(digitalRead(BUTTON_RIGHT_PIN) == 0 && prevRightPushed != 0){
+      yawTrim++;
+      Serial.println("Yaw up pushed");
+      lcd.setCursor(13, 0);
+      lcd.print(yawTrim);
+  }
+  if(digitalRead(BUTTON_LEFT_PIN) == 0 && prevLeftPushed != 0){
+      yawTrim--;
+      Serial.println("Yaw down pushed");
+      lcd.setCursor(13, 0);
+      lcd.print(yawTrim);
+  }
+  if(digitalRead(BUTTON_UP_PIN) == 0 && prevUpPushed != 0){
+      pitchTrim++;
+      Serial.println("Pitch up pushed");
+      lcd.setCursor(13, 0);
+      lcd.print(pitchTrim);
+  }
+  if(digitalRead(BUTTON_DOWN_PIN) == 0 && prevDownPushed != 0){
+      pitchTrim--;
+      Serial.println("Pitch down pushed");
+      lcd.setCursor(13, 0);
+      lcd.print(pitchTrim);
+  }
+  prevDownPushed = digitalRead(BUTTON_DOWN_PIN);
+  prevUpPushed = digitalRead(BUTTON_UP_PIN);
+  prevLeftPushed = digitalRead(BUTTON_LEFT_PIN);
+  prevRightPushed = digitalRead(BUTTON_RIGHT_PIN);
 
   //receive message from quadcopter
   bool prevArmed = armed;
@@ -430,6 +468,8 @@ void pidCalibrationMode() {
       packet.Py = pvals.Py;
       packet.Iy = pvals.Iy;
       packet.Dy = pvals.Dy;
+      packet.yawTrim = yawTrim;
+      packet.pitchTrim = pitchTrim;
       rfWrite((uint8_t*) (&packet), sizeof(packet));
     }
     packetSendTimer ++;
