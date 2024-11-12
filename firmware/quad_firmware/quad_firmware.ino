@@ -210,7 +210,7 @@ void loop() {
     dt = (current-lastTime) / 1000.0;
     lastTime = current;
 
-    // Serial.print(orientation.pitch);
+    // Serial.print(orientation.pitch_rate * RAD_TO_DEG);
     // Serial.print(F(" "));
 
     //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
@@ -218,7 +218,14 @@ void loop() {
     //cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
     cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch_rate * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch)) + pitchTrim / 10.0;
     cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll_rate * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll));
-    angle_yaw = orientation.yaw_rate + yawTrim;
+    angle_yaw = orientation.yaw_rate * RAD_TO_DEG + yawTrim;
+
+    // Serial.print(yaw_min_gimbal);
+    // Serial.print(F(" "));
+    // Serial.print(yaw_max_gimbal);
+    // Serial.print(F(" "));
+    // Serial.print(angle_yaw);
+    // Serial.println(F(" "));
 
     //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
     // gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
@@ -238,7 +245,7 @@ void loop() {
     prevPitchError = pvals.Pr * (cf_angle_pitch - pitch);
   
     pTerm = pvals.Py * (angle_yaw - yaw);
-    iTermYaw = iTermYaw *0.75 + pvals.Iy * (angle_yaw - yaw) * dt;
+    iTermYaw = iTermYaw + pvals.Iy * (angle_yaw - yaw) * dt;
     dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError) / dt;
     yawPrevError = (angle_yaw - yaw);
     if((angle_yaw - yaw) < iTolerance && (angle_yaw - yaw) > (0.0-iTolerance)){
@@ -246,12 +253,22 @@ void loop() {
     }
     float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
-    pitchPIDCorrection = 0;
+    // pTerm = pvals.Py * (angle_yaw - yaw);
+    // iTermYaw = iTermYaw *0.75 + pvals.Iy * (angle_yaw - yaw);
+    // dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError);
+    // yawPrevError = (angle_yaw - yaw);
+    // if((angle_yaw - yaw) < iTolerance && (angle_yaw - yaw) > (0.0-iTolerance)){
+    //   iTermYaw = 0;
+    // }
+    // float yawPIDCorrection = pTerm + iTermYaw + dTerm;
+
+    //pitchPIDCorrection = 0;
     //GOOD PITCH p=2.5 i=0.3 d=1.5
-    // yawPIDCorrection = 0;
+    yawPIDCorrection = 0;
     //FRONT POSITIVE PITCH CORRECTION, BACK NEGATIVE PITCH CORRECTION
     //YAW is POSITIVE FR and BL
-    //GOOD YAW is p=7.5 i=0.1 d=0 and need trim of 1 to 3
+    //WEIRD RADIANS YAW is p=7.5 i=0.58 d=0 and need trim of 1 to 3
+    //GOOD YAW IS p=4.6, i=1.15, d=0 and trim of -0.5
     fRValue = throttle + pitchPIDCorrection + yawPIDCorrection;
     fLValue = throttle + pitchPIDCorrection - yawPIDCorrection;
     bRValue = throttle - pitchPIDCorrection - yawPIDCorrection;
@@ -266,12 +283,8 @@ void loop() {
       iTermYaw = 0;
     }
 
-    // Serial.print(cf_angle_pitch);
-    // Serial.print(F(" "));
-    // Serial.print(pitch);
-    // Serial.print(cf_angle_roll);
-    // Serial.println(F(" "));
-
+    //Serial.print(cf_angle_pitch);
+    //Serial.println(F(" "));
   }
 
     if (armed) {
@@ -299,6 +312,11 @@ void loop() {
     analogWrite(propFrontLeftPin, 0);
     analogWrite(propBackLeftPin, 0);
   }
+
+  // Packet packet;
+  //   packet.magicNumber = 1829;
+  //   packet.yawValue = angle_yaw;
+  //   rfWrite((uint8_t*) (&packet), sizeof(packet));
 }
 
 

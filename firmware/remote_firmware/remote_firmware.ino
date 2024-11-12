@@ -185,13 +185,13 @@ void loop() {
   //trim
   //d-pad up down for pitch, left right for yaw
   if(digitalRead(BUTTON_RIGHT_PIN) == 0 && prevRightPushed != 0){
-      yawTrim++;
+      yawTrim+=0.25;
       Serial.println("Yaw up pushed");
       lcd.setCursor(13, 0);
       lcd.print(yawTrim);
   }
   if(digitalRead(BUTTON_LEFT_PIN) == 0 && prevLeftPushed != 0){
-      yawTrim--;
+      yawTrim-=0.25;
       Serial.println("Yaw down pushed");
       lcd.setCursor(13, 0);
       lcd.print(yawTrim);
@@ -306,6 +306,17 @@ void pidCalibrationMode() {
   // lcd.setFastBacklight(0, 255, 150);
   int toAdd = 0;
   while(pidCalibrate){
+    // if(rfAvailable()) {
+    // rfRead(buf, sizeof(Packet));
+    // Packet* packet = (Packet*) buf;
+    // int magicNumber = packet->magicNumber;
+    // float yawValue = packet->yawValue;
+    //   if (yawValue && magicNumber == 1829) {
+    //     lcd.setCursor(1, 13);
+    //     lcd.print(yawValue);
+    //   }
+    // }
+
     lcd.setCursor(0, 1);
     if(knob1.getCurrentPos() > lastKnobPos){
       lastKnobPos = knob1.getCurrentPos();
