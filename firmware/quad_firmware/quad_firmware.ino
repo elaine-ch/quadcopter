@@ -34,19 +34,23 @@ int yaw = 0;
 int pitch = 0;
 int roll = 0;
 
+float prevPitchError = 0;
 float iTermPitch = 0;
 float iTermYaw = 0;
-float iTolerance = 5;
+float iTolerance = 3;
 
 int deadzone = 3;
 
-int min_gimbal = -128;
-int max_gimbal = 128;
+int min_gimbal = -10;
+int max_gimbal = 10;
+
+int yaw_min_gimbal = -180;
+int yaw_max_gimbal = 180;
 
 int batteryCount = 0;
 
 unsigned long current;
-unsigned long dt;
+float dt;
 unsigned long lastTime;
 
 double gain = 0.95;
@@ -186,7 +190,7 @@ void loop() {
 
   //calculate the wanted thrust, yaw rate, pitch and roll values.
   throttle = throttle_stick;
-  yaw = map(yaw_stick, 0, 255, min_gimbal, max_gimbal); //TODO split yaw away from pitch and roll
+  yaw = map(yaw_stick, 0, 255, yaw_min_gimbal, yaw_max_gimbal); //TODO split yaw away from pitch and roll
   pitch = map(pitch_stick, 0, 255, min_gimbal, max_gimbal);
   roll = map(roll_stick, 0, 255, min_gimbal, max_gimbal);
   if(yaw > -deadzone && yaw < deadzone){ yaw = 0; }
@@ -203,45 +207,51 @@ void loop() {
   {
     current = millis();
     //dt = (current-lastTime) / 1000.0;
-    dt = (current-lastTime);
+    dt = (current-lastTime) / 1000.0;
     lastTime = current;
 
     // Serial.print(orientation.pitch);
     // Serial.print(F(" "));
 
     //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
-    cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0 + pitchTrim;
-    cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
+    //cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0 + pitchTrim;
+    //cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
+    cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch_rate * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch)) + pitchTrim / 10.0;
+    cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll_rate * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll));
     angle_yaw = orientation.yaw_rate + yawTrim;
-    Serial.print(orientation.yaw_rate);
-    Serial.println(F(" "));
 
     //just to see if the gyro angles are near accelerometer angles and how the gain draws the complimentary gain between them
     // gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
     // gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
     //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
     float pTerm = pvals.Pr * (cf_angle_pitch - pitch);
-    iTermPitch = iTermPitch * 0.9 + pvals.Ir * (cf_angle_pitch - pitch);
-    float dTerm = pvals.Dr * ((cf_angle_pitch - pitch) - pitchPrevError);
+    iTermPitch = iTermPitch + pvals.Ir * (cf_angle_pitch - pitch) * dt;
+    float dTerm = pvals.Dr * ((cf_angle_pitch - pitch) - pitchPrevError) / dt;
     pitchPrevError = (cf_angle_pitch - pitch);
     if((cf_angle_pitch - pitch) < iTolerance && (cf_angle_pitch - pitch) > (0.0-iTolerance)){
       iTermPitch = 0;
     }
+    // if((prevPitchError > 0 && pTerm < 0) || (prevPitchError < 0 && pTerm > 0)){
+    //   iTermPitch = 0;
+    // }
     float pitchPIDCorrection = pTerm + iTermPitch + dTerm;
-  
+    prevPitchError = pvals.Pr * (cf_angle_pitch - pitch);
   
     pTerm = pvals.Py * (angle_yaw - yaw);
-    iTermYaw = iTermYaw *0.75 + pvals.Iy * (angle_yaw - yaw);
-    dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError);
+    iTermYaw = iTermYaw *0.75 + pvals.Iy * (angle_yaw - yaw) * dt;
+    dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError) / dt;
     yawPrevError = (angle_yaw - yaw);
     if((angle_yaw - yaw) < iTolerance && (angle_yaw - yaw) > (0.0-iTolerance)){
       iTermYaw = 0;
     }
     float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
-    // pitchPIDCorrection = 0;
+    pitchPIDCorrection = 0;
+    //GOOD PITCH p=2.5 i=0.3 d=1.5
+    // yawPIDCorrection = 0;
     //FRONT POSITIVE PITCH CORRECTION, BACK NEGATIVE PITCH CORRECTION
     //YAW is POSITIVE FR and BL
+    //GOOD YAW is p=7.5 i=0.1 d=0 and need trim of 1 to 3
     fRValue = throttle + pitchPIDCorrection + yawPIDCorrection;
     fLValue = throttle + pitchPIDCorrection - yawPIDCorrection;
     bRValue = throttle - pitchPIDCorrection - yawPIDCorrection;
