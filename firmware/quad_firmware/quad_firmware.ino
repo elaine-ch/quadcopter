@@ -33,6 +33,7 @@ int roll = 0;
 
 float iTermPitch = 0;
 float iTermYaw = 0;
+float iTolerance = 5;
 
 int deadzone = 3;
 
@@ -216,6 +217,9 @@ void loop() {
     iTermPitch = iTermPitch + pvals.Ir * (cf_angle_pitch - pitch);
     float dTerm = pvals.Dr * ((cf_angle_pitch - pitch) - pitchPrevError);
     pitchPrevError = (cf_angle_pitch - pitch);
+    if((cf_angle_pitch - pitch) < iTolerance && (cf_angle_pitch - pitch) > (0.0-iTolerance)){
+      iTermPitch = 0;
+    }
     float pitchPIDCorrection = pTerm + iTermPitch + dTerm;
   
   
@@ -223,6 +227,9 @@ void loop() {
     iTermYaw = iTermYaw + pvals.Iy * (angle_yaw - yaw);
     dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError);
     yawPrevError = (angle_yaw - yaw);
+    // if((cf_angle_pitch - pitch) < iTolerance && (cf_angle_pitch - pitch) > (0.0-iTolerance)){
+    //   iTolerance = 0;
+    // }
     float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
     //FRONT POSITIVE PITCH CORRECTION, BACK NEGATIVE PITCH CORRECTION

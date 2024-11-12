@@ -127,7 +127,6 @@ void loop() {
   int pitch = constrain(pMap, 0, 255);
 
   //transmitting to quad
-  //for now, send throttle value
   if(millis() % 100 == 0) {
     Packet packet;
     packet.throttle_stick = throttle;
@@ -401,6 +400,35 @@ void pidCalibrationMode() {
       EEPROM.put(0, wholeEeprom);
       pidCalibrate = false;
       calibrate = false;
+    }
+
+  //declaring additional variables to avoid calling functions inside of constrain
+    int tMap = map(analogRead(PIN_THROTTLE), cValues.throttleMin, cValues.throttleMax, 0, 255);
+    int throttle = constrain(tMap, 0, 255);
+    int yMap = map(analogRead(PIN_YAW), cValues.yawMin, cValues.yawMax, 0, 255);
+    int yaw = constrain(yMap, 0, 255);
+    int rMap = map(analogRead(PIN_ROLL), cValues.rollMin, cValues.rollMax, 0, 255);
+    int roll = constrain(rMap, 0, 255);
+    int pMap = map(analogRead(PIN_PITCH), cValues.pitchMin, cValues.pitchMax, 0, 255);
+    int pitch = constrain(pMap, 0, 255);
+    
+     //transmitting to quad
+    if(millis() % 100 == 0) {
+      Packet packet;
+      packet.throttle_stick = throttle;
+      packet.yaw_stick = yaw;
+      packet.roll_stick = roll;
+      packet.pitch_stick = pitch;
+      packet.magicNumber = 1829;
+      packet.battery = 0;
+      packet.armed = armed;
+      packet.Pr = pvals.Pr;
+      packet.Ir = pvals.Ir;
+      packet.Dr = pvals.Dr;
+      packet.Py = pvals.Py;
+      packet.Iy = pvals.Iy;
+      packet.Dy = pvals.Dy;
+      rfWrite((uint8_t*) (&packet), sizeof(packet));
     }
   }
 
