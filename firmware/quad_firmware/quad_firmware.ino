@@ -10,10 +10,10 @@
 #define LED_ARMED 16
 #define RAD_TO_DEG 57.295779513082320876798154814105
 
-int propBackRightPin = 8;
-int propFrontRightPin = 3;
-int propFrontLeftPin = 4;
-int propBackLeftPin = 5;
+int propBackRightPin = 8; //or 49
+int propFrontRightPin = 3; //or 19
+int propFrontLeftPin = 4; //or 51
+int propBackLeftPin = 5; //or 50
 bool armed;
 
 int bRValue = 0;
@@ -36,6 +36,7 @@ int roll = 0;
 
 float prevPitchError = 0;
 float iTermPitch = 0;
+float iTermRoll = 0;
 float iTermYaw = 0;
 float iTolerance = 3;
 
@@ -231,6 +232,7 @@ void loop() {
     // gyro_angle_pitch = gyro_angle_pitch + orientation.pitch * RAD_TO_DEG * dt;
     // gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
     //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
+    //PID FOR PITCH
     float pTerm = pvals.Pr * (cf_angle_pitch - pitch);
     iTermPitch = iTermPitch + pvals.Ir * (cf_angle_pitch - pitch) * dt;
     float dTerm = pvals.Dr * ((cf_angle_pitch - pitch) - pitchPrevError) / dt;
@@ -242,8 +244,19 @@ void loop() {
     //   iTermPitch = 0;
     // }
     float pitchPIDCorrection = pTerm + iTermPitch + dTerm;
-    prevPitchError = pvals.Pr * (cf_angle_pitch - pitch);
-  
+    // prevPitchError = pvals.Pr * (cf_angle_pitch - pitch);
+
+    //PID FOR ROLL
+    pTerm = pvals.Pr * (cf_angle_roll - roll);
+    iTermRoll = iTermRoll + pvals.Ir * (cf_angle_roll - roll) * dt;
+    dTerm = pvals.Dr * ((cf_angle_roll - roll) - rollPrevError) / dt;
+    rollPrevError = (cf_angle_roll - roll);
+    if((cf_angle_roll - roll) < iTolerance && (cf_angle_roll - roll) > (0.0-iTolerance)){
+      iTermRoll = 0;
+    }
+    float rollPIDCorrection = pTerm + iTermRoll + dTerm;
+
+    //PID FOR YAW
     pTerm = pvals.Py * (angle_yaw - yaw);
     iTermYaw = iTermYaw + pvals.Iy * (angle_yaw - yaw) * dt;
     dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError) / dt;
@@ -269,10 +282,10 @@ void loop() {
     //YAW is POSITIVE FR and BL
     //WEIRD RADIANS YAW is p=7.5 i=0.58 d=0 and need trim of 1 to 3
     //GOOD YAW IS p=4.6, i=1.15, d=0 and trim of -0.5
-    fRValue = throttle + pitchPIDCorrection + yawPIDCorrection;
-    fLValue = throttle + pitchPIDCorrection - yawPIDCorrection;
-    bRValue = throttle - pitchPIDCorrection - yawPIDCorrection;
-    bLValue = throttle - pitchPIDCorrection + yawPIDCorrection;
+    fRValue = throttle + pitchPIDCorrection + yawPIDCorrection + rollPIDCorrection;
+    fLValue = throttle + pitchPIDCorrection - yawPIDCorrection - rollPIDCorrection;
+    bRValue = throttle - pitchPIDCorrection - yawPIDCorrection + rollPIDCorrection;
+    bLValue = throttle - pitchPIDCorrection + yawPIDCorrection - rollPIDCorrection;
 
     if(throttle < deadzone){
       fRValue = 0;
@@ -280,6 +293,7 @@ void loop() {
       bRValue = 0;
       bLValue = 0;
       iTermPitch = 0;
+      iTermRoll = 0;
       iTermYaw = 0;
     }
 
