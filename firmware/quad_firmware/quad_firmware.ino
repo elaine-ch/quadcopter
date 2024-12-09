@@ -10,18 +10,37 @@
 #define LED_ARMED 16
 #define RAD_TO_DEG 57.295779513082320876798154814105
 
-//other fcb or our quad
-int propBackRightPin = 3; //8 or 3
-int propFrontRightPin = 19; //3 or 19
-int propFrontLeftPin = 4; //4 or 4
-int propBackLeftPin = 5; //5 or 5
-bool armed;
+//assignments for our quad
+int propBackLeftPin = 19;
+int propFrontLeftPin = 3;
+int propFrontRightPin = 4;
+int propBackRightPin = 5;
 
+//assignments for fcb
+// int propBackRightPin = 8;
+// int propFrontRightPin = 3;
+// int propFrontLeftPin = 4;
+// int propBackLeftPin = 5;
+
+bool armed;
+bool wink;
+
+//LED assignments for our quad
 int RGB_GRN = 18;
 int RGB_RED = 34;
 int RGB_BLU = 35;
 int EYE1 = 8;
 int EYE2 = 9;
+
+int rgbInc = 1;
+int rgbRed = 180;
+
+//LED assignments for given fcb
+// int RGB_GRN = 18;
+// int RGB_RED = 18;
+// int RGB_BLU = 18;
+// int EYE1 = 18;
+// int EYE2 = 18;
 
 int bRValue = 0;
 int bLValue = 0;
@@ -30,6 +49,7 @@ int fRValue = 0;
 
 int pitchTrim = 0;
 int yawTrim = 0;
+int rollTrim = 0;
 
 int throttle_stick = 0;
 int yaw_stick = 0;
@@ -80,7 +100,7 @@ int counter = 0;
 unsigned long timeSinceLastPacket;
 
 struct PIDVals {
-  float Pr, Ir, Dr, Py, Iy, Dy;
+  float Pr, Ir, Dr, Pp, Ip, Dp, Py, Iy, Dy;
 };
 
 PIDVals pvals;
@@ -161,16 +181,24 @@ void setup() {
 
 void loop() {
   //battery stuff
-  // batteryCount++;
-  // if(batteryCount == 5000) {
-  //   readBattery();
-  //   batteryCount = 0;
+  batteryCount++;
+  if(batteryCount == 5000) {
+    readBattery();
+    batteryCount = 0;
+  }
+
+  analogWrite(RGB_RED, rgbRed);
+  // if(rgbRed == 200) {
+  //   rgbInc = 0;
+  // } else if (rgbRed == 0){
+  //   rgbInc = 1;
   // }
 
-  digitalWrite(RGB_GRN, LOW);
-  analogWrite(RGB_RED, 0);
-  analogWrite(RGB_BLU, 200);
-  //analogWrite(EYE1, 180);
+  // if(rgbInc == 0){
+  //   rgbRed--;
+  // } else {
+  //   rgbRed++;
+  // }
 
   //read from radio
   uint8_t buf[sizeof(Packet)];
@@ -190,12 +218,14 @@ void loop() {
       pvals.Pr = packet->Pr;
       pvals.Ir = packet->Ir;
       pvals.Dr = packet->Dr;
-      pvals.Py = packet->Py;
-      pvals.Iy = packet->Iy;
-      pvals.Dy = packet->Dy;
+      pvals.Pp = packet->Py;
+      pvals.Ip = packet->Iy;
+      pvals.Dp = packet->Dy;
       armed = packet->armed;
+      //pitch 2.25, roll 1.5
       pitchTrim = packet->pitchTrim;
       yawTrim = packet->yawTrim;
+      rollTrim = packet->rollTrim;
       timeSinceLastPacket = millis();
     }
   }
@@ -235,7 +265,7 @@ void loop() {
     //cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0 + pitchTrim;
     //cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll_rate)) / 1000.0;
     cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch_rate * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch)) + pitchTrim / 10.0;
-    cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll_rate * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll));
+    cf_angle_roll = ((gain) * (cf_angle_roll + (orientation.roll_rate * RAD_TO_DEG * dt)) + (1-gain) * (orientation.roll)) + rollTrim / 10.0;
     angle_yaw = orientation.yaw_rate * RAD_TO_DEG + yawTrim;
 
     // Serial.print(yaw_min_gimbal);
@@ -250,12 +280,14 @@ void loop() {
     // gyro_angle_roll = gyro_angle_roll + orientation.roll * RAD_TO_DEG * dt;
     //gyro_angle = gyro_angle + gyro_raw * RAD_TO_DEG * dt
     //PID FOR PITCH
-    float pTerm = pvals.Pr * (cf_angle_pitch - pitch);
-    iTermPitch = iTermPitch + pvals.Ir * (cf_angle_pitch - pitch) * dt;
-    float dTerm = pvals.Dr * ((cf_angle_pitch - pitch) - pitchPrevError) / dt;
+    //GOOD PITCH for other pcb p=0.9 i=0.66 d=0.19
+    
+    float pTerm = pvals.Pp * (cf_angle_pitch - pitch);
+    iTermPitch = iTermPitch * 0.95 + pvals.Ip * (cf_angle_pitch - pitch) * dt;
+    float dTerm = pvals.Dp * ((cf_angle_pitch - pitch) - pitchPrevError) / dt;
     pitchPrevError = (cf_angle_pitch - pitch);
     if((cf_angle_pitch - pitch) < iTolerance && (cf_angle_pitch - pitch) > (0.0-iTolerance)){
-      iTermPitch = 0;
+      // iTermPitch = 0;
     }
     // if((prevPitchError > 0 && pTerm < 0) || (prevPitchError < 0 && pTerm > 0)){
     //   iTermPitch = 0;
@@ -264,16 +296,22 @@ void loop() {
     // prevPitchError = pvals.Pr * (cf_angle_pitch - pitch);
 
     //PID FOR ROLL
+
+    pvals.Py = 6.6;
+    pvals.Iy = 0.0;
+    pvals.Dy = 0.0;
+    //GOOD ROLL for other pcb p=0.8, i=0.7 d=0.2
     pTerm = pvals.Pr * (cf_angle_roll - roll);
-    iTermRoll = iTermRoll + pvals.Ir * (cf_angle_roll - roll) * dt;
+    iTermRoll = iTermRoll * 0.95 + pvals.Ir * (cf_angle_roll - roll) * dt;
     dTerm = pvals.Dr * ((cf_angle_roll - roll) - rollPrevError) / dt;
     rollPrevError = (cf_angle_roll - roll);
     if((cf_angle_roll - roll) < iTolerance && (cf_angle_roll - roll) > (0.0-iTolerance)){
-      iTermRoll = 0;
+      // iTermRoll = 0;
     }
     float rollPIDCorrection = pTerm + iTermRoll + dTerm;
 
     //PID FOR YAW
+
     pTerm = pvals.Py * (angle_yaw - yaw);
     iTermYaw = iTermYaw + pvals.Iy * (angle_yaw - yaw) * dt;
     dTerm = pvals.Dy * ((angle_yaw - yaw) - yawPrevError) / dt;
@@ -292,9 +330,11 @@ void loop() {
     // }
     // float yawPIDCorrection = pTerm + iTermYaw + dTerm;
 
-    //pitchPIDCorrection = 0;
-    //GOOD PITCH p=2.5 i=0.3 d=1.5
-    yawPIDCorrection = 0;
+    // pitchPIDCorrection = 0;
+    //GOOD PITCH for other pcb p=0.9 i=0.66 d=0.19
+    //GOOD ROLL for other pcb p=0.8, i=0.7 d=0.2
+    // yawPIDCorrection = 0;
+    // pitchPIDCorrection = 0;
     //FRONT POSITIVE PITCH CORRECTION, BACK NEGATIVE PITCH CORRECTION
     //YAW is POSITIVE FR and BL
     //WEIRD RADIANS YAW is p=7.5 i=0.58 d=0 and need trim of 1 to 3
@@ -320,8 +360,8 @@ void loop() {
 
     if (armed) {
     digitalWrite(LED_ARMED, HIGH);
-    analogWrite(EYE1, 140);
-    analogWrite(EYE2, 140);
+    analogWrite(EYE1, 160);
+    analogWrite(EYE2, 160);
     bRValue = constrain(bRValue, 0, 255);
     bLValue = constrain(bLValue, 0, 255);
     fRValue = constrain(fRValue, 0, 255);
@@ -340,8 +380,8 @@ void loop() {
     // Serial.println(bLValue);
   } else {
     digitalWrite(LED_ARMED, LOW);
-    analogWrite(EYE1, 50);
-    analogWrite(EYE2, 50);
+    analogWrite(EYE1, 30);
+    analogWrite(EYE2, 30);
     analogWrite(propBackRightPin, 0);
     analogWrite(propFrontRightPin, 0);
     analogWrite(propFrontLeftPin, 0);

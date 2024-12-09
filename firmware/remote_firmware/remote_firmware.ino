@@ -19,13 +19,20 @@ int batteryCount = 0;
 int quadBattery = 0;
 int batteryLevel = 0;
 
-float yawTrim = 0;
-float pitchTrim = 0;
+struct Trim {
+  float yaw;
+  float pitch;
+  float roll;
+};
+
+float yawTrim;
+float pitchTrim;
+float rollTrim;
 
 int packetSendTimer = 0;
 float pInc = 0.1;
 float iInc = 0.01;
-float dInc = 0.1;
+float dInc = 0.01;
 
 extern RotaryEncoder knob1;
 int lastKnobPos;
@@ -48,10 +55,12 @@ struct PIDVals {
 struct WholeEeprom {
   MinMaxGimbals gimbalVals;
   PIDVals pidVals;
+  // Trim trimVals;
 };
 
 MinMaxGimbals cValues;
 PIDVals pvals;
+// Trim tVals;
 WholeEeprom wholeEeprom;
 
 void setup() {
@@ -70,6 +79,11 @@ void setup() {
   armed = false;
   lcd.setFastBacklight(255, 255, 255);
 
+  lastKnobPos = knob1.getCurrentPos();
+  yawTrim = 0;
+  rollTrim = 0;
+  pitchTrim = 0;
+
   rfFlush();
 
   //tell quad about reset
@@ -81,8 +95,6 @@ void setup() {
   packet.magicNumber = 1829;
   packet.battery = 0;
   packet.armed = armed;
-  packet.yawTrim = yawTrim;
-  packet.pitchTrim = pitchTrim;
   rfWrite((uint8_t*) (&packet), sizeof(packet));
 }
 
@@ -115,11 +127,14 @@ void loop() {
     pvals.Py = 2;
     pvals.Iy = 0;
     pvals.Dy = 0;
-
+    // tVals.roll = 0;
+    // tVals.pitch = 0;
+    // tVals.yaw = 0;
   } else {
     EEPROM.get(0, wholeEeprom);
     cValues = wholeEeprom.gimbalVals;
     pvals = wholeEeprom.pidVals;
+    // tVals = wholeEeprom.trimVals;
   }
   
   //declaring additional variables to avoid calling functions inside of constrain
@@ -150,6 +165,7 @@ void loop() {
     packet.Dy = pvals.Dy;
     packet.yawTrim = yawTrim;
     packet.pitchTrim = pitchTrim;
+    packet.rollTrim = rollTrim;
     rfWrite((uint8_t*) (&packet), sizeof(packet));
   }
 
@@ -158,9 +174,9 @@ void loop() {
   if(!armed && throttle >= 0 && throttle <= 5 && yaw <= 255 && yaw >= 250 && roll <= 255  && roll >= 250 && pitch >= 250 && pitch <= 255){
     armed = true;
     Serial.println("armed!");
-    char* armedMessage = "Quad armed!";
     lcd.clear();
-    lcd.write(armedMessage);
+    // char* armedMessage = "Quad armed!";
+    // lcd.write(armedMessage);
 
     lcd.setFastBacklight(255, 0, 0);
   }
@@ -169,9 +185,9 @@ void loop() {
   if(armed && digitalRead(BUTTON2_PIN) == 0){
     armed = false;
     Serial.println("disarmed!");
-    char* disarmed = "Quad disarmed!";
     lcd.clear();
-    lcd.write(disarmed);
+    // char* disarmed = "Quad disarmed!";
+    // lcd.write(disarmed);
 
     lcd.setCursor(0, 1);
     lcd.print(batteryLevel);
@@ -185,28 +201,64 @@ void loop() {
   //trim
   //d-pad up down for pitch, left right for yaw
   if(digitalRead(BUTTON_RIGHT_PIN) == 0 && prevRightPushed != 0){
-      yawTrim+=0.25;
-      Serial.println("Yaw up pushed");
-      lcd.setCursor(13, 0);
-      lcd.print(yawTrim);
+    rollTrim+=0.25;
+    Serial.println("Roll up pushed");
+    char* trimAdjust = "Roll";
+    lcd.clear();
+    lcd.write(trimAdjust);
+    lcd.setCursor(11, 0);
+    lcd.print(rollTrim);  
   }
   if(digitalRead(BUTTON_LEFT_PIN) == 0 && prevLeftPushed != 0){
-      yawTrim-=0.25;
-      Serial.println("Yaw down pushed");
-      lcd.setCursor(13, 0);
-      lcd.print(yawTrim);
+    rollTrim-=0.25;
+    Serial.println("Roll down pushed");
+    char* trimAdjust = "Roll";
+    lcd.clear();
+    lcd.write(trimAdjust);
+    lcd.setCursor(11, 0);
+    lcd.print(rollTrim);
   }
   if(digitalRead(BUTTON_UP_PIN) == 0 && prevUpPushed != 0){
-      pitchTrim++;
+      pitchTrim+=0.25;
       Serial.println("Pitch up pushed");
-      lcd.setCursor(13, 0);
+      char* trimAdjust = "Pitch";
+      lcd.clear();
+      lcd.write(trimAdjust);
+      lcd.setCursor(11, 0);
       lcd.print(pitchTrim);
   }
   if(digitalRead(BUTTON_DOWN_PIN) == 0 && prevDownPushed != 0){
-      pitchTrim--;
+      pitchTrim-=0.25;
       Serial.println("Pitch down pushed");
-      lcd.setCursor(13, 0);
+      char* trimAdjust = "Pitch";
+      lcd.clear();
+      lcd.write(trimAdjust);
+      lcd.setCursor(11, 0);
       lcd.print(pitchTrim);
+  }
+  if(knob1.getCurrentPos() > lastKnobPos) {
+    lastKnobPos = knob1.getCurrentPos();
+    yawTrim+=0.25;
+    Serial.println("Yaw up pushed");
+    char* trimAdjust = "Yaw";
+    lcd.clear();
+    lcd.write(trimAdjust);
+    lcd.setCursor(11, 0);
+    lcd.print(pitchTrim);
+    lcd.setCursor(11, 0);
+    lcd.print(yawTrim);
+  }
+  if(knob1.getCurrentPos() < lastKnobPos) {
+    lastKnobPos = knob1.getCurrentPos();
+    yawTrim-=0.25;
+    Serial.println("Yaw down pushed");
+    char* trimAdjust = "Yaw";
+    lcd.clear();
+    lcd.write(trimAdjust);
+    lcd.setCursor(11, 0);
+    lcd.print(pitchTrim);
+    lcd.setCursor(11, 0);
+    lcd.print(yawTrim);
   }
   prevDownPushed = digitalRead(BUTTON_DOWN_PIN);
   prevUpPushed = digitalRead(BUTTON_UP_PIN);
@@ -225,9 +277,9 @@ void loop() {
       quadBattery = packet->battery;
     }
     if(!armed && prevArmed) {
-      char* disarmed = "Quad disarmed!";
       lcd.clear();
-      lcd.write(disarmed);
+      // char* disarmed = "Quad disarmed!";
+      // lcd.write(disarmed);
 
       lcd.setCursor(0, 1);
       lcd.print(batteryLevel);
@@ -447,6 +499,7 @@ void pidCalibrationMode() {
     if(digitalRead(BUTTON_UP_PIN) == 0){
       wholeEeprom.gimbalVals = cValues;
       wholeEeprom.pidVals = pvals;
+      // wholeEeprom.trimVals = tVals;
       EEPROM.put(0, wholeEeprom);
       pidCalibrate = false;
       calibrate = false;
@@ -481,6 +534,7 @@ void pidCalibrationMode() {
       packet.Dy = pvals.Dy;
       packet.yawTrim = yawTrim;
       packet.pitchTrim = pitchTrim;
+      packet.rollTrim = rollTrim;
       rfWrite((uint8_t*) (&packet), sizeof(packet));
     }
     packetSendTimer ++;
@@ -539,6 +593,7 @@ void calibrationMode() {
     if(digitalRead(BUTTON2_PIN) == 0){
       wholeEeprom.gimbalVals = cValues;
       wholeEeprom.pidVals = pvals;
+      // wholeEeprom.trimVals = tVals;
       EEPROM.put(0, wholeEeprom);
       calibrate = false;
     }
