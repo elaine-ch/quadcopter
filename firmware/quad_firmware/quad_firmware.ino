@@ -10,11 +10,18 @@
 #define LED_ARMED 16
 #define RAD_TO_DEG 57.295779513082320876798154814105
 
-int propBackRightPin = 8; //or 49
-int propFrontRightPin = 3; //or 19
-int propFrontLeftPin = 4; //or 51
-int propBackLeftPin = 5; //or 50
+//other fcb or our quad
+int propBackRightPin = 3; //8 or 3
+int propFrontRightPin = 19; //3 or 19
+int propFrontLeftPin = 4; //4 or 4
+int propBackLeftPin = 5; //5 or 5
 bool armed;
+
+int RGB_GRN = 18;
+int RGB_RED = 34;
+int RGB_BLU = 35;
+int EYE1 = 8;
+int EYE2 = 9;
 
 int bRValue = 0;
 int bLValue = 0;
@@ -101,6 +108,11 @@ void setup() {
   pinMode(propBackLeftPin, OUTPUT);
   pinMode(BATTERY_SENSE_PIN, INPUT);
   pinMode(LED_ARMED, OUTPUT);
+  pinMode(RGB_GRN, OUTPUT);
+  pinMode(RGB_RED, OUTPUT);
+  pinMode(RGB_BLU, OUTPUT);
+  pinMode(EYE1, OUTPUT);
+  pinMode(EYE2, OUTPUT);
 
   // analogWrite(propBackRightPin, 0);
   // analogWrite(propFrontRightPin, 0);
@@ -154,6 +166,11 @@ void loop() {
   //   readBattery();
   //   batteryCount = 0;
   // }
+
+  digitalWrite(RGB_GRN, LOW);
+  analogWrite(RGB_RED, 0);
+  analogWrite(RGB_BLU, 200);
+  //analogWrite(EYE1, 180);
 
   //read from radio
   uint8_t buf[sizeof(Packet)];
@@ -211,8 +228,8 @@ void loop() {
     dt = (current-lastTime) / 1000.0;
     lastTime = current;
 
-    // Serial.print(orientation.pitch_rate * RAD_TO_DEG);
-    // Serial.print(F(" "));
+    Serial.print(orientation.pitch_rate * RAD_TO_DEG);
+    Serial.println(F(" "));
 
     //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
     //cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0 + pitchTrim;
@@ -303,6 +320,8 @@ void loop() {
 
     if (armed) {
     digitalWrite(LED_ARMED, HIGH);
+    analogWrite(EYE1, 140);
+    analogWrite(EYE2, 140);
     bRValue = constrain(bRValue, 0, 255);
     bLValue = constrain(bLValue, 0, 255);
     fRValue = constrain(fRValue, 0, 255);
@@ -321,6 +340,8 @@ void loop() {
     // Serial.println(bLValue);
   } else {
     digitalWrite(LED_ARMED, LOW);
+    analogWrite(EYE1, 50);
+    analogWrite(EYE2, 50);
     analogWrite(propBackRightPin, 0);
     analogWrite(propFrontRightPin, 0);
     analogWrite(propFrontLeftPin, 0);
