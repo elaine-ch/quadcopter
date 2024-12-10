@@ -32,7 +32,7 @@ int RGB_BLU = 35;
 int EYE1 = 8;
 int EYE2 = 9;
 
-int rgbInc = 1;
+bool rgbInc = true;
 int rgbRed = 180;
 
 //LED assignments for given fcb
@@ -189,17 +189,19 @@ void loop() {
   }
 
   analogWrite(RGB_RED, rgbRed);
-  // if(rgbRed == 200) {
-  //   rgbInc = 0;
-  // } else if (rgbRed == 0){
-  //   rgbInc = 1;
-  // }
+  if(rgbRed >= 250) {
+    rgbInc = false;
+  } else if (rgbRed <= 0){
+    rgbInc = true;
+  }
 
-  // if(rgbInc == 0){
-  //   rgbRed--;
-  // } else {
-  //   rgbRed++;
-  // }
+  if(rgbInc){
+    rgbRed++;
+  } else {
+    rgbRed--;
+  }
+
+  Serial.println(rgbRed);
 
   //read from radio
   uint8_t buf[sizeof(Packet)];
@@ -271,8 +273,8 @@ void loop() {
     dt = (current-lastTime) / 1000.0;
     lastTime = current;
 
-    Serial.print(orientation.pitch_rate * RAD_TO_DEG);
-    Serial.println(F(" "));
+    // Serial.print(orientation.pitch_rate * RAD_TO_DEG);
+    // Serial.println(F(" "));
 
     //cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
     //cf_angle_pitch = ((gain) * (cf_angle_pitch + (orientation.pitch * RAD_TO_DEG * dt)) + (1-gain) * (orientation.pitch_rate)) / 1000.0 + pitchTrim;

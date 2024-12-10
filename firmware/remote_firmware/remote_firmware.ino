@@ -55,12 +55,11 @@ struct PIDVals {
 struct WholeEeprom {
   MinMaxGimbals gimbalVals;
   PIDVals pidVals;
-  // Trim trimVals;
 };
 
 MinMaxGimbals cValues;
 PIDVals pvals;
-// Trim tVals;
+Trim tVals;
 WholeEeprom wholeEeprom;
 
 void setup() {
@@ -80,9 +79,12 @@ void setup() {
   lcd.setFastBacklight(255, 255, 255);
 
   lastKnobPos = knob1.getCurrentPos();
-  yawTrim = 0;
-  rollTrim = 0;
-  pitchTrim = 0;
+  // yawTrim = 0;
+  // rollTrim = 0;
+  // pitchTrim = 0;
+  tVals.yaw = 0;
+  tVals.roll = 0;
+  tVals.pitch = 0;
 
   rfFlush();
 
@@ -127,14 +129,18 @@ void loop() {
     pvals.Py = 2;
     pvals.Iy = 0;
     pvals.Dy = 0;
-    // tVals.roll = 0;
-    // tVals.pitch = 0;
-    // tVals.yaw = 0;
   } else {
     EEPROM.get(0, wholeEeprom);
     cValues = wholeEeprom.gimbalVals;
     pvals = wholeEeprom.pidVals;
-    // tVals = wholeEeprom.trimVals;
+  }
+
+  if(EEPROM.read(1012) == 255){
+    tVals.roll = 0;
+    tVals.pitch = 0;
+    tVals.yaw = 0;
+  } else {
+    EEPROM.get(1012, tVals);
   }
   
   //declaring additional variables to avoid calling functions inside of constrain
@@ -164,9 +170,9 @@ void loop() {
     packet.Py = pvals.Py;
     packet.Iy = pvals.Iy;
     packet.Dy = pvals.Dy;
-    packet.yawTrim = yawTrim;
-    packet.pitchTrim = pitchTrim;
-    packet.rollTrim = rollTrim;
+    packet.yawTrim = tVals.yaw;
+    packet.pitchTrim = tVals.pitch;
+    packet.rollTrim = tVals.roll;
     rfWrite((uint8_t*) (&packet), sizeof(packet));
   }
 
@@ -202,64 +208,66 @@ void loop() {
   //trim
   //d-pad up down for pitch, left right for roll
   if(digitalRead(BUTTON_RIGHT_PIN) == 0 && prevRightPushed != 0){
-    rollTrim+=0.25;
+    tVals.roll+=0.25;
     Serial.println("Roll up pushed");
     char* trimAdjust = "Roll";
     lcd.clear();
     lcd.write(trimAdjust);
     lcd.setCursor(11, 0);
-    lcd.print(rollTrim);  
+    lcd.print(tVals.roll);
+    EEPROM.put(1012, tVals); 
   }
   if(digitalRead(BUTTON_LEFT_PIN) == 0 && prevLeftPushed != 0){
-    rollTrim-=0.25;
+    tVals.roll-=0.25;
     Serial.println("Roll down pushed");
     char* trimAdjust = "Roll";
     lcd.clear();
     lcd.write(trimAdjust);
     lcd.setCursor(11, 0);
-    lcd.print(rollTrim);
+    lcd.print(tVals.roll);
+    EEPROM.put(1012, tVals); 
   }
   if(digitalRead(BUTTON_UP_PIN) == 0 && prevUpPushed != 0){
-      pitchTrim+=0.25;
-      Serial.println("Pitch up pushed");
-      char* trimAdjust = "Pitch";
-      lcd.clear();
-      lcd.write(trimAdjust);
-      lcd.setCursor(11, 0);
-      lcd.print(pitchTrim);
+    tVals.pitch+=0.25;
+    Serial.println("Pitch up pushed");
+    char* trimAdjust = "Pitch";
+    lcd.clear();
+    lcd.write(trimAdjust);
+    lcd.setCursor(11, 0);
+    lcd.print(tVals.pitch);
+    EEPROM.put(1012, tVals); 
   }
   if(digitalRead(BUTTON_DOWN_PIN) == 0 && prevDownPushed != 0){
-      pitchTrim-=0.25;
-      Serial.println("Pitch down pushed");
-      char* trimAdjust = "Pitch";
-      lcd.clear();
-      lcd.write(trimAdjust);
-      lcd.setCursor(11, 0);
-      lcd.print(pitchTrim);
+    tVals.pitch-=0.25;
+    Serial.println("Pitch down pushed");
+    char* trimAdjust = "Pitch";
+    lcd.clear();
+    lcd.write(trimAdjust);
+    lcd.setCursor(11, 0);
+    lcd.print(tVals.pitch);
+    EEPROM.put(1012, tVals); 
   }
   if(knob1.getCurrentPos() > lastKnobPos) {
     lastKnobPos = knob1.getCurrentPos();
-    yawTrim+=0.25;
+    tVals.yaw+=0.25;
     Serial.println("Yaw up pushed");
     char* trimAdjust = "Yaw";
     lcd.clear();
     lcd.write(trimAdjust);
     lcd.setCursor(11, 0);
-    lcd.print(pitchTrim);
-    lcd.setCursor(11, 0);
-    lcd.print(yawTrim);
+    lcd.print(tVals.yaw);
+    EEPROM.put(1012, tVals); 
   }
   if(knob1.getCurrentPos() < lastKnobPos) {
     lastKnobPos = knob1.getCurrentPos();
-    yawTrim-=0.25;
+    tVals.yaw-=0.25;
     Serial.println("Yaw down pushed");
     char* trimAdjust = "Yaw";
     lcd.clear();
     lcd.write(trimAdjust);
     lcd.setCursor(11, 0);
-    lcd.print(pitchTrim);
-    lcd.setCursor(11, 0);
-    lcd.print(yawTrim);
+    lcd.print(tVals.yaw);
+    EEPROM.put(1012, tVals); 
   }
   prevDownPushed = digitalRead(BUTTON_DOWN_PIN);
   prevUpPushed = digitalRead(BUTTON_UP_PIN);
@@ -543,9 +551,9 @@ void pidCalibrationMode() {
       packet.Py = pvals.Py;
       packet.Iy = pvals.Iy;
       packet.Dy = pvals.Dy;
-      packet.yawTrim = yawTrim;
-      packet.pitchTrim = pitchTrim;
-      packet.rollTrim = rollTrim;
+      packet.yawTrim = tVals.yaw;
+      packet.pitchTrim = tVals.pitch;
+      packet.rollTrim = tVals.roll;
       packet.wink = false;
       rfWrite((uint8_t*) (&packet), sizeof(packet));
     }
@@ -605,7 +613,6 @@ void calibrationMode() {
     if(digitalRead(BUTTON2_PIN) == 0){
       wholeEeprom.gimbalVals = cValues;
       wholeEeprom.pidVals = pvals;
-      // wholeEeprom.trimVals = tVals;
       EEPROM.put(0, wholeEeprom);
       calibrate = false;
     }
