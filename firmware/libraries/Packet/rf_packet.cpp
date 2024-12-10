@@ -13,7 +13,7 @@ struct Packet {
     int battery;
     bool armed;
     float Pr, Ir, Dr, Py, Iy, Dy;
-    float yawTrim, pitchTrim, rollTrim;
+    float yawTrim, pitchTrim;
 };
 
 #endif
