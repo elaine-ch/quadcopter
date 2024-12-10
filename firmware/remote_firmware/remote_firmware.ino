@@ -127,7 +127,7 @@ void loop() {
   int throttle = constrain(tMap, 0, 255);
   int yMap = map(analogRead(PIN_YAW), cValues.yawMin, cValues.yawMax, 0, 255);
   int yaw = constrain(yMap, 0, 255);
-  int rMap = map(analogRead(PIN_ROLL) * -1, cValues.rollMin, cValues.rollMax, 0, 255);
+  int rMap = map(analogRead(PIN_ROLL), cValues.rollMin, cValues.rollMax, 0, 255);
   int roll = constrain(rMap, 0, 255);
   int pMap = map(analogRead(PIN_PITCH), cValues.pitchMin, cValues.pitchMax, 0, 255);
   int pitch = constrain(pMap, 0, 255);
@@ -155,7 +155,7 @@ void loop() {
 
   //arm quadcopter from remote
   //our yaw and pitch are backwards
-  if(!armed && throttle >= 0 && throttle <= 5 && yaw <= 255 && yaw >= 250 && roll <= 5  && roll >= 0 && pitch >= 250 && pitch <= 255){
+  if(!armed && throttle >= 0 && throttle <= 5 && yaw <= 255 && yaw >= 250 && roll <= 255  && roll >= 250 && pitch >= 250 && pitch <= 255){
     armed = true;
     Serial.println("armed!");
     char* armedMessage = "Quad armed!";
@@ -457,7 +457,7 @@ void pidCalibrationMode() {
     int throttle = constrain(tMap, 0, 255);
     int yMap = map(analogRead(PIN_YAW), cValues.yawMin, cValues.yawMax, 0, 255);
     int yaw = constrain(yMap, 0, 255);
-    int rMap = map(analogRead(PIN_ROLL) * -1, cValues.rollMin, cValues.rollMax, 0, 255);
+    int rMap = map(analogRead(PIN_ROLL), cValues.rollMin, cValues.rollMax, 0, 255);
     int roll = constrain(rMap, 0, 255);
     int pMap = map(analogRead(PIN_PITCH), cValues.pitchMin, cValues.pitchMax, 0, 255);
     int pitch = constrain(pMap, 0, 255);
