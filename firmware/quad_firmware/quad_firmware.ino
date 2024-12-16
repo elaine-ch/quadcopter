@@ -135,11 +135,6 @@ void setup() {
   pinMode(EYE1, OUTPUT);
   pinMode(EYE2, OUTPUT);
 
-  // analogWrite(propBackRightPin, 0);
-  // analogWrite(propFrontRightPin, 0);
-  // analogWrite(propFrontLeftPin, 0);
-  // analogWrite(propBackLeftPin, 0);
-
   rfFlush();
 
   //send one packet on setup to tell remote quad is disarmed
@@ -241,7 +236,7 @@ void loop() {
     analogWrite(EYE1, 0);
   }
 
-  if(wink && millis() % 300 == 0){
+  if(wink && millis() % 100 == 0){
     wink = false;
   }
 
@@ -358,6 +353,16 @@ void loop() {
     fLValue = throttle + pitchPIDCorrection - yawPIDCorrection - rollPIDCorrection;
     bRValue = throttle - pitchPIDCorrection - yawPIDCorrection + rollPIDCorrection;
     bLValue = throttle - pitchPIDCorrection + yawPIDCorrection - rollPIDCorrection;
+
+    //GOOD VALUES AT MAX-ISH BATTERY: ROUND 1
+    /*
+    Pr: 6.7
+    Ir: 0.6
+    Dr: 0.7
+    same for p
+    pitch trim: 3
+    roll trim: 1.25
+    */
 
     if(throttle < deadzone){
       fRValue = 0;
